@@ -8,7 +8,7 @@ interface LogoProps {
 export default function Logo({ height = 40, className = "" }: LogoProps) {
   return (
     <Image
-      src="/logo.svg"
+      src="/assets/logo/logo.svg"
       alt="Move Academia"
       height={height}
       width={Math.round(height * 3.4)}

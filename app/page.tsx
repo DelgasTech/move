@@ -7,6 +7,7 @@ import Planos from "@/components/sections/Planos";
 import Servicos from "@/components/sections/Servicos";
 import Diferenciais from "@/components/sections/Diferenciais";
 import CtaFinal from "@/components/sections/CtaFinal";
+import Galeria from "@/components/sections/Galeria";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Planos />
         <Servicos />
         <Diferenciais />
+        <Galeria />
         <CtaFinal />
       </main>
       <Footer />
