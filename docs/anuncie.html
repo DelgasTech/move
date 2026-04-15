@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Move — Anuncie na Academia | Move Academia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #F7941D;
+      --primary-light: #FFF3E0;
+      --charcoal: #333333;
+      --dark-bg: #1A1A1A;
+      --charcoal-bg: #282828;
+      --white-10: rgba(255,255,255,0.1);
+      --white-5: rgba(255,255,255,0.05);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark-bg);
+      color: #fff;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--white-10);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo { font-weight: 900; font-size: 1.25rem; color: #fff; letter-spacing: 0.05em; }
+    .logo span { color: var(--primary); }
+
+    nav a {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-left: 1.75rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--primary); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: rgba(247,148,29,0.1);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top right, rgba(247,148,29,0.15), transparent, transparent);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 8rem 1rem 4rem;
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(247,148,29,0.1);
+      border: 1px solid rgba(247,148,29,0.3);
+      color: var(--primary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-desc {
+      color: #d1d5db;
+      font-size: 1.125rem;
+      max-width: 40rem;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-desc strong { color: #fff; }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #e8850f; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.3);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      z-index: 1;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ─── SECTIONS SHARED ─── */
+    section { padding: 5rem 1rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
+    .container-md { max-width: 56rem; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-label {
+      display: block;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-sub { color: #9ca3af; margin-top: 1rem; max-width: 36rem; margin-left: auto; margin-right: auto; }
+
+    /* ─── PÚBLICO ─── */
+    .publico { background: rgba(51,51,51,0.2); }
+
+    .publico-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .stat-card {
+      background: var(--dark-bg);
+      border: 1px solid var(--white-10);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-label {
+      color: #9ca3af;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-big {
+      font-size: 3.75rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-caption { color: #fff; font-weight: 600; margin-top: 0.25rem; }
+
+    .gender-row { display: flex; gap: 1.5rem; }
+
+    .gender-item { flex: 1; }
+
+    .gender-pct-primary { font-size: 2.5rem; font-weight: 900; color: var(--primary); }
+    .gender-pct-white { font-size: 2.5rem; font-weight: 900; color: #fff; }
+    .gender-name-primary { color: #fff; font-weight: 600; margin: 0.25rem 0 0.75rem; }
+    .gender-name-white { color: #9ca3af; font-weight: 600; margin: 0.25rem 0 0.75rem; }
+
+    .bar-track {
+      height: 0.5rem;
+      background: var(--white-10);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .bar-fill-primary { height: 100%; background: var(--primary); border-radius: 9999px; }
+    .bar-fill-white { height: 100%; background: rgba(255,255,255,0.6); border-radius: 9999px; }
+
+    .age-card {
+      background: var(--dark-bg);
+      border: 1px solid var(--white-10);
+      border-radius: 1.5rem;
+      padding: 2rem;
+    }
+
+    .age-row { margin-bottom: 1.25rem; }
+
+    .age-row-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.375rem;
+    }
+
+    .age-faixa { color: #fff; font-size: 0.875rem; font-weight: 500; }
+    .age-pct { color: var(--primary); font-size: 0.875rem; font-weight: 700; }
+
+    .age-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--white-10);
+      color: #9ca3af;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .age-note strong { color: #fff; }
+    .age-note .highlight { color: var(--primary); font-weight: 700; }
+
+    /* ─── COMO FUNCIONA ─── */
+    .como-funciona { background: var(--dark-bg); }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .step-card {
+      background: rgba(51,51,51,0.4);
+      border: 1px solid var(--white-10);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .step-card:hover { border-color: rgba(247,148,29,0.4); }
+
+    .step-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.5rem; height: 3.5rem;
+      background: rgba(247,148,29,0.1);
+      border: 1px solid rgba(247,148,29,0.3);
+      border-radius: 1rem;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .step-num {
+      color: var(--primary);
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+    .step-desc { color: #9ca3af; font-size: 0.875rem; line-height: 1.6; }
+
+    .formats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 32rem;
+      margin: 0 auto 2.5rem;
+    }
+
+    .format-card {
+      border-radius: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .format-card.default { border: 2px solid var(--white-10); background: rgba(51,51,51,0.3); }
+    .format-card.featured { border: 2px solid var(--primary); background: var(--charcoal); box-shadow: 0 20px 40px rgba(247,148,29,0.1); }
+
+    .format-badge {
+      position: absolute;
+      top: -1rem; left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.625rem;
+      font-weight: 700;
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .format-duration { font-size: 3rem; font-weight: 900; color: #fff; }
+    .format-label { color: #9ca3af; font-size: 0.875rem; margin-top: 0.25rem; }
+
+    .alert-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      max-width: 40rem;
+      margin: 0 auto;
+      background: rgba(247,148,29,0.05);
+      border: 1px solid rgba(247,148,29,0.2);
+      border-radius: 1rem;
+      padding: 1.25rem;
+    }
+
+    .alert-icon { color: var(--primary); font-size: 1.25rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .alert-text { color: #d1d5db; font-size: 0.875rem; line-height: 1.6; }
+
+    /* ─── UNIDADES ─── */
+    .unidades { background: rgba(51,51,51,0.2); }
+
+    .unidades-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .unidade-card {
+      background: var(--dark-bg);
+      border: 1px solid var(--white-10);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .unidade-card:hover { border-color: rgba(247,148,29,0.3); }
+
+    .unidade-header {
+      background: rgba(247,148,29,0.1);
+      border-bottom: 1px solid var(--white-10);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .unidade-icon { color: var(--primary); font-size: 1.125rem; }
+    .unidade-name { color: #fff; font-weight: 700; font-size: 1.125rem; }
+
+    .unidade-body { padding: 2rem; }
+
+    .unidade-section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #9ca3af;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .horarios-list { list-style: none; margin-bottom: 2rem; }
+    .horarios-list li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      margin-bottom: 0.375rem;
+    }
+    .horarios-list li span:first-child { color: #9ca3af; }
+    .horarios-list li span:last-child { color: #fff; font-weight: 500; }
+
+    .metricas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .metrica-item {
+      background: rgba(51,51,51,0.5);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .metrica-val { font-size: 1.875rem; font-weight: 900; line-height: 1; }
+    .metrica-val.orange { color: var(--primary); }
+    .metrica-val.white { color: #fff; }
+    .metrica-desc { color: #9ca3af; font-size: 0.625rem; margin-top: 0.375rem; line-height: 1.4; }
+
+    /* ─── CTA ─── */
+    .cta-section { background: var(--dark-bg); }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary), #e8850f);
+      border-radius: 1.5rem;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-circle-1 {
+      position: absolute;
+      top: -3rem; right: -3rem;
+      width: 12rem; height: 12rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+
+    .cta-circle-2 {
+      position: absolute;
+      bottom: -2rem; left: -2rem;
+      width: 8rem; height: 8rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .cta-box p {
+      color: rgba(255,220,180,0.9);
+      font-size: 1.125rem;
+      margin-bottom: 2.5rem;
+      max-width: 36rem;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #fff;
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 1.125rem;
+      padding: 1rem 2.5rem;
+      border-radius: 9999px;
+      transition: background 0.2s;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .btn-cta:hover { background: #fff7ed; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark-bg);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      border-top: 1px solid var(--white-10);
+    }
+    footer strong { color: var(--primary); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .publico-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .unidades-grid { grid-template-columns: 1fr; }
+      .formats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">MOVE<span>.</span></div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#publico">Audiência</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#cta">Anunciar</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-tag">📺 TV Move — Mídia Indoor</div>
+      <h1>Seu público-alvo<br><span>está aqui.</span></h1>
+      <p class="hero-desc">
+        Anuncie sua marca nas telas das academias Move e alcance
+        <strong>+1.600 pessoas todos os dias</strong> enquanto
+        treinam — atentas, presentes e no seu melhor estado de espírito.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20anunciar%20minha%20marca%20nas%20TVs%20da%20Move%20Academia." target="_blank" class="btn-primary">💬 Quero anunciar na Move</a>
+        <a href="#unidades" class="btn-outline">Ver dados por unidade</a>
+      </div>
+    </div>
+    <div class="hero-scroll">&#8964;</div>
+  </section>
+
+  <!-- PÚBLICO -->
+  <section class="publico" id="publico">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Perfil de audiência</span>
+        <h2 class="section-title">O Seu Público-Alvo Está Aqui</h2>
+        <p class="section-sub">Dados de março de 2025, obtidos pelo sistema de controle e catracas das 4 unidades.</p>
+      </div>
+
+      <div class="publico-grid">
+        <!-- Esquerda -->
+        <div>
+          <div class="stat-card">
+            <p class="stat-label">Média diária de alunos</p>
+            <p class="stat-big">1.635</p>
+            <p class="stat-caption">pessoas por dia em todas as unidades</p>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-label" style="margin-bottom: 1rem;">Distribuição por gênero</p>
+            <div class="gender-row">
+              <div class="gender-item">
+                <div class="gender-pct-primary">46%</div>
+                <div class="gender-name-primary">Mulheres</div>
+                <div class="bar-track">
+                  <div class="bar-fill-primary" style="width: 46%;"></div>
+                </div>
+              </div>
+              <div class="gender-item">
+                <div class="gender-pct-white">54%</div>
+                <div class="gender-name-white">Homens</div>
+                <div class="bar-track">
+                  <div class="bar-fill-white" style="width: 54%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direita — faixa etária -->
+        <div class="age-card">
+          <p class="stat-label" style="margin-bottom: 1.5rem;">Faixa etária</p>
+
+          <div class="age-row">
+            <div class="age-row-header"><span class="age-faixa">20–29 anos</span><span class="age-pct">19.6%</span></div>
+            <div class="bar-track"><div class="bar-fill-primary" style="width: 78%;"></div></div>
+          </div>
+          <div class="age-row">
+            <div class="age-row-header"><span class="age-faixa">30–39 anos</span><span class="age-pct">24.8%</span></div>
+            <div class="bar-track"><div class="bar-fill-primary" style="width: 99%;"></div></div>
+          </div>
+          <div class="age-row">
+            <div class="age-row-header"><span class="age-faixa">40–49 anos</span><span class="age-pct">18.0%</span></div>
+            <div class="bar-track"><div class="bar-fill-primary" style="width: 72%;"></div></div>
+          </div>
+          <div class="age-row">
+            <div class="age-row-header"><span class="age-faixa">50–59 anos</span><span class="age-pct">15.1%</span></div>
+            <div class="bar-track"><div class="bar-fill-primary" style="width: 60%;"></div></div>
+          </div>
+          <div class="age-row">
+            <div class="age-row-header"><span class="age-faixa">60+ anos</span><span class="age-pct">15.7%</span></div>
+            <div class="bar-track"><div class="bar-fill-primary" style="width: 63%;"></div></div>
+          </div>
+
+          <div class="age-note">
+            <strong>44.4%</strong> do público tem entre
+            <span class="highlight">20 e 39 anos</span> — poder de compra
+            e alto engajamento com marcas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="como-funciona" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Simples assim</span>
+        <h2 class="section-title">Como Funciona</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-icon">🎬</div>
+          <p class="step-num">Passo 1</p>
+          <h3 class="step-title">Envie seu vídeo</h3>
+          <p class="step-desc">Produza um vídeo de 15 ou 30 segundos com a sua marca e envie para aprovação da Move.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">✅</div>
+          <p class="step-num">Passo 2</p>
+          <h3 class="step-title">Aprovação</h3>
+          <p class="step-desc">Nossa equipe avalia o conteúdo. O áudio é removido — foque na identidade visual.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">⏱️</div>
+          <p class="step-num">Passo 3</p>
+          <h3 class="step-title">No ar todos os dias</h3>
+          <p class="step-desc">Seu anúncio entra na programação das TVs das unidades escolhidas e começa a rodar.</p>
+        </div>
+      </div>
+
+      <div class="formats-grid">
+        <div class="format-card default">
+          <div class="format-duration">30s</div>
+          <div class="format-label">Duração do vídeo</div>
+        </div>
+        <div class="format-card featured">
+          <div class="format-badge">Mais aparições</div>
+          <div class="format-duration">15s</div>
+          <div class="format-label">Duração do vídeo</div>
+        </div>
+      </div>
+
+      <div class="alert-box">
+        <span class="alert-icon">⚠️</span>
+        <p class="alert-text">
+          O conteúdo do vídeo está sujeito à aprovação pelo setor responsável da Move Academia.
+          O áudio será removido na exibição nas telas — capriche na identidade visual!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIDADES -->
+  <section class="unidades" id="unidades">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">4 unidades disponíveis</span>
+        <h2 class="section-title">Dados de Exibição por Unidade</h2>
+        <p class="section-sub">Escolha uma ou mais unidades e maximize o alcance da sua marca.</p>
+      </div>
+
+      <div class="unidades-grid">
+
+        <!-- Rui Barbosa -->
+        <div class="unidade-card">
+          <div class="unidade-header">
+            <span class="unidade-icon">📺</span>
+            <span class="unidade-name">Move Rui Barbosa</span>
+          </div>
+          <div class="unidade-body">
+            <p class="unidade-section-label">⏰ Horário de funcionamento</p>
+            <ul class="horarios-list">
+              <li><span>Segunda à Sexta</span><span>05h às 01h</span></li>
+              <li><span>Sábado e Domingo</span><span>07h às 16h</span></li>
+              <li><span>Feriados</span><span>07h às 12h</span></li>
+            </ul>
+            <p class="unidade-section-label">📊 Dados de exibição (diários)</p>
+            <div class="metricas-grid">
+              <div class="metrica-item"><div class="metrica-val orange">102</div><div class="metrica-desc">aparições/dia (vídeo 30s)</div></div>
+              <div class="metrica-item"><div class="metrica-val white">204</div><div class="metrica-desc">aparições/dia (vídeo 15s)</div></div>
+              <div class="metrica-item"><div class="metrica-val orange">31<span style="font-size:1rem">min</span></div><div class="metrica-desc">em contato com o cliente/dia</div></div>
+              <div class="metrica-item"><div class="metrica-val white">15<span style="font-size:1rem">h</span></div><div class="metrica-desc">vendendo seu produto/mês</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rondon -->
+        <div class="unidade-card">
+          <div class="unidade-header">
+            <span class="unidade-icon">📺</span>
+            <span class="unidade-name">Move Rondon</span>
+          </div>
+          <div class="unidade-body">
+            <p class="unidade-section-label">⏰ Horário de funcionamento</p>
+            <ul class="horarios-list">
+              <li><span>Segunda à Sexta</span><span>05h às 23h</span></li>
+              <li><span>Sábado e Domingo</span><span>07h às 16h</span></li>
+              <li><span>Feriados</span><span>07h às 12h</span></li>
+            </ul>
+            <p class="unidade-section-label">📊 Dados de exibição (diários)</p>
+            <div class="metricas-grid">
+              <div class="metrica-item"><div class="metrica-val orange">114</div><div class="metrica-desc">aparições/dia (vídeo 30s)</div></div>
+              <div class="metrica-item"><div class="metrica-val white">228</div><div class="metrica-desc">aparições/dia (vídeo 15s)</div></div>
+              <div class="metrica-item"><div class="metrica-val orange">34<span style="font-size:1rem">min</span></div><div class="metrica-desc">em contato com o cliente/dia</div></div>
+              <div class="metrica-item"><div class="metrica-val white">17<span style="font-size:1rem">h</span></div><div class="metrica-desc">vendendo seu produto/mês</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Central Parque -->
+        <div class="unidade-card">
+          <div class="unidade-header">
+            <span class="unidade-icon">📺</span>
+            <span class="unidade-name">Move Central Parque</span>
+          </div>
+          <div class="unidade-body">
+            <p class="unidade-section-label">⏰ Horário de funcionamento</p>
+            <ul class="horarios-list">
+              <li><span>Segunda à Sexta</span><span>05h às 00h</span></li>
+              <li><span>Sábado e Domingo</span><span>07h às 16h</span></li>
+              <li><span>Feriados</span><span>07h às 12h</span></li>
+            </ul>
+            <p class="unidade-section-label">📊 Dados de exibição (diários)</p>
+            <div class="metricas-grid">
+              <div class="metrica-item"><div class="metrica-val orange">108</div><div class="metrica-desc">aparições/dia (vídeo 30s)</div></div>
+              <div class="metrica-item"><div class="metrica-val white">216</div><div class="metrica-desc">aparições/dia (vídeo 15s)</div></div>
+              <div class="metrica-item"><div class="metrica-val orange">32<span style="font-size:1rem">min</span></div><div class="metrica-desc">em contato com o cliente/dia</div></div>
+              <div class="metrica-item"><div class="metrica-val white">16<span style="font-size:1rem">h</span></div><div class="metrica-desc">vendendo seu produto/mês</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sete de Setembro -->
+        <div class="unidade-card">
+          <div class="unidade-header">
+            <span class="unidade-icon">📺</span>
+            <span class="unidade-name">Move Sete de Setembro</span>
+          </div>
+          <div class="unidade-body">
+            <p class="unidade-section-label">⏰ Horário de funcionamento</p>
+            <ul class="horarios-list">
+              <li><span>Segunda à Sexta</span><span>05h às 22h</span></li>
+              <li><span>Sábado</span><span>07h às 12h</span></li>
+              <li><span>Feriados</span><span>07h às 12h</span></li>
+            </ul>
+            <p class="unidade-section-label">📊 Dados de exibição (diários)</p>
+            <div class="metricas-grid">
+              <div class="metrica-item"><div class="metrica-val orange">120</div><div class="metrica-desc">aparições/dia (vídeo 30s)</div></div>
+              <div class="metrica-item"><div class="metrica-val white">240</div><div class="metrica-desc">aparições/dia (vídeo 15s)</div></div>
+              <div class="metrica-item"><div class="metrica-val orange">36<span style="font-size:1rem">min</span></div><div class="metrica-desc">em contato com o cliente/dia</div></div>
+              <div class="metrica-item"><div class="metrica-val white">18<span style="font-size:1rem">h</span></div><div class="metrica-desc">vendendo seu produto/mês</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <div class="container-md">
+      <div class="cta-box">
+        <div class="cta-circle-1"></div>
+        <div class="cta-circle-2"></div>
+        <h2>Movimente seu negócio!</h2>
+        <p>Fale com a nossa equipe comercial e saiba como colocar sua marca em evidência para milhares de pessoas todos os dias.</p>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20anunciar%20minha%20marca%20nas%20TVs%20da%20Move%20Academia." target="_blank" class="btn-cta">
+          💬 Quero anunciar na Move
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 <strong>Move Academia</strong>. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
