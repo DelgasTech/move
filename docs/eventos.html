@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virada 24h — Desafio Wolf x Move | Move Academia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #F7941D;
+      --primary-light: #FFF3E0;
+      --charcoal: #333333;
+      --dark-bg: #1A1A1A;
+      --charcoal-40: rgba(51,51,51,0.4);
+      --white-10: rgba(255,255,255,0.1);
+      --white-5: rgba(255,255,255,0.05);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #fff;
+      color: var(--charcoal);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+
+    .logo span { color: var(--primary); }
+
+    nav a {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-left: 1.75rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--primary); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--dark-bg), rgba(51,51,51,0.5), var(--dark-bg));
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top right, rgba(247,148,29,0.2), transparent, transparent);
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 25%;
+      right: 25%;
+      width: 24rem;
+      height: 24rem;
+      background: rgba(247,148,29,0.1);
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: 25%;
+      left: 25%;
+      width: 16rem;
+      height: 16rem;
+      background: rgba(247,148,29,0.05);
+      border-radius: 50%;
+      filter: blur(60px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.3);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      z-index: 1;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 7rem;
+      height: 7rem;
+      background: var(--primary);
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 25px 50px rgba(247,148,29,0.3);
+    }
+
+    .hero-badge span {
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .hero-badge small {
+      font-size: 0.625rem;
+      font-weight: 700;
+    }
+
+    .hero-label {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 4.5rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .hero-date {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-desc {
+      color: rgba(255,255,255,0.5);
+      font-size: 1.125rem;
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+
+    /* ─── SECTIONS SHARED ─── */
+    section { padding: 5rem 1rem; }
+
+    .container {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .container-sm {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .container-lg {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-label {
+      display: block;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 900;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ─── SOBRE ─── */
+    .sobre { background: #fff; }
+
+    .sobre .section-title { color: var(--charcoal); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .info-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: var(--primary-light);
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+
+    .info-icon {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card h3 {
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .info-card p {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    .sobre-desc {
+      color: #4b5563;
+      text-align: center;
+      font-size: 1.125rem;
+      line-height: 1.8;
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+
+    /* ─── PROGRAMAÇÃO ─── */
+    .programacao { background: var(--dark-bg); }
+
+    .programacao .section-title { color: #fff; }
+
+    .day-block { margin-bottom: 3rem; }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .day-chip {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.875rem;
+      padding: 0.4rem 1rem;
+      border-radius: 0.75rem;
+      white-space: nowrap;
+    }
+
+    .day-label {
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+    }
+
+    .day-line {
+      flex: 1;
+      height: 1px;
+      background: var(--white-10);
+    }
+
+    .schedule-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: rgba(51,51,51,0.3);
+      border: 1px solid var(--white-5);
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .schedule-time {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.875rem;
+      min-width: 110px;
+      flex-shrink: 0;
+    }
+
+    .schedule-activity {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .schedule-instructor {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    /* ─── REGULAMENTO ─── */
+    .regulamento { background: #fff; }
+
+    .regulamento .section-title { color: var(--charcoal); }
+
+    .rule-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .rule-check {
+      color: var(--primary);
+      font-size: 1rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .rule-item p {
+      color: var(--charcoal);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* ─── COTAS ─── */
+    .cotas { background: var(--dark-bg); }
+
+    .cotas .section-title { color: #fff; }
+
+    .cotas-desc {
+      color: rgba(255,255,255,0.5);
+      margin-top: 1rem;
+    }
+
+    .cotas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cota-card {
+      background: rgba(51,51,51,0.4);
+      border: 1px solid var(--white-10);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s;
+    }
+
+    .cota-card:hover { border-color: rgba(247,148,29,0.4); }
+
+    .cota-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .cota-dot {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+    }
+
+    .cota-name {
+      font-size: 1.25rem;
+      font-weight: 900;
+      margin-bottom: 0.25rem;
+    }
+
+    .cota-price {
+      font-size: 1.875rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .cota-benefits {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .cota-benefits li {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cota-benefits li::before {
+      content: '•';
+      color: var(--primary);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .cota-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.625rem 1rem;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .cota-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* ─── PATROCINADORES ─── */
+    .patrocinadores { background: #fff; }
+
+    .patrocinadores .section-title { color: var(--charcoal); }
+
+    .tier-block { margin-bottom: 2.5rem; }
+
+    .tier-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .tier-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .tier-name {
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .tier-line {
+      flex: 1;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    .sponsors-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .sponsor-chip {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 1rem 1.5rem;
+      min-width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sponsor-chip span {
+      font-weight: 700;
+      color: var(--charcoal);
+      font-size: 0.875rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark-bg);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      border-top: 1px solid var(--white-10);
+    }
+
+    footer strong { color: var(--primary); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      nav { display: none; }
+      .hero-badge { width: 5.5rem; height: 5.5rem; }
+      .hero-badge span { font-size: 1.125rem; }
+      .cotas-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">MOVE<span>.</span></div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#programacao">Programação</a>
+      <a href="#regulamento">Regulamento</a>
+      <a href="#cotas">Cotas</a>
+      <a href="#patrocinadores">Patrocinadores</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>24<br><small>HORAS</small></span>
+      </div>
+      <p class="hero-label">Wolf × Move — Desafio</p>
+      <h1>Virada 24h</h1>
+      <p class="hero-date">08 e 09 de Novembro de 2025</p>
+      <p class="hero-desc">Concha Acústica de Salto/SP — 24 horas de música, movimento e superação.</p>
+    </div>
+    <div class="hero-scroll">&#8964;</div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">O evento</span>
+        <h2 class="section-title">Sobre o Virada 24h</h2>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3>Local</h3>
+          <p>Concha Acústica de Salto, SP</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">⏱️</div>
+          <h3>Duração</h3>
+          <p>24 horas contínuas de atividades</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">👥</div>
+          <h3>Formato</h3>
+          <p>Desafio Wolf × Move — equipes de 24 atletas</p>
+        </div>
+      </div>
+
+      <p class="sobre-desc">
+        Uma celebração épica onde academia Wolf e academia Move se unem para criar 24 horas
+        inesquecíveis de música ao vivo, aulões, dança e muita energia na Concha Acústica de Salto/SP.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROGRAMAÇÃO -->
+  <section class="programacao" id="programacao">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Agenda completa</span>
+        <h2 class="section-title">Programação</h2>
+      </div>
+
+      <!-- Sábado -->
+      <div class="day-block">
+        <div class="day-header">
+          <div class="day-chip">08/11/2025</div>
+          <span class="day-label">Sábado</span>
+          <div class="day-line"></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">09h00</span>
+          <div><p class="schedule-activity">Funcional</p><p class="schedule-instructor">Alane</p></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">10h00 – 12h00</span>
+          <div><p class="schedule-activity">Aulão Especial</p><p class="schedule-instructor">Gabriel & Heidy</p></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">16h00</span>
+          <div><p class="schedule-activity">Apresentações de Dança</p><p class="schedule-instructor">Cia dos Crias & DCA</p></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">17h00</span>
+          <div><p class="schedule-activity">Kids Chiqueto & Faces Oculta</p></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">18h00</span>
+          <div><p class="schedule-activity">Banda Move</p></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">19h00</span>
+          <div><p class="schedule-activity">Sunset DJ Zotte</p></div>
+        </div>
+      </div>
+
+      <!-- Domingo -->
+      <div class="day-block">
+        <div class="day-header">
+          <div class="day-chip">09/11/2025</div>
+          <span class="day-label">Domingo</span>
+          <div class="day-line"></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">07h00</span>
+          <div><p class="schedule-activity">Corrida / Caminhada</p></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">09h00</span>
+          <div><p class="schedule-activity">DJ Fidelis</p></div>
+        </div>
+        <div class="schedule-item">
+          <span class="schedule-time">10h00 – 11h00</span>
+          <div><p class="schedule-activity">Banda Ashline</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGULAMENTO -->
+  <section class="regulamento" id="regulamento">
+    <div class="container-sm">
+      <div class="section-header">
+        <span class="section-label">Como funciona</span>
+        <h2 class="section-title">Regulamento do Desafio</h2>
+      </div>
+
+      <div class="rule-item"><span class="rule-check">✓</span><p>O desafio conta com 24 atletas participantes.</p></div>
+      <div class="rule-item"><span class="rule-check">✓</span><p>Cada atleta cumpre 1 hora de atividade contínua por vez.</p></div>
+      <div class="rule-item"><span class="rule-check">✓</span><p>Cada atleta pode participar no máximo 3 vezes ao longo do evento.</p></div>
+      <div class="rule-item"><span class="rule-check">✓</span><p>A revezamento entre atletas deve ser feito de forma organizada conforme escala.</p></div>
+      <div class="rule-item"><span class="rule-check">✓</span><p>A participação é voluntária e todos os atletas devem estar em boa condição física.</p></div>
+      <div class="rule-item"><span class="rule-check">✓</span><p>Em caso de desistência, o próximo atleta da lista assume imediatamente.</p></div>
+      <div class="rule-item"><span class="rule-check">✓</span><p>Todos os participantes devem usar o colete identificador da equipe.</p></div>
+      <div class="rule-item"><span class="rule-check">✓</span><p>A equipe que completar mais horas acumuladas vence o Desafio Wolf × Move.</p></div>
+    </div>
+  </section>
+
+  <!-- COTAS -->
+  <section class="cotas" id="cotas">
+    <div class="container-lg">
+      <div class="section-header">
+        <span class="section-label">Seja um parceiro</span>
+        <h2 class="section-title">Cotas de Patrocínio</h2>
+        <p class="cotas-desc">Associe sua marca a um dos maiores eventos esportivos da região.</p>
+      </div>
+
+      <div class="cotas-grid">
+        <!-- Diamante -->
+        <div class="cota-card">
+          <div class="cota-icon" style="background: rgba(185,242,255,0.2); border: 2px solid #B9F2FF;">
+            <div class="cota-dot" style="background: #B9F2FF;"></div>
+          </div>
+          <p class="cota-name" style="color: #B9F2FF;">Diamante</p>
+          <p class="cota-price">R$ 10.000</p>
+          <ul class="cota-benefits">
+            <li>Logo de destaque em toda comunicação</li>
+            <li>Palco e banner principal</li>
+            <li>30 ingressos VIP</li>
+            <li>Ativação de marca no evento</li>
+            <li>Menção em todas as mídias sociais</li>
+          </ul>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20cota%20Diamante%20do%20evento%20Virada%2024h%20da%20Move%20Academia." target="_blank" class="cota-btn">💬 Saber mais</a>
+        </div>
+
+        <!-- Ouro -->
+        <div class="cota-card">
+          <div class="cota-icon" style="background: rgba(255,215,0,0.2); border: 2px solid #FFD700;">
+            <div class="cota-dot" style="background: #FFD700;"></div>
+          </div>
+          <p class="cota-name" style="color: #FFD700;">Ouro</p>
+          <p class="cota-price">R$ 5.000</p>
+          <ul class="cota-benefits">
+            <li>Logo em materiais do evento</li>
+            <li>Banner lateral</li>
+            <li>15 ingressos VIP</li>
+            <li>Menção nas mídias sociais</li>
+          </ul>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20cota%20Ouro%20do%20evento%20Virada%2024h%20da%20Move%20Academia." target="_blank" class="cota-btn">💬 Saber mais</a>
+        </div>
+
+        <!-- Prata -->
+        <div class="cota-card">
+          <div class="cota-icon" style="background: rgba(192,192,192,0.2); border: 2px solid #C0C0C0;">
+            <div class="cota-dot" style="background: #C0C0C0;"></div>
+          </div>
+          <p class="cota-name" style="color: #C0C0C0;">Prata</p>
+          <p class="cota-price">R$ 3.000</p>
+          <ul class="cota-benefits">
+            <li>Logo nos materiais impressos</li>
+            <li>8 ingressos</li>
+            <li>Menção nas redes sociais</li>
+          </ul>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20cota%20Prata%20do%20evento%20Virada%2024h%20da%20Move%20Academia." target="_blank" class="cota-btn">💬 Saber mais</a>
+        </div>
+
+        <!-- Bronze -->
+        <div class="cota-card">
+          <div class="cota-icon" style="background: rgba(205,127,50,0.2); border: 2px solid #CD7F32;">
+            <div class="cota-dot" style="background: #CD7F32;"></div>
+          </div>
+          <p class="cota-name" style="color: #CD7F32;">Bronze</p>
+          <p class="cota-price">R$ 1.500</p>
+          <ul class="cota-benefits">
+            <li>Logo no site do evento</li>
+            <li>4 ingressos</li>
+            <li>Agradecimento nas redes</li>
+          </ul>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20cota%20Bronze%20do%20evento%20Virada%2024h%20da%20Move%20Academia." target="_blank" class="cota-btn">💬 Saber mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATROCINADORES -->
+  <section class="patrocinadores" id="patrocinadores">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Apoio</span>
+        <h2 class="section-title">Patrocinadores</h2>
+      </div>
+
+      <div class="tier-block">
+        <div class="tier-header">
+          <div class="tier-dot" style="background: #B9F2FF;"></div>
+          <span class="tier-name" style="color: #B9F2FF;">Diamante</span>
+          <div class="tier-line"></div>
+        </div>
+        <div class="sponsors-row">
+          <div class="sponsor-chip"><span>FILA</span></div>
+        </div>
+      </div>
+
+      <div class="tier-block">
+        <div class="tier-header">
+          <div class="tier-dot" style="background: #FFD700;"></div>
+          <span class="tier-name" style="color: #FFD700;">Ouro</span>
+          <div class="tier-line"></div>
+        </div>
+        <div class="sponsors-row">
+          <div class="sponsor-chip"><span>Matrix</span></div>
+          <div class="sponsor-chip"><span>TNT Sport Drink</span></div>
+        </div>
+      </div>
+
+      <div class="tier-block">
+        <div class="tier-header">
+          <div class="tier-dot" style="background: #C0C0C0;"></div>
+          <span class="tier-name" style="color: #C0C0C0;">Prata</span>
+          <div class="tier-line"></div>
+        </div>
+        <div class="sponsors-row">
+          <div class="sponsor-chip"><span>Ágil Internet</span></div>
+          <div class="sponsor-chip"><span>Axgard</span></div>
+        </div>
+      </div>
+
+      <div class="tier-block">
+        <div class="tier-header">
+          <div class="tier-dot" style="background: #CD7F32;"></div>
+          <span class="tier-name" style="color: #CD7F32;">Bronze</span>
+          <div class="tier-line"></div>
+        </div>
+        <div class="sponsors-row">
+          <div class="sponsor-chip"><span>DA Beauty</span></div>
+          <div class="sponsor-chip"><span>Prefeitura de Salto</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 <strong>Move Academia</strong>. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
