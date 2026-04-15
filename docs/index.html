@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Move Academia — Salto, SP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #F7941D;
+      --primary-light: #FFF3E0;
+      --charcoal: #333333;
+      --dark-bg: #1A1A1A;
+      --white-10: rgba(255,255,255,0.1);
+      --white-5: rgba(255,255,255,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #fff;
+      color: var(--charcoal);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--white-10);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+
+    .logo { font-weight: 900; font-size: 1.25rem; color: #fff; letter-spacing: 0.05em; }
+    .logo span { color: var(--primary); }
+
+    nav { display: flex; align-items: center; gap: 0.25rem; }
+
+    nav a {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--primary); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--dark-bg), rgba(51,51,51,0.9), var(--dark-bg));
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top right, rgba(247,148,29,0.2), transparent, transparent);
+    }
+
+    .hero-glow-1 {
+      position: absolute;
+      top: 25%; right: 25%;
+      width: 24rem; height: 24rem;
+      background: rgba(247,148,29,0.1);
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: 25%; left: 25%;
+      width: 16rem; height: 16rem;
+      background: rgba(247,148,29,0.05);
+      border-radius: 50%;
+      filter: blur(60px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(247,148,29,0.2);
+      border: 1px solid rgba(247,148,29,0.3);
+      color: var(--primary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-desc {
+      color: #d1d5db;
+      font-size: 1.125rem;
+      max-width: 40rem;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 5rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #e8850f; }
+
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline-white:hover { border-color: var(--primary); color: var(--primary); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    .hero-stat-val { font-size: 2.25rem; font-weight: 900; color: var(--primary); }
+    .hero-stat-label { color: rgba(255,255,255,0.5); font-size: 0.875rem; margin-top: 0.25rem; }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.3);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      z-index: 1;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ─── SHARED ─── */
+    section { padding: 5rem 1rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
+    .container-md { max-width: 48rem; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-label {
+      display: block;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title { font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 900; }
+    .section-title.white { color: #fff; }
+    .section-title.dark { color: var(--charcoal); }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-sub { color: #9ca3af; margin-top: 1rem; max-width: 36rem; margin-left: auto; margin-right: auto; }
+    .section-sub.light { color: #6b7280; }
+
+    /* ─── MODALIDADES ─── */
+    .modalidades { background: var(--dark-bg); }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .modal-card {
+      background: rgba(51,51,51,0.4);
+      border: 1px solid var(--white-5);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: border-color 0.3s, background 0.3s;
+      cursor: default;
+    }
+    .modal-card:hover { border-color: rgba(247,148,29,0.5); background: rgba(51,51,51,0.6); }
+
+    .modal-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .modal-title { color: #fff; font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem; }
+    .modal-title span { color: var(--primary); }
+    .modal-desc { color: rgba(255,255,255,0.5); font-size: 0.875rem; line-height: 1.6; }
+
+    /* ─── HORÁRIOS ─── */
+    .horarios { background: #fff; }
+
+    .unit-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .unit-btn {
+      padding: 0.625rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: #f3f4f6;
+      color: var(--charcoal);
+    }
+    .unit-btn:hover { background: #e5e7eb; }
+    .unit-btn.active { background: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(247,148,29,0.3); }
+
+    .schedule-wrap {
+      overflow-x: auto;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .schedule-table { width: 100%; font-size: 0.875rem; border-collapse: collapse; }
+
+    .schedule-table thead tr { background: var(--dark-bg); }
+    .schedule-table th {
+      color: #fff;
+      font-weight: 600;
+      padding: 1rem 0.75rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .schedule-table th:first-child { text-align: left; min-width: 160px; }
+
+    .schedule-table tbody tr { border-top: 1px solid #f3f4f6; }
+    .schedule-table tbody tr:nth-child(even) { background: rgba(249,250,251,0.5); }
+
+    .schedule-table td { padding: 0.75rem; text-align: center; color: #6b7280; }
+    .schedule-table td:first-child { text-align: left; font-weight: 600; color: var(--charcoal); }
+
+    .time-chip {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .dash { color: #d1d5db; }
+
+    .schedule-note { text-align: center; color: #9ca3af; font-size: 0.75rem; margin-top: 1rem; }
+
+    .unit-panel { display: none; }
+    .unit-panel.active { display: block; }
+
+    /* ─── PLANOS ─── */
+    .planos { background: var(--dark-bg); }
+
+    .period-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .period-group {
+      background: rgba(51,51,51,0.5);
+      padding: 0.25rem;
+      border-radius: 9999px;
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .period-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #9ca3af;
+      background: transparent;
+    }
+    .period-btn:hover { color: #fff; }
+    .period-btn.active { background: var(--primary); color: #fff; }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+
+    .plan-card {
+      border-radius: 1.5rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .plan-card.default { background: rgba(51,51,51,0.5); border: 1px solid var(--white-10); }
+    .plan-card.highlight { background: var(--charcoal); border: 2px solid var(--primary); box-shadow: 0 25px 50px rgba(247,148,29,0.2); }
+
+    .plan-badge {
+      position: absolute;
+      top: -1rem; left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.625rem;
+      font-weight: 700;
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .plan-name { font-size: 1.5rem; font-weight: 900; color: #fff; }
+
+    .plan-price-row { display: flex; align-items: flex-end; gap: 0.25rem; margin: 1rem 0; }
+    .plan-currency { color: #9ca3af; font-size: 0.875rem; }
+    .plan-value { font-size: 3rem; font-weight: 900; color: #fff; line-height: 1; }
+    .plan-period { color: #9ca3af; font-size: 0.875rem; margin-bottom: 0.25rem; }
+    .plan-period-label { color: var(--primary); font-size: 0.75rem; font-weight: 500; margin-bottom: 1.5rem; }
+
+    .plan-features { list-style: none; flex: 1; margin-bottom: 2rem; }
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.875rem;
+      color: #d1d5db;
+    }
+    .plan-features li::before { content: '✓'; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+
+    .btn-plan-highlight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.875rem;
+      border-radius: 9999px;
+      transition: background 0.2s;
+    }
+    .btn-plan-highlight:hover { background: #e8850f; }
+
+    .btn-plan-outline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.875rem;
+      border-radius: 9999px;
+      transition: all 0.2s;
+    }
+    .btn-plan-outline:hover { background: var(--primary); color: #fff; }
+
+    /* ─── SERVIÇOS ─── */
+    .servicos { background: #fff; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      border-radius: 1rem;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card.default { background: #f9fafb; border: 1px solid #e5e7eb; }
+    .service-card.highlight { background: var(--dark-bg); border: 2px solid var(--primary); }
+
+    .service-best {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-name.dark { color: var(--charcoal); }
+    .service-name.white { color: #fff; }
+
+    .service-desc { font-size: 0.875rem; line-height: 1.6; flex: 1; margin-bottom: 1.5rem; }
+    .service-desc.dark { color: #6b7280; }
+    .service-desc.white { color: #9ca3af; }
+
+    .service-price { font-size: 1.875rem; font-weight: 900; margin-bottom: 1.25rem; }
+    .service-price.dark { color: var(--charcoal); }
+    .service-price.orange { color: var(--primary); }
+    .service-price small { font-size: 0.875rem; font-weight: 400; color: #9ca3af; margin-left: 0.25rem; }
+
+    /* ─── DIFERENCIAIS ─── */
+    .diferenciais { background: var(--primary-light); }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .diff-card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(247,148,29,0.15);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .diff-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem; height: 4rem;
+      background: rgba(247,148,29,0.1);
+      border-radius: 1rem;
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .diff-title { font-size: 1.25rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .diff-desc { color: #6b7280; font-size: 0.875rem; line-height: 1.6; }
+
+    /* ─── CTA FINAL ─── */
+    .cta-final {
+      background: var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(229,115,0,0.2), transparent);
+    }
+
+    .cta-circle-1 {
+      position: absolute;
+      top: 0; right: 0;
+      width: 24rem; height: 24rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      transform: translate(50%, -50%);
+    }
+
+    .cta-circle-2 {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 16rem; height: 16rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      transform: translate(-50%, 50%);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .cta-content h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: #fff; margin-bottom: 1.25rem; }
+    .cta-content p { color: rgba(255,255,255,0.8); font-size: 1.125rem; margin-bottom: 2.5rem; max-width: 36rem; margin-left: auto; margin-right: auto; }
+
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+    .btn-cta-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #fff;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      transition: background 0.2s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .btn-cta-white:hover { background: #f9fafb; }
+
+    .btn-cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      transition: all 0.2s;
+    }
+    .btn-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark-bg);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      border-top: 1px solid var(--white-10);
+    }
+    footer strong { color: var(--primary); }
+
+    /* ─── WHATSAPP BUTTON ─── */
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      z-index: 200;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.5rem; height: 3.5rem;
+      background: #25D366;
+      border-radius: 50%;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .modal-grid { grid-template-columns: 1fr; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-stats { gap: 0.5rem; }
+      .hero-stat-val { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">MOVE<span>.</span></div>
+    <nav>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#horarios">Horários</a>
+      <a href="#planos">Planos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Academia Move — Salto, SP</div>
+      <h1>Uma Nova <span>Experiência</span><br>em Academia</h1>
+      <p class="hero-desc">Musculação, Bike Indoor, Cross Training, Pilates, Fisioterapia e muito mais. 4 unidades em Salto para você treinar onde quiser.</p>
+      <div class="hero-btns">
+        <a href="#planos" class="btn-primary">Ver Planos</a>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20conhecer%20os%20planos%20da%20Move%20Academia." target="_blank" class="btn-outline-white">💬 WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div class="text-center">
+          <div class="hero-stat-val">4</div>
+          <div class="hero-stat-label">Unidades</div>
+        </div>
+        <div class="text-center">
+          <div class="hero-stat-val">9+</div>
+          <div class="hero-stat-label">Modalidades</div>
+        </div>
+        <div class="text-center">
+          <div class="hero-stat-val">100%</div>
+          <div class="hero-stat-label">Dedicação</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">&#8964;</div>
+  </section>
+
+  <!-- MODALIDADES -->
+  <section class="modalidades" id="modalidades">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">O que oferecemos</span>
+        <h2 class="section-title white">Nossas Modalidades</h2>
+        <p class="section-sub">9 modalidades para você escolher o treino ideal para cada objetivo.</p>
+      </div>
+      <div class="modal-grid">
+        <div class="modal-card">
+          <span class="modal-icon">🏋️</span>
+          <p class="modal-title">MOV<span>E</span> Musculação</p>
+          <p class="modal-desc">Força, resistência e hipertrofia com equipamentos de última geração.</p>
+        </div>
+        <div class="modal-card">
+          <span class="modal-icon">🚴</span>
+          <p class="modal-title">MOV<span>E</span> Bike</p>
+          <p class="modal-desc">Bike indoor com sistema israelense para máxima performance.</p>
+        </div>
+        <div class="modal-card">
+          <span class="modal-icon">🏃</span>
+          <p class="modal-title">MOV<span>E</span> Running</p>
+          <p class="modal-desc">Corridas e treinos no Estádio Municipal com assessoria especializada.</p>
+        </div>
+        <div class="modal-card">
+          <span class="modal-icon">⚡</span>
+          <p class="modal-title">Cross Team MOV<span>E</span></p>
+          <p class="modal-desc">Cross Training funcional em equipe para desafiar seus limites.</p>
+        </div>
+        <div class="modal-card">
+          <span class="modal-icon">🎵</span>
+          <p class="modal-title">Sala Fitness</p>
+          <p class="modal-desc">Jump, Ritbox, Step, Fitdance e Kids em aulas animadas e dinâmicas.</p>
+        </div>
+        <div class="modal-card">
+          <span class="modal-icon">🧘</span>
+          <p class="modal-title">MOV<span>E</span> Pilates</p>
+          <p class="modal-desc">Melhore sua postura e qualidade de vida com o método Pilates.</p>
+        </div>
+        <div class="modal-card">
+          <span class="modal-icon">❤️</span>
+          <p class="modal-title">MOV<span>E</span> Fortalecimento Terapêutico</p>
+          <p class="modal-desc">Atividades essenciais para o dia a dia com foco em saúde e bem-estar.</p>
+        </div>
+        <div class="modal-card">
+          <span class="modal-icon">🩺</span>
+          <p class="modal-title">MOV<span>E</span> Fisioterapia</p>
+          <p class="modal-desc">Reabilitação e recuperação com profissionais qualificados.</p>
+        </div>
+        <div class="modal-card">
+          <span class="modal-icon">👤</span>
+          <p class="modal-title">Musculação Supervisionada</p>
+          <p class="modal-desc">Acompanhamento individual de personal trainer para resultados acelerados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORÁRIOS -->
+  <section class="horarios" id="horarios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Planeje seu treino</span>
+        <h2 class="section-title dark">Grade de Horários</h2>
+        <p class="section-sub light">Selecione a unidade para ver os horários disponíveis.</p>
+      </div>
+
+      <div class="unit-tabs">
+        <button class="unit-btn active" onclick="showUnit('rondon', this)">Rondon</button>
+        <button class="unit-btn" onclick="showUnit('rui', this)">Rui Barbosa</button>
+        <button class="unit-btn" onclick="showUnit('sete', this)">Sete de Setembro</button>
+        <button class="unit-btn" onclick="showUnit('central', this)">Central / Parque</button>
+      </div>
+
+      <!-- Rondon -->
+      <div id="unit-rondon" class="unit-panel active">
+        <div class="schedule-wrap">
+          <table class="schedule-table">
+            <thead><tr><th>Modalidade</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr></thead>
+            <tbody>
+              <tr><td>Musculação</td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">08h–14h</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Jump</td><td><span class="time-chip">07h / 19h</span></td><td><span class="dash">—</span></td><td><span class="time-chip">07h / 19h</span></td><td><span class="dash">—</span></td><td><span class="time-chip">07h / 19h</span></td><td><span class="time-chip">09h</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Ritbox</td><td><span class="dash">—</span></td><td><span class="time-chip">07h / 19h30</span></td><td><span class="dash">—</span></td><td><span class="time-chip">07h / 19h30</span></td><td><span class="dash">—</span></td><td><span class="time-chip">10h</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Step</td><td><span class="time-chip">18h</span></td><td><span class="dash">—</span></td><td><span class="time-chip">18h</span></td><td><span class="dash">—</span></td><td><span class="time-chip">18h</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Fitdance</td><td><span class="dash">—</span></td><td><span class="time-chip">18h30</span></td><td><span class="dash">—</span></td><td><span class="time-chip">18h30</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Kids</td><td><span class="time-chip">09h</span></td><td><span class="time-chip">09h</span></td><td><span class="time-chip">09h</span></td><td><span class="time-chip">09h</span></td><td><span class="time-chip">09h</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Rui Barbosa -->
+      <div id="unit-rui" class="unit-panel">
+        <div class="schedule-wrap">
+          <table class="schedule-table">
+            <thead><tr><th>Modalidade</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr></thead>
+            <tbody>
+              <tr><td>Musculação</td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">08h–13h</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Cross Team Move</td><td><span class="time-chip">07h / 18h</span></td><td><span class="time-chip">07h / 18h</span></td><td><span class="time-chip">07h / 18h</span></td><td><span class="time-chip">07h / 18h</span></td><td><span class="time-chip">07h / 18h</span></td><td><span class="time-chip">09h</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Jump</td><td><span class="time-chip">07h / 19h</span></td><td><span class="dash">—</span></td><td><span class="time-chip">07h / 19h</span></td><td><span class="dash">—</span></td><td><span class="time-chip">07h / 19h</span></td><td><span class="time-chip">09h</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Pilates</td><td><span class="time-chip">08h / 17h</span></td><td><span class="time-chip">08h / 17h</span></td><td><span class="time-chip">08h / 17h</span></td><td><span class="time-chip">08h / 17h</span></td><td><span class="time-chip">08h</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Sete de Setembro -->
+      <div id="unit-sete" class="unit-panel">
+        <div class="schedule-wrap">
+          <table class="schedule-table">
+            <thead><tr><th>Modalidade</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr></thead>
+            <tbody>
+              <tr><td>Musculação</td><td><span class="time-chip">06h–21h</span></td><td><span class="time-chip">06h–21h</span></td><td><span class="time-chip">06h–21h</span></td><td><span class="time-chip">06h–21h</span></td><td><span class="time-chip">06h–21h</span></td><td><span class="time-chip">08h–12h</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Fisioterapia</td><td><span class="time-chip">07h–19h</span></td><td><span class="time-chip">07h–19h</span></td><td><span class="time-chip">07h–19h</span></td><td><span class="time-chip">07h–19h</span></td><td><span class="time-chip">07h–19h</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Fortalecimento Terapêutico</td><td><span class="time-chip">08h / 16h</span></td><td><span class="time-chip">08h / 16h</span></td><td><span class="time-chip">08h / 16h</span></td><td><span class="time-chip">08h / 16h</span></td><td><span class="time-chip">08h</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Central / Parque -->
+      <div id="unit-central" class="unit-panel">
+        <div class="schedule-wrap">
+          <table class="schedule-table">
+            <thead><tr><th>Modalidade</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr></thead>
+            <tbody>
+              <tr><td>Musculação</td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">06h–22h</span></td><td><span class="time-chip">08h–14h</span></td><td><span class="time-chip">08h–12h</span></td></tr>
+              <tr><td>Bike Indoor</td><td><span class="time-chip">07h / 18h30</span></td><td><span class="time-chip">07h / 18h30</span></td><td><span class="time-chip">07h / 18h30</span></td><td><span class="time-chip">07h / 18h30</span></td><td><span class="time-chip">07h / 18h30</span></td><td><span class="time-chip">09h</span></td><td><span class="dash">—</span></td></tr>
+              <tr><td>Running</td><td><span class="dash">—</span></td><td><span class="time-chip">06h30 / 19h</span></td><td><span class="dash">—</span></td><td><span class="time-chip">06h30 / 19h</span></td><td><span class="dash">—</span></td><td><span class="time-chip">07h</span></td><td><span class="time-chip">07h</span></td></tr>
+              <tr><td>Musculação Supervisionada</td><td><span class="time-chip">07h–20h</span></td><td><span class="time-chip">07h–20h</span></td><td><span class="time-chip">07h–20h</span></td><td><span class="time-chip">07h–20h</span></td><td><span class="time-chip">07h–20h</span></td><td><span class="time-chip">08h–12h</span></td><td><span class="dash">—</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="schedule-note">* Horários sujeitos a alteração. Confirme com a unidade.</p>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section class="planos" id="planos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Invista na sua saúde</span>
+        <h2 class="section-title white">Nossos Planos</h2>
+        <p class="section-sub">Escolha o período e o plano ideal para você.</p>
+      </div>
+
+      <div class="period-toggle">
+        <div class="period-group">
+          <button class="period-btn" onclick="setPeriod('anual', this)">Anual</button>
+          <button class="period-btn" onclick="setPeriod('semestral', this)">Semestral</button>
+          <button class="period-btn active" onclick="setPeriod('mensal', this)">Mensal</button>
+        </div>
+      </div>
+
+      <div class="plans-grid">
+        <!-- START -->
+        <div class="plan-card default">
+          <p class="plan-name">START</p>
+          <div class="plan-price-row">
+            <span class="plan-currency">R$</span>
+            <span class="plan-value" id="price-start">145</span>
+            <span class="plan-period">/mês</span>
+          </div>
+          <p class="plan-period-label" id="label-start" style="visibility:hidden;">Pagamento mensal</p>
+          <ul class="plan-features">
+            <li>Musculação ilimitada</li>
+            <li>Aulas Fitness (Rondon / Rui Barbosa)</li>
+            <li>Fisioterapia (Sete de Setembro)</li>
+          </ul>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20START%20da%20Move%20Academia." target="_blank" class="btn-plan-outline">💬 Contratar via WhatsApp</a>
+        </div>
+
+        <!-- PLUS -->
+        <div class="plan-card highlight">
+          <div class="plan-badge">Mais Popular</div>
+          <p class="plan-name">PLUS</p>
+          <div class="plan-price-row">
+            <span class="plan-currency">R$</span>
+            <span class="plan-value" id="price-plus">195</span>
+            <span class="plan-period">/mês</span>
+          </div>
+          <p class="plan-period-label" id="label-plus" style="visibility:hidden;">Pagamento mensal</p>
+          <ul class="plan-features">
+            <li>Musculação ilimitada</li>
+            <li>Crossfit (Rui Barbosa)</li>
+            <li>Bike Indoor (Central / Parque)</li>
+            <li>Fisioterapia</li>
+            <li>Aulas Fitness (Rondon / Rui Barbosa)</li>
+            <li>Aulas reservadas pelo app</li>
+          </ul>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20PLUS%20da%20Move%20Academia." target="_blank" class="btn-plan-highlight">💬 Contratar via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Serviços extras</span>
+        <h2 class="section-title dark">Serviços Adicionais</h2>
+        <p class="section-sub light">Potencialize seus resultados com suporte especializado.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card default">
+          <p class="service-name dark">Nutricionista</p>
+          <p class="service-desc dark">Avaliação nutricional completa e plano alimentar personalizado para seus objetivos.</p>
+          <p class="service-price dark">R$ 114,90<small>/mês</small></p>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20servi%C3%A7o%20de%20Nutricionista%20da%20Move%20Academia." target="_blank" class="btn-plan-outline">💬 Saber mais</a>
+        </div>
+        <div class="service-card default">
+          <p class="service-name dark">Consultoria Física</p>
+          <p class="service-desc dark">Avaliação física detalhada e prescrição de treino individual.</p>
+          <p class="service-price dark">R$ 59,90<small>/mês</small></p>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20servi%C3%A7o%20de%20Consultoria%20F%C3%ADsica%20da%20Move%20Academia." target="_blank" class="btn-plan-outline">💬 Saber mais</a>
+        </div>
+        <div class="service-card highlight">
+          <p class="service-best">⭐ Melhor custo-benefício</p>
+          <p class="service-name white">Pacote Completo</p>
+          <p class="service-desc white">Nutricionista + Consultoria Física com 15% de desconto. A combinação perfeita para resultados.</p>
+          <p class="service-price orange">R$ 149,90<small>/mês</small></p>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20servi%C3%A7o%20de%20Pacote%20Completo%20da%20Move%20Academia." target="_blank" class="btn-plan-highlight">💬 Saber mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="diferenciais" id="diferenciais">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Por que a Move?</span>
+        <h2 class="section-title dark">Nossos Diferenciais</h2>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-card">
+          <div class="diff-icon">👨‍👩‍👧</div>
+          <h3 class="diff-title">Espaço Kids</h3>
+          <p class="diff-desc">Área dedicada para os pequenos se divertirem enquanto você treina com tranquilidade.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">📱</div>
+          <h3 class="diff-title">App de Reservas</h3>
+          <p class="diff-desc">Reserve suas aulas pelo aplicativo Move com facilidade e nunca perca seu horário favorito.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🛍️</div>
+          <h3 class="diff-title">Loja Move</h3>
+          <p class="diff-desc">Suplementos, acessórios e linha de produtos exclusivos Move para potencializar seus treinos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="cta">
+    <div class="cta-circle-1"></div>
+    <div class="cta-circle-2"></div>
+    <div class="cta-content">
+      <h2>Pronto para começar?</h2>
+      <p>Fale com nossa equipe agora mesmo pelo WhatsApp e escolha o plano perfeito para você.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20conhecer%20os%20planos%20da%20Move%20Academia." target="_blank" class="btn-cta-white">💬 Falar pelo WhatsApp →</a>
+        <a href="#planos" class="btn-cta-ghost">Ver os Planos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 <strong>Move Academia</strong>. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- WHATSAPP FAB -->
+  <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20conhecer%20os%20planos%20da%20Move%20Academia." target="_blank" class="whatsapp-fab" title="WhatsApp">💬</a>
+
+  <script>
+    // Unit schedule tabs
+    function showUnit(id, btn) {
+      document.querySelectorAll('.unit-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('unit-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // Period toggle for plans
+    const prices = {
+      anual:     { start: 115, plus: 165 },
+      semestral: { start: 130, plus: 180 },
+      mensal:    { start: 145, plus: 195 },
+    };
+
+    const periodLabels = {
+      anual: 'Pagamento anual',
+      semestral: 'Pagamento semestral',
+      mensal: '',
+    };
+
+    function setPeriod(period, btn) {
+      document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.getElementById('price-start').textContent = prices[period].start;
+      document.getElementById('price-plus').textContent  = prices[period].plus;
+
+      const label = periodLabels[period];
+      ['start', 'plus'].forEach(id => {
+        const el = document.getElementById('label-' + id);
+        el.textContent = label;
+        el.style.visibility = label ? 'visible' : 'hidden';
+      });
+    }
+  </script>
+
+</body>
+</html>
