@@ -6,6 +6,7 @@ import Horarios from "@/components/sections/Horarios";
 import Planos from "@/components/sections/Planos";
 import Servicos from "@/components/sections/Servicos";
 import Diferenciais from "@/components/sections/Diferenciais";
+import Equipe from "@/components/sections/Equipe";
 import CtaFinal from "@/components/sections/CtaFinal";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <Planos />
         <Servicos />
         <Diferenciais />
+        <Equipe />
         <CtaFinal />
       </main>
       <Footer />

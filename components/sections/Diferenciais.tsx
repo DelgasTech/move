@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiSmartphone, FiShoppingBag, FiUsers } from "react-icons/fi";
 
@@ -26,40 +27,64 @@ const diferenciais = [
 
 export default function Diferenciais() {
   return (
-    <section id="diferenciais" className="py-20 lg:py-28 bg-primary-light">
+    <section id="diferenciais" className="py-20 lg:py-28 bg-primary-light overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-            Por que a Move?
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal mt-3">
-            Nossos Diferenciais
-          </h2>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Imagem */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <Image
+              src="/images/corda.jpg"
+              alt="Aluna Move Academia com corda"
+              fill
+              className="object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/40 to-transparent" />
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {diferenciais.map((item, index) => (
+          {/* Conteúdo */}
+          <div>
             <motion.div
-              key={item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-8 text-center shadow-sm border border-orange-100"
+              transition={{ duration: 0.6 }}
+              className="mb-10"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl text-primary mb-5">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-bold text-charcoal mb-3">{item.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+              <span className="text-primary font-semibold text-sm uppercase tracking-widest">
+                Por que a Move?
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal mt-3">
+                Nossos Diferenciais
+              </h2>
             </motion.div>
-          ))}
+
+            <div className="flex flex-col gap-6">
+              {diferenciais.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white rounded-2xl p-6 flex items-start gap-5 shadow-sm border border-orange-100"
+                >
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-2xl text-primary shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-charcoal mb-1">{item.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

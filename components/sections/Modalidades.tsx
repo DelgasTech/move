@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   FiActivity,
@@ -26,8 +27,18 @@ const iconMap: Record<string, ReactNode> = {
 
 export default function Modalidades() {
   return (
-    <section id="modalidades" className="py-20 lg:py-28 bg-dark-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="modalidades" className="relative py-20 lg:py-28 bg-dark-bg overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 opacity-10">
+        <Image
+          src="/images/halteres.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/60 via-transparent to-dark-bg/80" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

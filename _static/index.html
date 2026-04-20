@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Move Academia — Salto, SP</title>
+  <meta name="description" content="Academia Move em Salto/SP. Musculação, Bike Indoor, Cross Training, Pilates, Fisioterapia e muito mais. 4 unidades para você treinar onde quiser." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ──────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #F7941D;
+      --primary-light: #FFF3E0;
+      --charcoal: #333333;
+      --dark-bg: #1A1A1A;
+      --charcoal-40: rgba(51,51,51,0.4);
+      --charcoal-50: rgba(51,51,51,0.5);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #fff; color: #333; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    /* ─── Header ──────────────────────────────────── */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    #header.scrolled {
+      background: rgba(26,26,26,0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    @media(min-width:1024px){ .header-inner { height: 80px; } }
+    .logo-text {
+      font-size: 1.5rem; font-weight: 900; color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .logo-text span { color: var(--primary); }
+    nav.desktop { display: none; gap: 2rem; align-items: center; }
+    @media(min-width:768px){ nav.desktop { display: flex; } }
+    nav.desktop a {
+      color: #d1d5db; font-size: 0.875rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav.desktop a:hover { color: var(--primary); }
+    .header-cta {
+      display: none; align-items: center; gap: 0.5rem;
+      background: var(--primary); color: #fff;
+      font-size: 0.875rem; font-weight: 700;
+      padding: 0.5rem 1rem; border-radius: 9999px;
+      transition: background 0.2s;
+    }
+    .header-cta:hover { background: #f97316; }
+    @media(min-width:768px){ .header-cta { display: flex; } }
+    .menu-btn { display: flex; color: #fff; padding: 0.5rem; }
+    @media(min-width:768px){ .menu-btn { display: none; } }
+    .mobile-menu {
+      display: none; background: rgba(26,26,26,0.98);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu nav {
+      display: flex; flex-direction: column;
+      padding: 1rem 1.5rem; gap: 0.25rem;
+    }
+    .mobile-menu nav a {
+      color: #d1d5db; font-size: 1rem; font-weight: 500;
+      padding: 0.625rem 0; transition: color 0.2s;
+    }
+    .mobile-menu nav a:hover { color: var(--primary); }
+    .mobile-menu .cta-mobile {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background: var(--primary); color: #fff; font-weight: 700;
+      padding: 0.875rem 1rem; border-radius: 9999px; margin-top: 0.5rem;
+    }
+
+    /* ─── Hero ────────────────────────────────────── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      background: var(--dark-bg);
+    }
+    .hero-bg1 {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--dark-bg), #333, var(--dark-bg));
+    }
+    .hero-bg2 {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top right, rgba(247,148,29,0.2), transparent);
+    }
+    .hero-circle1 {
+      position: absolute; top: 25%; right: 25%;
+      width: 24rem; height: 24rem;
+      background: rgba(247,148,29,0.10); border-radius: 9999px; filter: blur(64px);
+    }
+    .hero-circle2 {
+      position: absolute; bottom: 25%; left: 25%;
+      width: 16rem; height: 16rem;
+      background: rgba(247,148,29,0.05); border-radius: 9999px; filter: blur(48px);
+    }
+    .hero-inner {
+      position: relative; z-index: 10;
+      max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;
+      width: 100%; text-align: center;
+    }
+    @media(min-width:1024px){
+      .hero-inner { display: flex; align-items: center; gap: 4rem; text-align: left; }
+    }
+    .hero-content { flex: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(247,148,29,0.2); color: var(--primary);
+      border: 1px solid rgba(247,148,29,0.3);
+      font-size: 0.75rem; font-weight: 700;
+      padding: 0.375rem 1rem; border-radius: 9999px;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-size: clamp(2.25rem, 6vw, 4.5rem);
+      font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 1.5rem;
+    }
+    .hero-title span { color: var(--primary); }
+    .hero-desc {
+      color: #d1d5db; font-size: 1.125rem; line-height: 1.75;
+      max-width: 42rem; margin: 0 auto 2.5rem;
+    }
+    @media(min-width:1024px){ .hero-desc { margin-left: 0; } }
+    .hero-btns {
+      display: flex; flex-direction: column; gap: 1rem;
+      justify-content: center; align-items: center;
+    }
+    @media(min-width:640px){ .hero-btns { flex-direction: row; } }
+    @media(min-width:1024px){ .hero-btns { justify-content: flex-start; } }
+    .btn-primary {
+      background: var(--primary); color: #fff; font-weight: 700;
+      padding: 1rem 2rem; border-radius: 9999px; font-size: 1rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #f97316; }
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,0.3); color: #fff; font-weight: 700;
+      padding: 1rem 2rem; border-radius: 9999px; font-size: 1rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline-white:hover { border-color: var(--primary); color: var(--primary); }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2rem; max-width: 20rem;
+      margin: 3.5rem auto 0;
+    }
+    @media(min-width:1024px){ .hero-stats { margin-left: 0; } }
+    .hero-stat-value { font-size: 2.25rem; font-weight: 900; color: var(--primary); }
+    .hero-stat-label { color: #9ca3af; font-size: 0.875rem; margin-top: 0.25rem; }
+    @media(min-width:1024px){ .hero-stat-value, .hero-stat-label { text-align: left; } }
+    .hero-image-slot {
+      flex: 1; display: none;
+    }
+    @media(min-width:1024px){ .hero-image-slot { display: block; } }
+    .hero-image-box {
+      position: relative; aspect-ratio: 4/5; max-width: 32rem; margin: 0 auto;
+      border-radius: 1.5rem; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      background: var(--charcoal-40);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-image-box img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-image-placeholder {
+      color: rgba(255,255,255,0.2); font-size: 0.875rem; text-align: center; padding: 2rem;
+    }
+    .hero-image-badge {
+      position: absolute; bottom: -1rem; left: -1rem;
+      background: var(--primary); color: #fff;
+      padding: 0.75rem 1.25rem; border-radius: 1rem;
+      font-weight: 700; font-size: 0.875rem;
+      box-shadow: 0 10px 25px rgba(247,148,29,0.4);
+    }
+    .scroll-indicator {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.4); animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%,100%{ transform: translateX(-50%) translateY(0); }
+      50%{ transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ─── Section Commons ─────────────────────────── */
+    .section-label {
+      color: var(--primary); font-weight: 600; font-size: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .section-title {
+      font-size: clamp(1.875rem, 4vw, 3rem);
+      font-weight: 900; line-height: 1.1; margin-top: 0.75rem;
+    }
+    .section-head { text-align: center; margin-bottom: 3.5rem; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .py-section { padding: 5rem 0; }
+    @media(min-width:1024px){ .py-section { padding: 7rem 0; } }
+
+    /* ─── Modalidades ─────────────────────────────── */
+    #modalidades { background: var(--dark-bg); }
+    #modalidades .section-title { color: #fff; }
+    #modalidades .section-desc { color: #9ca3af; margin-top: 1rem; max-width: 40rem; margin-left: auto; margin-right: auto; }
+    .mod-grid {
+      display: grid; gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+    @media(min-width:640px){ .mod-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .mod-grid { grid-template-columns: repeat(3,1fr); } }
+    .mod-card {
+      background: rgba(51,51,51,0.4); border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 1rem; padding: 1.5rem;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .mod-card:hover {
+      border-color: rgba(247,148,29,0.5);
+      background: rgba(51,51,51,0.6);
+    }
+    .mod-icon {
+      width: 2.5rem; height: 2.5rem; color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .mod-name { color: #fff; font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem; }
+    .mod-name span { color: var(--primary); }
+    .mod-desc { color: #9ca3af; font-size: 0.875rem; line-height: 1.6; }
+
+    /* ─── Horários ────────────────────────────────── */
+    #horarios { background: #fff; }
+    #horarios .section-title { color: var(--charcoal); }
+    #horarios .section-desc { color: #6b7280; margin-top: 1rem; }
+    .unit-filters {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .unit-btn {
+      padding: 0.625rem 1.25rem; border-radius: 9999px;
+      font-weight: 600; font-size: 0.875rem;
+      background: #f3f4f6; color: var(--charcoal);
+      transition: all 0.2s;
+    }
+    .unit-btn.active {
+      background: var(--primary); color: #fff;
+      box-shadow: 0 4px 14px rgba(247,148,29,0.3);
+    }
+    .unit-btn:hover:not(.active) { background: #e5e7eb; }
+    .schedule-wrap {
+      overflow-x: auto; border-radius: 1rem;
+      border: 1px solid #e5e7eb; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .schedule-table thead tr { background: var(--dark-bg); color: #fff; }
+    .schedule-table th {
+      padding: 1rem 0.75rem; font-weight: 600; white-space: nowrap;
+    }
+    .schedule-table th:first-child { text-align: left; min-width: 160px; }
+    .schedule-table td {
+      padding: 0.75rem; border-top: 1px solid #f3f4f6;
+      text-align: center; color: #4b5563;
+    }
+    .schedule-table td:first-child { text-align: left; font-weight: 600; color: var(--charcoal); }
+    .schedule-table tbody tr:nth-child(even) { background: rgba(249,250,251,0.5); }
+    .time-badge {
+      background: var(--primary-light); color: var(--primary);
+      font-weight: 500; padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem; font-size: 0.75rem; white-space: nowrap;
+      display: inline-block;
+    }
+    .dash { color: #d1d5db; }
+    .schedule-note { text-align: center; color: #9ca3af; font-size: 0.75rem; margin-top: 1rem; }
+    .schedule-panel { display: none; }
+    .schedule-panel.active { display: block; }
+
+    /* ─── Planos ──────────────────────────────────── */
+    #planos { background: var(--dark-bg); }
+    #planos .section-title { color: #fff; }
+    #planos .section-desc { color: #9ca3af; margin-top: 1rem; }
+    .period-toggle {
+      display: flex; justify-content: center; margin-bottom: 3rem;
+    }
+    .period-group {
+      background: rgba(51,51,51,0.5); padding: 0.25rem;
+      border-radius: 9999px; display: flex; gap: 0.25rem;
+    }
+    .period-btn {
+      padding: 0.5rem 1.25rem; border-radius: 9999px;
+      font-weight: 600; font-size: 0.875rem; color: #9ca3af;
+      transition: all 0.2s;
+    }
+    .period-btn.active { background: var(--primary); color: #fff; }
+    .period-btn:hover:not(.active) { color: #fff; }
+    .plans-grid {
+      display: grid; gap: 2rem; grid-template-columns: 1fr;
+      max-width: 48rem; margin: 0 auto;
+    }
+    @media(min-width:768px){ .plans-grid { grid-template-columns: repeat(2,1fr); } }
+    .plan-card {
+      position: relative; border-radius: 1.5rem; padding: 2rem;
+      display: flex; flex-direction: column;
+      background: rgba(51,51,51,0.5); border: 1px solid rgba(255,255,255,0.1);
+    }
+    .plan-card.highlight {
+      background: #333;
+      border: 2px solid var(--primary);
+      box-shadow: 0 25px 50px rgba(247,148,29,0.2);
+    }
+    .plan-badge {
+      position: absolute; top: -1rem; left: 50%; transform: translateX(-50%);
+      background: var(--primary); color: #fff;
+      font-size: 0.75rem; font-weight: 700;
+      padding: 0.375rem 1rem; border-radius: 9999px;
+      text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+    }
+    .plan-name { font-size: 1.5rem; font-weight: 900; color: #fff; }
+    .plan-price-row { display: flex; align-items: flex-end; gap: 0.25rem; margin-top: 1rem; }
+    .plan-currency { color: #9ca3af; font-size: 0.875rem; }
+    .plan-price { font-size: 3rem; font-weight: 900; color: #fff; line-height: 1; }
+    .plan-period-label { color: #9ca3af; font-size: 0.875rem; margin-bottom: 0.25rem; }
+    .plan-note { color: var(--primary); font-size: 0.75rem; margin-top: 0.25rem; font-weight: 500; }
+    .plan-features { list-style: none; margin: 1.5rem 0 2rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+    .plan-feature { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .plan-check { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+    .plan-feature span { color: #d1d5db; font-size: 0.875rem; }
+    .btn-plan-highlight {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background: var(--primary); color: #fff; font-weight: 700;
+      padding: 0.875rem; border-radius: 9999px; font-size: 0.875rem;
+      transition: background 0.2s;
+    }
+    .btn-plan-highlight:hover { background: #f97316; }
+    .btn-plan-outline {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      border: 2px solid var(--primary); color: var(--primary); font-weight: 700;
+      padding: 0.875rem; border-radius: 9999px; font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+    .btn-plan-outline:hover { background: var(--primary); color: #fff; }
+
+    /* ─── Serviços ────────────────────────────────── */
+    #servicos { background: #fff; }
+    #servicos .section-title { color: var(--charcoal); }
+    #servicos .section-desc { color: #6b7280; margin-top: 1rem; max-width: 32rem; margin-left: auto; margin-right: auto; }
+    .services-grid {
+      display: grid; gap: 2rem; grid-template-columns: 1fr;
+      max-width: 56rem; margin: 0 auto;
+    }
+    @media(min-width:768px){ .services-grid { grid-template-columns: repeat(3,1fr); } }
+    .service-card {
+      border-radius: 1rem; padding: 1.75rem;
+      display: flex; flex-direction: column;
+      background: #f9fafb; border: 1px solid #e5e7eb; color: var(--charcoal);
+    }
+    .service-card.highlight {
+      background: var(--dark-bg); border: 2px solid var(--primary); color: #fff;
+    }
+    .service-star {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: var(--primary); font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;
+    }
+    .service-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-desc { font-size: 0.875rem; line-height: 1.6; flex: 1; margin-bottom: 1.5rem; color: #6b7280; }
+    .service-card.highlight .service-desc { color: #9ca3af; }
+    .service-price { font-size: 1.875rem; font-weight: 900; }
+    .service-card:not(.highlight) .service-price { color: var(--charcoal); }
+    .service-card.highlight .service-price { color: var(--primary); }
+    .service-per { font-size: 0.875rem; color: #9ca3af; margin-left: 0.25rem; }
+    .service-price-row { margin-bottom: 1.25rem; }
+    .btn-service { margin-top: auto; }
+
+    /* ─── Diferenciais ────────────────────────────── */
+    #diferenciais { background: var(--primary-light); }
+    #diferenciais .section-title { color: var(--charcoal); }
+    .dif-grid {
+      display: grid; gap: 2rem; grid-template-columns: 1fr;
+    }
+    @media(min-width:768px){ .dif-grid { grid-template-columns: repeat(3,1fr); } }
+    .dif-card {
+      background: #fff; border-radius: 1rem; padding: 2rem;
+      text-align: center; border: 1px solid #fed7aa;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .dif-icon-box {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 4rem; height: 4rem; background: rgba(247,148,29,0.1);
+      border-radius: 1rem; color: var(--primary); margin-bottom: 1.25rem;
+    }
+    .dif-name { font-size: 1.25rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .dif-desc { color: #6b7280; font-size: 0.875rem; line-height: 1.6; }
+
+    /* ─── CTA ─────────────────────────────────────── */
+    #cta {
+      padding: 5rem 0; background: var(--primary);
+      position: relative; overflow: hidden;
+    }
+    @media(min-width:1024px){ #cta { padding: 7rem 0; } }
+    .cta-bg1 {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(249,115,22,0.2), transparent);
+    }
+    .cta-circle1 {
+      position: absolute; top: 0; right: 0;
+      width: 24rem; height: 24rem;
+      background: rgba(255,255,255,0.05); border-radius: 9999px;
+      transform: translate(50%,-50%);
+    }
+    .cta-circle2 {
+      position: absolute; bottom: 0; left: 0;
+      width: 16rem; height: 16rem;
+      background: rgba(255,255,255,0.05); border-radius: 9999px;
+      transform: translate(-50%,50%);
+    }
+    .cta-inner { position: relative; z-index: 10; max-width: 56rem; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+    .cta-title { font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 900; color: #fff; margin-bottom: 1.25rem; }
+    .cta-desc { color: rgba(255,255,255,0.8); font-size: 1.125rem; margin-bottom: 2.5rem; max-width: 40rem; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: center; }
+    @media(min-width:640px){ .cta-btns { flex-direction: row; } }
+    .btn-cta-white {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      background: #fff; color: var(--primary); font-weight: 700;
+      padding: 1rem 2rem; border-radius: 9999px; font-size: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: background 0.2s;
+    }
+    .btn-cta-white:hover { background: #f3f4f6; }
+    .btn-cta-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 2px solid rgba(255,255,255,0.4); color: #fff; font-weight: 700;
+      padding: 1rem 2rem; border-radius: 9999px; font-size: 1rem;
+      transition: all 0.2s;
+    }
+    .btn-cta-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    /* ─── Footer ──────────────────────────────────── */
+    footer { background: var(--dark-bg); color: #9ca3af; padding: 4rem 0 2rem; }
+    .footer-grid {
+      display: grid; gap: 2.5rem; grid-template-columns: 1fr;
+      margin-bottom: 3rem;
+    }
+    @media(min-width:768px){ .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .footer-grid { grid-template-columns: repeat(4,1fr); } }
+    .footer-logo { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 0.75rem; }
+    .footer-logo span { color: var(--primary); }
+    .footer-brand-desc { font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem; }
+    .footer-socials { display: flex; gap: 1rem; }
+    .footer-socials a { color: #9ca3af; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--primary); }
+    .footer-heading { color: #fff; font-weight: 600; margin-bottom: 1rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a { font-size: 0.875rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-unit { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .footer-unit svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+    .footer-contact-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .footer-contact-item svg { color: var(--primary); flex-shrink: 0; }
+    .footer-contact-item a:hover { color: var(--primary); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      align-items: center; text-align: center; font-size: 0.75rem;
+    }
+    @media(min-width:640px){ .footer-bottom { flex-direction: row; justify-content: space-between; } }
+
+    /* ─── WhatsApp Button ─────────────────────────── */
+    #wa-btn {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50;
+      background: #22c55e; color: #fff;
+      width: 3.5rem; height: 3.5rem; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: background 0.2s, transform 0.2s;
+    }
+    #wa-btn:hover { background: #16a34a; transform: scale(1.1); }
+
+    /* ─── SVG Icons (inline) ──────────────────────── */
+    .icon { width: 1.25rem; height: 1.25rem; display: inline-block; vertical-align: middle; }
+    .icon-lg { width: 2rem; height: 2rem; }
+
+    /* ─── Animations ──────────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════ -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo-text">MOV<span>E</span></a>
+
+    <nav class="desktop">
+      <a href="#modalidades">Modalidades</a>
+      <a href="#horarios">Horários</a>
+      <a href="#planos">Planos</a>
+      <a href="#modalidades">Eventos</a>
+      <a href="#modalidades">Anuncie</a>
+      <a href="#modalidades">Trabalhe Conosco</a>
+      <a href="#cta">Contato</a>
+    </nav>
+
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Tenho+interesse+em+conhecer+os+planos+da+Move+Academia." target="_blank" class="header-cta">
+      <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Fale pelo WhatsApp
+    </a>
+
+    <button class="menu-btn" id="menu-toggle" aria-label="Menu">
+      <svg id="icon-menu" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="icon-close" class="icon" style="display:none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="#modalidades" class="mobile-link">Modalidades</a>
+      <a href="#horarios" class="mobile-link">Horários</a>
+      <a href="#planos" class="mobile-link">Planos</a>
+      <a href="#cta" class="mobile-link">Contato</a>
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Tenho+interesse+em+conhecer+os+planos+da+Move+Academia." target="_blank" class="cta-mobile">
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Fale pelo WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg1"></div>
+  <div class="hero-bg2"></div>
+  <div class="hero-circle1"></div>
+  <div class="hero-circle2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-badge">Academia Move — Salto, SP</span>
+      <h1 class="hero-title">Uma Nova <span>Experiência</span><br>em Academia</h1>
+      <p class="hero-desc">Musculação, Bike Indoor, Cross Training, Pilates, Fisioterapia e muito mais. 4 unidades em Salto para você treinar onde quiser.</p>
+      <div class="hero-btns">
+        <a href="#planos" class="btn-primary">Ver Planos</a>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Tenho+interesse+em+conhecer+os+planos+da+Move+Academia." target="_blank" class="btn-outline-white">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-value">4</div><div class="hero-stat-label">Unidades</div></div>
+        <div><div class="hero-stat-value">9+</div><div class="hero-stat-label">Modalidades</div></div>
+        <div><div class="hero-stat-value">100%</div><div class="hero-stat-label">Dedicação</div></div>
+      </div>
+    </div>
+
+    <div class="hero-image-slot">
+      <div style="position:relative">
+        <div class="hero-image-box">
+          <div class="hero-image-placeholder">
+            📷 hero.jpg<br><small>Coloque a imagem em<br>assets/images/hero.jpg</small>
+          </div>
+        </div>
+        <div class="hero-image-badge">4 unidades em Salto</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ═══ MODALIDADES ═══════════════════════════════════ -->
+<section id="modalidades" class="py-section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">O que oferecemos</div>
+      <h2 class="section-title" style="color:#fff">Nossas Modalidades</h2>
+      <p class="section-desc">9 modalidades para você escolher o treino ideal para cada objetivo.</p>
+    </div>
+    <div class="mod-grid" id="mod-grid"></div>
+  </div>
+</section>
+
+<!-- ═══ HORÁRIOS ══════════════════════════════════════ -->
+<section id="horarios" class="py-section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Planeje seu treino</div>
+      <h2 class="section-title">Grade de Horários</h2>
+      <p class="section-desc">Selecione a unidade para ver os horários disponíveis.</p>
+    </div>
+    <div class="unit-filters" id="unit-filters"></div>
+    <div id="schedule-panels"></div>
+    <p class="schedule-note">* Horários sujeitos a alteração. Confirme com a unidade.</p>
+  </div>
+</section>
+
+<!-- ═══ PLANOS ════════════════════════════════════════ -->
+<section id="planos" class="py-section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Invista na sua saúde</div>
+      <h2 class="section-title" style="color:#fff">Nossos Planos</h2>
+      <p class="section-desc">Escolha o período e o plano ideal para você.</p>
+    </div>
+    <div class="period-toggle">
+      <div class="period-group">
+        <button class="period-btn" data-period="anual">Anual</button>
+        <button class="period-btn" data-period="semestral">Semestral</button>
+        <button class="period-btn active" data-period="mensal">Mensal</button>
+      </div>
+    </div>
+    <div class="plans-grid" id="plans-grid"></div>
+  </div>
+</section>
+
+<!-- ═══ SERVIÇOS ══════════════════════════════════════ -->
+<section id="servicos" class="py-section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Serviços extras</div>
+      <h2 class="section-title">Serviços Adicionais</h2>
+      <p class="section-desc">Potencialize seus resultados com suporte especializado.</p>
+    </div>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+<!-- ═══ DIFERENCIAIS ══════════════════════════════════ -->
+<section id="diferenciais" class="py-section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-label">Por que a Move?</div>
+      <h2 class="section-title">Nossos Diferenciais</h2>
+    </div>
+    <div class="dif-grid">
+      <div class="dif-card fade-up">
+        <div class="dif-icon-box">
+          <svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="dif-name">Espaço Kids</h3>
+        <p class="dif-desc">Área dedicada para os pequenos se divertirem enquanto você treina com tranquilidade.</p>
+      </div>
+      <div class="dif-card fade-up">
+        <div class="dif-icon-box">
+          <svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3 class="dif-name">App de Reservas</h3>
+        <p class="dif-desc">Reserve suas aulas pelo aplicativo Move com facilidade e nunca perca seu horário favorito.</p>
+      </div>
+      <div class="dif-card fade-up">
+        <div class="dif-icon-box">
+          <svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <h3 class="dif-name">Loja Move</h3>
+        <p class="dif-desc">Suplementos, acessórios e linha de produtos exclusivos Move para potencializar seus treinos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ══════════════════════════════════════ -->
+<section id="cta">
+  <div class="cta-bg1"></div>
+  <div class="cta-circle1"></div>
+  <div class="cta-circle2"></div>
+  <div class="cta-inner">
+    <h2 class="cta-title">Pronto para começar?</h2>
+    <p class="cta-desc">Fale com nossa equipe agora mesmo pelo WhatsApp e escolha o plano perfeito para você.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Tenho+interesse+em+conhecer+os+planos+da+Move+Academia." target="_blank" class="btn-cta-white">
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Falar pelo WhatsApp
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#planos" class="btn-cta-outline">Ver os Planos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">MOV<span>E</span></div>
+        <p class="footer-brand-desc">Uma nova experiência em academia. Saúde, movimento e qualidade de vida para toda a família.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">
+            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Navegação</h4>
+        <ul class="footer-links">
+          <li><a href="#modalidades">Modalidades</a></li>
+          <li><a href="#horarios">Horários</a></li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#modalidades">Eventos</a></li>
+          <li><a href="#modalidades">Anuncie na Move</a></li>
+          <li><a href="#modalidades">Trabalhe Conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Unidades</h4>
+        <div class="footer-unit"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Rondon — Salto, SP</span></div>
+        <div class="footer-unit"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Rui Barbosa — Salto, SP</span></div>
+        <div class="footer-unit"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sete de Setembro — Salto, SP</span></div>
+        <div class="footer-unit"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Central / Parque — Salto, SP</span></div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contato</h4>
+        <div class="footer-contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.8 19.79 19.79 0 0 1 1.61 5.22 2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6 6l.94-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="https://wa.me/5511999999999" target="_blank">(XX) 9XXXX-XXXX</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:contato@moveacademia.com.br">contato@moveacademia.com.br</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Move Academia. Todos os direitos reservados.</p>
+      <p>Desenvolvido com ❤️ para a sua saúde</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ WHATSAPP BUTTON ═══════════════════════════════ -->
+<a id="wa-btn" href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Tenho+interesse+em+conhecer+os+planos+da+Move+Academia." target="_blank" aria-label="Falar pelo WhatsApp">
+  <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</a>
+
+<!-- ═══ SCRIPTS ════════════════════════════════════════ -->
+<script>
+  const WA = '5511999999999';
+  const WA_DEFAULT = encodeURIComponent('Olá! Tenho interesse em conhecer os planos da Move Academia.');
+  const waLink = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+
+  // ── Data ─────────────────────────────────────────────
+  const modalities = [
+    { name: 'Move Musculação', icon: 'dumbbell', desc: 'Força, resistência e hipertrofia com equipamentos de última geração.' },
+    { name: 'Move Bike', icon: 'bike', desc: 'Bike indoor com sistema israelense para máxima performance.' },
+    { name: 'Move Running', icon: 'running', desc: 'Corridas e treinos no Estádio Municipal com assessoria especializada.' },
+    { name: 'Cross Team Move', icon: 'cross', desc: 'Cross Training funcional em equipe para desafiar seus limites.' },
+    { name: 'Sala Fitness', icon: 'music', desc: 'Jump, Ritbox, Step, Fitdance e Kids em aulas animadas e dinâmicas.' },
+    { name: 'Move Pilates', icon: 'pilates', desc: 'Melhore sua postura e qualidade de vida com o método Pilates.' },
+    { name: 'Move Fortalecimento Terapêutico', icon: 'heart', desc: 'Atividades essenciais para o dia a dia com foco em saúde e bem-estar.' },
+    { name: 'Move Fisioterapia', icon: 'firstaid', desc: 'Reabilitação e recuperação com profissionais qualificados.' },
+    { name: 'Musculação Supervisionada', icon: 'user', desc: 'Acompanhamento individual de personal trainer para resultados acelerados.' },
+  ];
+
+  const modIcons = {
+    dumbbell: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 5v14M18 5v14M3 8h3M18 8h3M3 16h3M18 16h3M6 8h12M6 16h12"/></svg>`,
+    bike: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5L9 11l-3 1 1-4h7l2 4-3 3.5z"/></svg>`,
+    running: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="4" r="1.5"/><path d="M9 7l-2 5h6l2-5M7 17l2-5M17 17l-2-5M7 17l-1 4M17 17l1 4"/></svg>`,
+    cross: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    music: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+    pilates: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    heart: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+    firstaid: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`,
+    user: `<svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+  };
+
+  const plans = [
+    {
+      id: 'start', name: 'START',
+      prices: { anual: 115, semestral: 130, mensal: 145 },
+      includes: ['Musculação ilimitada','Aulas Fitness (Rondon / Rui Barbosa)','Fisioterapia (Sete de Setembro)'],
+      highlight: false,
+    },
+    {
+      id: 'plus', name: 'PLUS', badge: 'Mais Popular',
+      prices: { anual: 165, semestral: 180, mensal: 195 },
+      includes: ['Musculação ilimitada','Crossfit (Rui Barbosa)','Bike Indoor (Central / Parque)','Fisioterapia','Aulas Fitness (Rondon / Rui Barbosa)','Aulas reservadas pelo app'],
+      highlight: true,
+    },
+  ];
+
+  const services = [
+    { id: 'nutri', name: 'Nutricionista', desc: 'Avaliação nutricional completa e plano alimentar personalizado para seus objetivos.', price: 114.90 },
+    { id: 'consultoria', name: 'Consultoria Física', desc: 'Avaliação física detalhada e prescrição de treino individual.', price: 59.90 },
+    { id: 'combo', name: 'Pacote Completo', desc: 'Nutricionista + Consultoria Física com 15% de desconto. A combinação perfeita para resultados.', price: 149.90, highlight: true },
+  ];
+
+  const days = ['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];
+
+  const scheduleData = [
+    {
+      unit: 'Rondon',
+      schedule: [
+        { mod: 'Musculação', times: {'Seg':'06h–22h','Ter':'06h–22h','Qua':'06h–22h','Qui':'06h–22h','Sex':'06h–22h','Sáb':'08h–14h','Dom':'—'} },
+        { mod: 'Jump', times: {'Seg':'07h / 19h','Ter':'—','Qua':'07h / 19h','Qui':'—','Sex':'07h / 19h','Sáb':'09h','Dom':'—'} },
+        { mod: 'Ritbox', times: {'Seg':'—','Ter':'07h / 19h30','Qua':'—','Qui':'07h / 19h30','Sex':'—','Sáb':'10h','Dom':'—'} },
+        { mod: 'Step', times: {'Seg':'18h','Ter':'—','Qua':'18h','Qui':'—','Sex':'18h','Sáb':'—','Dom':'—'} },
+        { mod: 'Fitdance', times: {'Seg':'—','Ter':'18h30','Qua':'—','Qui':'18h30','Sex':'—','Sáb':'—','Dom':'—'} },
+        { mod: 'Kids', times: {'Seg':'09h','Ter':'09h','Qua':'09h','Qui':'09h','Sex':'09h','Sáb':'—','Dom':'—'} },
+      ]
+    },
+    {
+      unit: 'Rui Barbosa',
+      schedule: [
+        { mod: 'Musculação', times: {'Seg':'06h–22h','Ter':'06h–22h','Qua':'06h–22h','Qui':'06h–22h','Sex':'06h–22h','Sáb':'08h–13h','Dom':'—'} },
+        { mod: 'Cross Team Move', times: {'Seg':'07h / 18h','Ter':'07h / 18h','Qua':'07h / 18h','Qui':'07h / 18h','Sex':'07h / 18h','Sáb':'09h','Dom':'—'} },
+        { mod: 'Jump', times: {'Seg':'07h / 19h','Ter':'—','Qua':'07h / 19h','Qui':'—','Sex':'07h / 19h','Sáb':'09h','Dom':'—'} },
+        { mod: 'Pilates', times: {'Seg':'08h / 17h','Ter':'08h / 17h','Qua':'08h / 17h','Qui':'08h / 17h','Sex':'08h','Sáb':'—','Dom':'—'} },
+      ]
+    },
+    {
+      unit: 'Sete de Setembro',
+      schedule: [
+        { mod: 'Musculação', times: {'Seg':'06h–21h','Ter':'06h–21h','Qua':'06h–21h','Qui':'06h–21h','Sex':'06h–21h','Sáb':'08h–12h','Dom':'—'} },
+        { mod: 'Fisioterapia', times: {'Seg':'07h–19h','Ter':'07h–19h','Qua':'07h–19h','Qui':'07h–19h','Sex':'07h–19h','Sáb':'—','Dom':'—'} },
+        { mod: 'Fortalecimento Terapêutico', times: {'Seg':'08h / 16h','Ter':'08h / 16h','Qua':'08h / 16h','Qui':'08h / 16h','Sex':'08h','Sáb':'—','Dom':'—'} },
+      ]
+    },
+    {
+      unit: 'Central / Parque',
+      schedule: [
+        { mod: 'Musculação', times: {'Seg':'06h–22h','Ter':'06h–22h','Qua':'06h–22h','Qui':'06h–22h','Sex':'06h–22h','Sáb':'08h–14h','Dom':'08h–12h'} },
+        { mod: 'Bike Indoor', times: {'Seg':'07h / 18h30','Ter':'07h / 18h30','Qua':'07h / 18h30','Qui':'07h / 18h30','Sex':'07h / 18h30','Sáb':'09h','Dom':'—'} },
+        { mod: 'Running', times: {'Seg':'—','Ter':'06h30 / 19h','Qua':'—','Qui':'06h30 / 19h','Sex':'—','Sáb':'07h','Dom':'07h'} },
+        { mod: 'Musculação Supervisionada', times: {'Seg':'07h–20h','Ter':'07h–20h','Qua':'07h–20h','Qui':'07h–20h','Sex':'07h–20h','Sáb':'08h–12h','Dom':'—'} },
+      ]
+    },
+  ];
+
+  // ── Render Modalidades ───────────────────────────────
+  const modGrid = document.getElementById('mod-grid');
+  modalities.forEach(m => {
+    const name = m.name.includes('Move')
+      ? m.name.replace('Move', 'MOV') + 'E'
+      : m.name;
+    modGrid.innerHTML += `
+      <div class="mod-card fade-up">
+        <div class="mod-icon">${modIcons[m.icon]}</div>
+        <div class="mod-name">${m.name}</div>
+        <div class="mod-desc">${m.desc}</div>
+      </div>`;
+  });
+
+  // ── Render Horários ──────────────────────────────────
+  const filtersEl = document.getElementById('unit-filters');
+  const panelsEl = document.getElementById('schedule-panels');
+
+  scheduleData.forEach((u, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'unit-btn' + (i === 0 ? ' active' : '');
+    btn.textContent = u.unit;
+    btn.dataset.unit = u.unit;
+    filtersEl.appendChild(btn);
+
+    const panel = document.createElement('div');
+    panel.className = 'schedule-panel' + (i === 0 ? ' active' : '');
+    panel.id = `panel-${u.unit.replace(/\s|\//g,'-')}`;
+
+    let rows = u.schedule.map((row, ri) => {
+      const cells = days.map(d => {
+        const t = row.times[d];
+        if (!t || t === '—') return `<td><span class="dash">—</span></td>`;
+        return `<td><span class="time-badge">${t}</span></td>`;
+      }).join('');
+      return `<tr>${`<td>${row.mod}</td>`}${cells}</tr>`;
+    }).join('');
+
+    panel.innerHTML = `
+      <div class="schedule-wrap">
+        <table class="schedule-table">
+          <thead><tr>
+            <th>Modalidade</th>
+            ${days.map(d => `<th>${d}</th>`).join('')}
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+    panelsEl.appendChild(panel);
+  });
+
+  filtersEl.addEventListener('click', e => {
+    const btn = e.target.closest('.unit-btn');
+    if (!btn) return;
+    document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.schedule-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const id = `panel-${btn.dataset.unit.replace(/\s|\//g,'-')}`;
+    document.getElementById(id).classList.add('active');
+  });
+
+  // ── Render Planos ────────────────────────────────────
+  let currentPeriod = 'mensal';
+  const plansGrid = document.getElementById('plans-grid');
+
+  function renderPlans() {
+    plansGrid.innerHTML = '';
+    plans.forEach(p => {
+      const noteHtml = currentPeriod !== 'mensal'
+        ? `<p class="plan-note">${currentPeriod === 'anual' ? 'Pagamento anual' : 'Pagamento semestral'}</p>`
+        : '';
+      const features = p.includes.map(f =>
+        `<li class="plan-feature"><span class="plan-check">✓</span><span>${f}</span></li>`
+      ).join('');
+      const badgeHtml = p.badge ? `<div class="plan-badge">${p.badge}</div>` : '';
+      const btnHtml = p.highlight
+        ? `<a href="${waLink('Olá! Tenho interesse no plano '+p.name+' da Move Academia.')}" target="_blank" class="btn-plan-highlight">
+            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Contratar via WhatsApp</a>`
+        : `<a href="${waLink('Olá! Tenho interesse no plano '+p.name+' da Move Academia.')}" target="_blank" class="btn-plan-outline">
+            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Contratar via WhatsApp</a>`;
+
+      plansGrid.innerHTML += `
+        <div class="plan-card ${p.highlight ? 'highlight' : ''}">
+          ${badgeHtml}
+          <div class="plan-name">${p.name}</div>
+          <div class="plan-price-row">
+            <span class="plan-currency">R$</span>
+            <span class="plan-price">${p.prices[currentPeriod]}</span>
+            <span class="plan-period-label">/mês</span>
+          </div>
+          ${noteHtml}
+          <ul class="plan-features">${features}</ul>
+          ${btnHtml}
+        </div>`;
+    });
+  }
+  renderPlans();
+
+  document.querySelectorAll('.period-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPeriod = btn.dataset.period;
+      renderPlans();
+    });
+  });
+
+  // ── Render Serviços ──────────────────────────────────
+  const servGrid = document.getElementById('services-grid');
+  services.forEach(s => {
+    const starHtml = s.highlight
+      ? `<div class="service-star">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Melhor custo-benefício</div>` : '';
+    const btnCls = s.highlight ? 'btn-plan-highlight' : 'btn-plan-outline';
+    servGrid.innerHTML += `
+      <div class="service-card ${s.highlight ? 'highlight' : ''}">
+        ${starHtml}
+        <h3 class="service-name">${s.name}</h3>
+        <p class="service-desc">${s.desc}</p>
+        <div class="service-price-row">
+          <span class="service-price">R$ ${s.price.toFixed(2).replace('.',',')}</span>
+          <span class="service-per">/mês</span>
+        </div>
+        <a href="${waLink('Olá! Tenho interesse no serviço de '+s.name+' da Move Academia.')}" target="_blank" class="${btnCls} btn-service">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Saber mais
+        </a>
+      </div>`;
+  });
+
+  // ── Header scroll ────────────────────────────────────
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // ── Mobile menu ──────────────────────────────────────
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+
+  menuToggle.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    iconMenu.style.display = open ? 'none' : '';
+    iconClose.style.display = open ? '' : 'none';
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      iconMenu.style.display = '';
+      iconClose.style.display = 'none';
+    });
+  });
+
+  // ── Fade-up on scroll ────────────────────────────────
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Footer year ──────────────────────────────────────
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

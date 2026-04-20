@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiMessageCircle, FiTv } from "react-icons/fi";
 
@@ -11,13 +12,22 @@ const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
 
 export default function TvMoveHero() {
   return (
-    <section className="relative bg-dark-bg pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex items-center bg-dark-bg overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/halteres.jpg"
+          alt="Move Academia"
+          fill
+          className="object-cover object-center"
+          priority
+        />
       </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-dark-bg/75" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32 w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

@@ -1,13 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiClock, FiTv } from "react-icons/fi";
 import { tvUnidades } from "@/data/tvmove";
 
 export default function TvMoveUnidades() {
   return (
-    <section id="unidades" className="py-20 lg:py-28 bg-charcoal/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="unidades" className="relative py-20 lg:py-28 bg-dark-bg overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <Image src="/images/halter.jpg" alt="" fill className="object-cover object-center" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/60 via-transparent to-dark-bg/60" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
