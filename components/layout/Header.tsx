@@ -6,16 +6,16 @@ import { FiMenu, FiX, FiMessageCircle } from "react-icons/fi";
 import Logo from "@/components/Logo";
 
 const navLinks = [
-  { label: "Modalidades", href: "#modalidades" },
-  { label: "Horários", href: "#horarios" },
-  { label: "Planos", href: "#planos" },
+  { label: "Modalidades", href: "/#modalidades" },
+  { label: "Horários", href: "/#horarios" },
+  { label: "Planos", href: "/#planos" },
   { label: "Parcerias", href: "/parcerias" },
   { label: "Anuncie", href: "/anuncie" },
   { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
-  { label: "Contato", href: "#cta" },
+  { label: "Contato", href: "/#cta" },
 ];
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5511910204226";
 const WA_MESSAGE = encodeURIComponent("Olá! Tenho interesse em conhecer os planos da Move Academia.");
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 

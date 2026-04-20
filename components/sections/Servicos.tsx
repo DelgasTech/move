@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FiMessageCircle, FiStar } from "react-icons/fi";
 import { services } from "@/data/services";
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5511910204226";
 
 function getWaLink(serviceName: string) {
   const msg = encodeURIComponent(

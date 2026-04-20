@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiMessageCircle, FiTv } from "react-icons/fi";
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5511910204226";
 const WA_MSG = encodeURIComponent(
   "Olá! Tenho interesse em anunciar minha marca nas TVs da Move Academia."
 );

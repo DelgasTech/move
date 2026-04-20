@@ -1,10 +1,6 @@
 import { FiInstagram, FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import Logo from "@/components/Logo";
 
-const WA_NUMBER = "5511999999999";
-const WA_MESSAGE = encodeURIComponent("Olá! Tenho interesse em conhecer os planos da Move Academia.");
-const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
-
 export default function Footer() {
   return (
     <footer className="bg-dark-bg text-gray-400 pt-16 pb-8">
@@ -19,7 +15,13 @@ export default function Footer() {
               Uma nova experiência em academia. Saúde, movimento e qualidade de vida para toda a família.
             </p>
             <div className="flex gap-4">
-              <a href="#" aria-label="Instagram" className="text-gray-400 hover:text-primary transition-colors">
+              <a
+                href="https://www.instagram.com/personnalitemove/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
                 <FiInstagram className="w-5 h-5" />
               </a>
             </div>
@@ -54,20 +56,12 @@ export default function Footer() {
                 { name: "Rondon", href: "https://www.google.com/maps/dir//Move+-+Rondon+-+R.+Botucatu,+74+-+Jardim+da+Cidade,+Salto+-+SP,+13323-080/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf4f7b3e63e5fd:0xf628a5c4fd7422ba?sa=X&ved=1t:57443&ictx=111" },
                 { name: "Rui Barbosa", href: "https://www.google.com/maps/dir//Move+-+Rui+Barbosa+-+R.+Rui+Barbosa,+672+-+Centro,+Salto+-+SP,+13320-230/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf513c7ec597b1:0x141f75856c97702?sa=X&ved=1t:57443&ictx=111" },
                 { name: "Sete de Setembro", href: null },
-                {
-                  name: "Central / Parque",
-                  href: "https://www.google.com/maps/dir/-23.1243776,-47.251456/Move+-+Central+Parque,+Av.+Get%C3%BAlio+Vargas,+770+-+Piso+1+-+Jardim+Celani,+Salto+-+SP,+13326-185/@-23.1620744,-47.3189233,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94cf5304b22be769:0x937b69c90efbcaac!2m2!1d-47.307373!2d-23.1909294?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D",
-                },
+                { name: "Central / Parque", href: "https://www.google.com/maps/dir/-23.1243776,-47.251456/Move+-+Central+Parque,+Av.+Get%C3%BAlio+Vargas,+770+-+Piso+1+-+Jardim+Celani,+Salto+-+SP,+13326-185/@-23.1620744,-47.3189233,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94cf5304b22be769:0x937b69c90efbcaac!2m2!1d-47.307373!2d-23.1909294?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D" },
               ].map((unit) => (
                 <li key={unit.name} className="flex items-start gap-2">
                   <FiMapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   {unit.href ? (
-                    <a
-                      href={unit.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors"
-                    >
+                    <a href={unit.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                       {unit.name} — Salto, SP
                     </a>
                   ) : (
@@ -83,19 +77,16 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Contato por Unidade</h4>
             <ul className="space-y-3 text-sm">
               {[
-                { name: "Rondon", tel: "XXXXXXXXXX" },
-                { name: "Rui Barbosa", tel: "XXXXXXXXXX" },
-                { name: "Sete de Setembro", tel: "XXXXXXXXXX" },
-                { name: "Central / Parque", tel: "XXXXXXXXXX" },
+                { name: "Sete de Setembro", tel: "+55 11 97107-1020", telRaw: "5511971071020" },
+                { name: "Rondon",            tel: "+55 19 99886-6581", telRaw: "5519998866581" },
+                { name: "Central / Parque",  tel: "+55 11 93446-1020", telRaw: "5511934461020" },
+                { name: "Rui Barbosa",       tel: "+55 11 91844-1020", telRaw: "5511918441020" },
               ].map((unit) => (
                 <li key={unit.name} className="flex items-start gap-2">
                   <FiPhone className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-white text-xs font-semibold">{unit.name}</p>
-                    <a
-                      href={`tel:+55${unit.tel}`}
-                      className="hover:text-primary transition-colors"
-                    >
+                    <a href={`tel:+${unit.telRaw}`} className="hover:text-primary transition-colors">
                       {unit.tel}
                     </a>
                   </div>
@@ -111,7 +102,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs">
+        <div className="border-t border-white/10 pt-6 text-xs text-center">
           <p>© {new Date().getFullYear()} Move Academia. Todos os direitos reservados.</p>
         </div>
       </div>

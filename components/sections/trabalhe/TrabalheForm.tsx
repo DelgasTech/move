@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { FiMessageCircle, FiUpload } from "react-icons/fi";
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5511910204226";
 
 const areas = [
   "Personal Trainer",

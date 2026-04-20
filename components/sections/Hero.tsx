@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiMessageCircle } from "react-icons/fi";
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5511910204226";
 const WA_MESSAGE = encodeURIComponent("Olá! Tenho interesse em conhecer os planos da Move Academia.");
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 

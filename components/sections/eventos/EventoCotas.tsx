@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FiMessageCircle } from "react-icons/fi";
 import { sponsorshipTiers } from "@/data/events";
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5511910204226";
 
 function getWaLink(tier: string) {
   const msg = encodeURIComponent(

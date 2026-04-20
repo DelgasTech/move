@@ -2,23 +2,25 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiInstagram } from "react-icons/fi";
 
 interface ParceriaCardProps {
   slug: string;
   nome: string;
   descricao: string;
   cta: string;
+  ctaHref: string;
+  instagram?: string;
   invertido: boolean;
 }
 
-export default function ParceriaCard({ slug, nome, descricao, cta, invertido }: ParceriaCardProps) {
+export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, instagram, invertido }: ParceriaCardProps) {
   const imagePath = `/images/parcerias/${slug}.jpg`;
 
   return (
     <section className="py-20 lg:py-28 bg-dark-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`grid lg:grid-cols-2 gap-12 items-center ${invertido ? "lg:flex-row-reverse" : ""}`}>
+        <div className={`grid lg:grid-cols-2 gap-12 items-center`}>
 
           {/* Imagem */}
           <motion.div
@@ -36,7 +38,6 @@ export default function ParceriaCard({ slug, nome, descricao, cta, invertido }: 
                 className="object-cover"
                 onError={() => {}}
               />
-              {/* Placeholder enquanto não tem imagem */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/20">
                 <div className="w-16 h-16 border-2 border-white/10 rounded-2xl flex items-center justify-center">
                   <span className="text-2xl font-black text-white/20">?</span>
@@ -64,16 +65,29 @@ export default function ParceriaCard({ slug, nome, descricao, cta, invertido }: 
               {descricao}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-orange-500 text-white font-bold px-6 py-3 rounded-full transition-colors"
               >
                 {cta}
                 <FiArrowRight className="w-4 h-4" />
-              </button>
+              </a>
+              {instagram && (
+                <a
+                  href={instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border-2 border-white/20 hover:border-primary text-white hover:text-primary font-bold px-6 py-3 rounded-full transition-colors"
+                >
+                  <FiInstagram className="w-4 h-4" />
+                  Instagram
+                </a>
+              )}
             </div>
 
-            {/* Badge parceria */}
             <div className="mt-8 inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-3">
               <div className="w-2 h-2 bg-primary rounded-full" />
               <span className="text-gray-400 text-sm">

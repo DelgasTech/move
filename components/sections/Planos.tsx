@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FiCheck, FiMessageCircle } from "react-icons/fi";
 import { plans, type PricePeriod } from "@/data/plans";
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5511910204226";
 
 function getWaLink(planName: string) {
   const msg = encodeURIComponent(
