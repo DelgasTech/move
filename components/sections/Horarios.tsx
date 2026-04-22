@@ -10,17 +10,6 @@ const professorColors: Record<string, { bg: string; text: string }> = {
   "Heidy": { bg: "bg-teal-100",   text: "text-teal-700"   },
 };
 
-function getCellStyle(value: string) {
-  for (const [prof, style] of Object.entries(professorColors)) {
-    if (value && value !== "—" && scheduleData.some((u) =>
-      u.schedule.some((r) => r.modality.includes(prof) && Object.values(r.times).includes(value))
-    )) {
-      // fallback — color applied per-row instead
-      return style;
-    }
-  }
-  return null;
-}
 
 function getProfColor(modality: string) {
   for (const [prof, style] of Object.entries(professorColors)) {
