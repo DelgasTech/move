@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MoutonneeHeader from "./_components/MoutonneeHeader";
 import MoutonneeContent from "./_components/MoutonneeContent";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function MoutoннeePage() {
   return (
     <>
-      <Header />
+      <MoutonneeHeader />
       <main>
         <MoutonneeContent />
       </main>
