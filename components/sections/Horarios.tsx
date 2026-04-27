@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { scheduleData, days } from "@/data/schedule";
 
@@ -10,6 +11,11 @@ const professorColors: Record<string, { bg: string; text: string }> = {
   "Heidy": { bg: "bg-teal-100",   text: "text-teal-700"   },
 };
 
+const professorImages: Record<string, string> = {
+  "Erica":   "/images/prof/Erica-removebg-preview.png",
+  "Gabriel": "/images/prof/Gabriel-removebg-preview.png",
+  "Heidy":   "/images/prof/Heidy-removebg-preview.png",
+};
 
 function getProfColor(modality: string) {
   for (const [prof, style] of Object.entries(professorColors)) {
@@ -22,9 +28,39 @@ export default function Horarios() {
   const [selectedUnit, setSelectedUnit] = useState(scheduleData[0].unit);
   const currentSchedule = scheduleData.find((u) => u.unit === selectedUnit)!;
 
+  const unitProfs = Array.from(
+    new Set(
+      currentSchedule.schedule
+        .map((r) => r.modality.split(" — ")[1]?.replace("Prof. ", "").trim())
+        .filter(Boolean)
+    )
+  ) as string[];
+
   return (
-    <section id="horarios" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="horarios" className="relative py-20 lg:py-28 bg-white overflow-hidden">
+
+      {/* Professor images — decorative background */}
+      {unitProfs.map((prof, i) => {
+        const src = professorImages[prof];
+        if (!src) return null;
+        const isRight = i % 2 !== 0;
+        return (
+          <div
+            key={prof}
+            className={`pointer-events-none absolute bottom-0 ${isRight ? "right-0" : "left-0"} h-[85%] w-[220px] lg:w-[280px] select-none`}
+          >
+            <Image
+              src={src}
+              alt={`Prof. ${prof}`}
+              fill
+              className="object-contain object-bottom"
+              sizes="280px"
+            />
+          </div>
+        );
+      })}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
