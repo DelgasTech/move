@@ -12,7 +12,7 @@ const steps = [
   {
     icon: FiCheckCircle,
     title: "Aprovação",
-    desc: "Nossa equipe avalia o conteúdo. O áudio é removido — foque na identidade visual.",
+    desc: "Nossa equipe avalia o conteúdo. O áudio é removido, foque na identidade visual.",
   },
   {
     icon: FiClock,
@@ -104,7 +104,7 @@ export default function TvMoveComoFunciona() {
           <FiAlertCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
           <p className="text-gray-300 text-sm leading-relaxed">
             O conteúdo do vídeo está sujeito à aprovação pelo setor responsável da Move Academia.
-            O áudio será removido na exibição nas telas — capriche na identidade visual!
+            O áudio será removido na exibição nas telas, capriche na identidade visual!
           </p>
         </motion.div>
       </div>

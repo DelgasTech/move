@@ -45,8 +45,8 @@ export default function TvMoveHero() {
 
           <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             Anuncie sua marca nas telas das academias Move e alcance{" "}
-            <span className="text-white font-bold">+1.600 pessoas todos os dias</span> enquanto
-            treinam — atentas, presentes e no seu melhor estado de espírito.
+            <span className="text-white font-bold">+1.600 pessoas todos os dias,</span> enquanto
+            treinam atentas, presentes e no seu melhor estado de espírito.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

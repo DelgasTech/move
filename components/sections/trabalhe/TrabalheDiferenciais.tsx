@@ -6,7 +6,7 @@ import { FiMapPin, FiHeart, FiTrendingUp, FiUsers } from "react-icons/fi";
 const items = [
   {
     icon: <FiMapPin className="w-7 h-7" />,
-    title: "4 Unidades",
+    title: "6 Unidades",
     description: "Oportunidades em todas as unidades de Salto/SP.",
   },
   {
