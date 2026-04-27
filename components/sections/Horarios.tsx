@@ -35,18 +35,18 @@ export default function Horarios() {
 
       {/* Professor images — decorative background (test: all 3) */}
       {allProfs.map(([prof, src], i) => {
-        const positions = ["left-0", "left-1/2 -translate-x-1/2", "right-0"];
+        const positions = ["left-[-40px]", "left-1/2 -translate-x-1/2", "right-[-40px]"];
         return (
           <div
             key={prof}
-            className={`pointer-events-none absolute bottom-0 ${positions[i]} h-[85%] w-[220px] lg:w-[280px] select-none`}
+            className={`pointer-events-none absolute bottom-0 ${positions[i]} h-full w-[38%] max-w-[480px] select-none opacity-20`}
           >
             <Image
               src={src}
               alt={`Prof. ${prof}`}
               fill
               className="object-contain object-bottom"
-              sizes="280px"
+              sizes="480px"
             />
           </div>
         );
