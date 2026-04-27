@@ -139,15 +139,18 @@ export default function Planos() {
           <h3 className="text-center text-white font-black text-2xl mb-2">Convênios</h3>
           <p className="text-center text-gray-400 text-sm mb-8">Acesse a Move pelo seu benefício.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
-            {partners.map((p, i) => (
-              <div key={i} className="bg-charcoal/50 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-white font-black text-lg">{p.name}</span>
-                  <span className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full">{p.tier}</span>
-                </div>
-                <p className="text-gray-400 text-xs">{p.units}</p>
-                {p.includes.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
+
+            {/* Wellhub — Sete de Setembro (SILVER+) */}
+            {(() => {
+              const p = partners[0];
+              return (
+                <div className="bg-charcoal/50 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-white font-black text-lg">{p.name}</span>
+                    <span className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full">{p.tier}</span>
+                  </div>
+                  <p className="text-gray-400 text-xs">{p.units}</p>
                   <ul className="space-y-1.5">
                     {p.includes.map((item) => (
                       <li key={item} className="flex items-center gap-2 text-gray-300 text-xs">
@@ -156,15 +159,60 @@ export default function Planos() {
                       </li>
                     ))}
                   </ul>
-                )}
-                {p.obs && (
-                  <div className="flex items-start gap-2 mt-1 text-gray-500 text-xs border-t border-white/10 pt-3">
-                    <FiAlertCircle className="w-3 h-3 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span>{p.obs}</span>
+                  {p.obs && (
+                    <div className="flex items-start gap-2 mt-1 text-gray-500 text-xs border-t border-white/10 pt-3">
+                      <FiAlertCircle className="w-3 h-3 text-yellow-500 flex-shrink-0 mt-0.5" />
+                      <span>{p.obs}</span>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+
+            {/* Wellhub BASIC+ + Totalpass — mesclados */}
+            {(() => {
+              const wb = partners[1];
+              const tp = partners[2];
+              return (
+                <div className="bg-charcoal/50 border border-white/10 rounded-2xl p-5 flex gap-4">
+                  {/* Wellhub BASIC+ */}
+                  <div className="flex-1 flex flex-col gap-2">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-white font-black text-lg">{wb.name}</span>
+                      <span className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full w-fit">{wb.tier}</span>
+                    </div>
+                    <p className="text-gray-400 text-xs">{wb.units}</p>
+                    <ul className="space-y-1.5">
+                      {wb.includes.map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-gray-300 text-xs">
+                          <FiCheck className="w-3 h-3 text-primary flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    {wb.obs && (
+                      <div className="flex items-start gap-2 mt-auto pt-3 border-t border-white/10 text-gray-500 text-xs">
+                        <FiAlertCircle className="w-3 h-3 text-yellow-500 flex-shrink-0 mt-0.5" />
+                        <span>{wb.obs}</span>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            ))}
+
+                  {/* Divisor vertical */}
+                  <div className="w-px bg-white/10 self-stretch" />
+
+                  {/* Totalpass */}
+                  <div className="flex-1 flex flex-col gap-2">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-white font-black text-lg">{tp.name}</span>
+                      <span className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full w-fit">{tp.tier}</span>
+                    </div>
+                    <p className="text-gray-400 text-xs">{tp.units}</p>
+                  </div>
+                </div>
+              );
+            })()}
+
           </div>
         </motion.div>
 
