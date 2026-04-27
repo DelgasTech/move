@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Modalidades", href: "/#modalidades" },
   { label: "Horários", href: "/#horarios" },
   { label: "Planos", href: "/#planos" },
-  { label: "Parcerias", href: "/parcerias" },
+  { label: "Unidades", href: "/unidades" },
   { label: "Anuncie", href: "/anuncie" },
   { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
   { label: "Contato", href: "/#cta" },

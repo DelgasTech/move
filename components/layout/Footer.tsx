@@ -35,7 +35,7 @@ export default function Footer() {
                 { label: "Modalidades", href: "/#modalidades" },
                 { label: "Horários", href: "/#horarios" },
                 { label: "Planos", href: "/#planos" },
-                { label: "Parcerias", href: "/parcerias" },
+                { label: "Unidades", href: "/unidades" },
                 { label: "Anuncie na Move", href: "/anuncie" },
                 { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
               ].map((link) => (

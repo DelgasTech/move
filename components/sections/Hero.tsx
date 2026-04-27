@@ -47,7 +47,7 @@ export default function Hero() {
 
             <p className="text-gray-300 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed">
               Musculação, Bike Indoor, Cross Training, Pilates, Fisioterapia e muito mais.
-              4 unidades em Salto para você treinar onde quiser.
+              6 unidades em Salto para você treinar onde quiser.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -77,8 +77,8 @@ export default function Hero() {
             className="mt-16 flex gap-10"
           >
             {[
-              { value: "4", label: "Unidades" },
-              { value: "9+", label: "Modalidades" },
+              { value: "6", label: "Unidades" },
+              { value: "10+", label: "Modalidades" },
               { value: "100%", label: "Dedicação" },
             ].map((stat) => (
               <div key={stat.label}>
