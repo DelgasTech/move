@@ -36,6 +36,8 @@ export default function Footer() {
                 { label: "Horários", href: "/#horarios" },
                 { label: "Planos", href: "/#planos" },
                 { label: "Unidades", href: "/unidades" },
+                { label: "Moutonnée Move", href: "/moutonnee" },
+                { label: "Smash Move", href: "/smash" },
                 { label: "Anuncie na Move", href: "/anuncie" },
                 { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
               ].map((link) => (

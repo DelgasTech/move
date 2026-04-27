@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { FiMenu, FiX, FiMessageCircle } from "react-icons/fi";
+import { FiMenu, FiX, FiMessageCircle, FiChevronDown } from "react-icons/fi";
 import Logo from "@/components/Logo";
 
 const navLinks = [
@@ -15,6 +15,11 @@ const navLinks = [
   { label: "Contato", href: "/#cta" },
 ];
 
+const parceiros = [
+  { label: "Moutonnée Move", href: "/moutonnee" },
+  { label: "Smash Move", href: "/smash" },
+];
+
 const WA_NUMBER = "5511910204226";
 const WA_MESSAGE = encodeURIComponent("Olá! Tenho interesse em conhecer os planos da Move Academia.");
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
@@ -22,6 +27,18 @@ const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [parceirosOpen, setParceirosOpen] = useState(false);
+  const parceirosRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (parceirosRef.current && !parceirosRef.current.contains(e.target as Node)) {
+        setParceirosOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -53,6 +70,30 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            {/* Parceiros dropdown */}
+            <div ref={parceirosRef} className="relative">
+              <button
+                onClick={() => setParceirosOpen(!parceirosOpen)}
+                className="flex items-center gap-1 text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+              >
+                Parceiros
+                <FiChevronDown className={`w-3.5 h-3.5 transition-transform ${parceirosOpen ? "rotate-180" : ""}`} />
+              </button>
+              {parceirosOpen && (
+                <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-dark-bg/98 backdrop-blur-md border border-white/10 rounded-xl shadow-xl py-2 min-w-[160px]">
+                  {parceiros.map((p) => (
+                    <a
+                      key={p.href}
+                      href={p.href}
+                      onClick={() => setParceirosOpen(false)}
+                      className="block px-4 py-2.5 text-sm text-gray-300 hover:text-primary hover:bg-white/5 transition-colors"
+                    >
+                      {p.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* CTA */}
@@ -91,6 +132,19 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <div className="border-t border-white/10 pt-2">
+              <p className="text-gray-500 text-xs uppercase tracking-widest mb-2 px-0">Parceiros</p>
+              {parceiros.map((p) => (
+                <a
+                  key={p.href}
+                  href={p.href}
+                  className="block text-gray-300 hover:text-primary transition-colors text-base font-medium py-2"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {p.label}
+                </a>
+              ))}
+            </div>
             <a
               href={WA_LINK}
               target="_blank"
