@@ -32,7 +32,7 @@ const unidades = [
   {
     slug: "sete-de-setembro",
     nome: "Sete de Setembro",
-    descricao: "A unidade Sete de Setembro une localização estratégica e estrutura de alto nível. Um ambiente acolhedor, com toda a metodologia Move, para você treinar com foco, constância e os melhores profissionais ao seu lado.",
+    descricao: "A unidade Sete de Setembro, no Vila Henrique, une localização estratégica e estrutura de alto nível. Um ambiente acolhedor, com toda a metodologia Move, para você treinar com foco, constância e os melhores profissionais ao seu lado.",
     telRaw: "5511971071020",
     mapsHref: "https://maps.app.goo.gl/b8Gh1E8PSiPYqJYU8",
     imageSrc: "/images/fachadas/fachada sete de setembro.jpg",
