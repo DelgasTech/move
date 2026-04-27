@@ -10,12 +10,13 @@ interface ParceriaCardProps {
   descricao: string;
   cta: string;
   ctaHref: string;
+  pageHref?: string;
   instagram?: string;
   imageSrc?: string;
   invertido: boolean;
 }
 
-export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, instagram, imageSrc, invertido }: ParceriaCardProps) {
+export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, pageHref, instagram, imageSrc, invertido }: ParceriaCardProps) {
   const imagePath = imageSrc ?? `/images/parcerias/${slug}.jpg`;
 
   return (
@@ -69,11 +70,20 @@ export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, inst
             </p>
 
             <div className="flex flex-wrap gap-4">
+              {pageHref && (
+                <a
+                  href={pageHref}
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-orange-500 text-white font-bold px-6 py-3 rounded-full transition-colors"
+                >
+                  Conhecer
+                  <FiArrowRight className="w-4 h-4" />
+                </a>
+              )}
               <a
                 href={ctaHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-orange-500 text-white font-bold px-6 py-3 rounded-full transition-colors"
+                className="inline-flex items-center gap-2 border-2 border-white/20 hover:border-primary text-white hover:text-primary font-bold px-6 py-3 rounded-full transition-colors"
               >
                 {cta}
                 <FiArrowRight className="w-4 h-4" />
