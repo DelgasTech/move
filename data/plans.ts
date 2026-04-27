@@ -1,3 +1,11 @@
+export interface PlanPartner {
+  name: string;
+  tier: string;
+  units: string;
+  includes: string[];
+  obs?: string;
+}
+
 export interface Plan {
   id: string;
   name: string;
@@ -48,6 +56,29 @@ export const plans: Plan[] = [
       "Aulas reservadas pelo app",
     ],
     highlight: true,
+  },
+];
+
+export const partners: PlanPartner[] = [
+  {
+    name: "Wellhub",
+    tier: "SILVER +",
+    units: "Sete de Setembro",
+    includes: ["Pilates", "Fortalecimento Terapêutico", "Musculação", "Fisioterapia"],
+    obs: "1 check-in por dia, válido para uma modalidade (exceto aulas de corrida e musculação supervisionada)",
+  },
+  {
+    name: "Wellhub",
+    tier: "BASIC +",
+    units: "Central Parque, Rondon e Rui Barbosa",
+    includes: ["Bike", "Musculação", "Aulas Fitness", "Cross"],
+    obs: "1 check-in por dia, válido para uma modalidade (exceto aulas de corrida e musculação supervisionada)",
+  },
+  {
+    name: "Totalpass",
+    tier: "TP 1+",
+    units: "Rui Barbosa, Central Parque e Rondon",
+    includes: [],
   },
 ];
 
