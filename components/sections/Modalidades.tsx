@@ -31,7 +31,7 @@ export default function Modalidades() {
             Nossas Modalidades
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            9 modalidades para você escolher o treino ideal para cada objetivo.
+            13 modalidades distribuídas nas nossas unidades para você escolher o treino ideal.
           </p>
         </motion.div>
 
@@ -46,7 +46,17 @@ export default function Modalidades() {
               className="bg-charcoal/40 border border-white/5 rounded-2xl p-6 hover:border-primary/50 hover:bg-charcoal/60 transition-all duration-300 cursor-default"
             >
               <h3 className="text-white font-bold text-lg mb-2 leading-tight">{mod.name}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{mod.description}</p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-3">{mod.description}</p>
+              <div className="flex flex-wrap gap-1.5 mt-auto">
+                {mod.units.map((unit) => (
+                  <span
+                    key={unit}
+                    className="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-primary/90 border border-primary/20"
+                  >
+                    {unit}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
