@@ -11,11 +11,12 @@ interface ParceriaCardProps {
   cta: string;
   ctaHref: string;
   instagram?: string;
+  imageSrc?: string;
   invertido: boolean;
 }
 
-export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, instagram, invertido }: ParceriaCardProps) {
-  const imagePath = `/images/parcerias/${slug}.jpg`;
+export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, instagram, imageSrc, invertido }: ParceriaCardProps) {
+  const imagePath = imageSrc ?? `/images/parcerias/${slug}.jpg`;
 
   return (
     <section className="py-20 lg:py-28 bg-dark-bg">
