@@ -360,7 +360,7 @@
              transform="scale(3.125)"
              id="g26"><path
                id="path28"
-               style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:#ffffff;fill-opacity:0;fill-rule:nonzero;stroke:none"
                d="M 0,0 H 1920 V 1080 H 0 Z" /></g></g></g><g
          id="g30"><g
            clip-path="url(#clipPath36)"
@@ -368,7 +368,7 @@
              transform="scale(3.125)"
              id="g38"><path
                id="path40"
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:#000000;fill-opacity:0;fill-rule:nonzero;stroke:none"
                d="M 0,0 H 1920 V 1080 H 0 Z" /></g></g></g><g
          id="g42"><g
            clip-path="url(#clipPath48)"
