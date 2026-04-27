@@ -1,6 +1,6 @@
 export type Day = "Seg" | "Ter" | "Qua" | "Qui" | "Sex" | "Sáb" | "Dom";
 
-export const days: Day[] = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+export const days: Day[] = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
 
 export interface ScheduleRow {
   modality: string;
@@ -13,6 +13,71 @@ export interface UnitSchedule {
 }
 
 export const scheduleData: UnitSchedule[] = [
+  {
+    unit: "Central Parque",
+    schedule: [
+      {
+        modality: "Spinning — Prof. Camila",
+        times: {
+          Seg: "—",
+          Ter: "06h00 / 07h00 / 08h00",
+          Qua: "—",
+          Qui: "06h00 / 07h00 / 08h00",
+          Sex: "—",
+          Sáb: "—",
+          Dom: "—",
+        },
+      },
+      {
+        modality: "Spinning — Prof. Michela",
+        times: {
+          Seg: "07h00 / 08h00",
+          Ter: "—",
+          Qua: "07h00 / 08h00",
+          Qui: "—",
+          Sex: "07h00 / 08h00",
+          Sáb: "—",
+          Dom: "—",
+        },
+      },
+      {
+        modality: "Spinning — Prof. Marco",
+        times: {
+          Seg: "17h00",
+          Ter: "—",
+          Qua: "17h00",
+          Qui: "—",
+          Sex: "17h00 / 18h00 / 19h00",
+          Sáb: "—",
+          Dom: "09h15",
+        },
+      },
+      {
+        modality: "Spinning — Prof. Marco / Geraldo",
+        times: {
+          Seg: "—",
+          Ter: "—",
+          Qua: "—",
+          Qui: "—",
+          Sex: "—",
+          Sáb: "07h15 / 08h30",
+          Dom: "08h00",
+        },
+      },
+      {
+        modality: "Spinning — Prof. Cleiton",
+        times: {
+          Seg: "18h00 / 19h00 / 20h00",
+          Ter: "18h00 / 19h00 / 20h00",
+          Qua: "18h00 / 19h00 / 20h00",
+          Qui: "18h00 / 19h00 / 20h00",
+          Sex: "—",
+          Sáb: "—",
+          Dom: "—",
+        },
+      },
+    ],
+  },
   {
     unit: "Rondon",
     schedule: [
