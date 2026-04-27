@@ -122,12 +122,12 @@ export default function UnidadeCard({
               </a>
             </div>
 
-            <div className="mt-8 inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-3">
+            {/* <div className="mt-8 inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-3">
               <div className="w-2 h-2 bg-primary rounded-full" />
               <span className="text-gray-400 text-sm">
                 Unidade oficial <span className="text-white font-semibold">Move Academia</span> — Salto, SP
               </span>
-            </div>
+            </div> */}
           </motion.div>
 
         </div>
