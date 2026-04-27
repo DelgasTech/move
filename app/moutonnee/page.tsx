@@ -1,10 +1,33 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import { motion } from "framer-motion";
-import { FiCheck, FiMessageCircle, FiChevronDown, FiClock, FiZap } from "react-icons/fi";
+import { FiCheck, FiMessageCircle, FiClock, FiZap } from "react-icons/fi";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FAQSection from "./_components/FAQSection";
+
+export const metadata: Metadata = {
+  title: "Moutonnée Move | Cross Training, Hyrox e Musculação em Salto, SP",
+  description:
+    "Box de Cross Training, Hyrox e Musculação em Salto, SP. Estrutura premium, professores especializados e planos a partir de 12x R$189,90. Aceita Wellhub e TotalPass.",
+  keywords: [
+    "crossfit salto sp",
+    "cross training salto",
+    "hyrox salto",
+    "musculação salto",
+    "moutonnée move",
+    "box crossfit salto",
+    "academia salto sp",
+  ],
+  openGraph: {
+    title: "Moutonnée Move — Cross Training, Hyrox e Musculação em Salto, SP",
+    description:
+      "Box de Cross Training, Hyrox e Musculação em Salto. Planos a partir de 12x R$189,90. Wellhub Silver+ e TotalPass TP2.",
+    url: "https://moveacademia.com.br/moutonnee",
+    siteName: "Moutonnée Move",
+    locale: "pt_BR",
+    type: "website",
+  },
+};
 
 const WA = "5511978246761";
 
@@ -13,30 +36,9 @@ function waLink(msg: string) {
 }
 
 const plans = [
-  {
-    id: "mensal",
-    name: "Mensal",
-    price: "250",
-    installments: null,
-    highlight: false,
-    badge: null,
-  },
-  {
-    id: "anual-recorrente",
-    name: "Anual Recorrente",
-    price: "217",
-    installments: "12x",
-    highlight: true,
-    badge: "Mais Popular",
-  },
-  {
-    id: "anual-cartao",
-    name: "Anual Cartão",
-    price: "189,90",
-    installments: "12x",
-    highlight: false,
-    badge: "Melhor Preço",
-  },
+  { id: "mensal", name: "Mensal", price: "250", installments: null, highlight: false, badge: null },
+  { id: "anual-recorrente", name: "Anual Recorrente", price: "217", installments: "12x", highlight: true, badge: "Mais Popular" },
+  { id: "anual-cartao", name: "Anual Cartão", price: "189,90", installments: "12x", highlight: false, badge: "Melhor Preço" },
 ];
 
 const comboPlans = [
@@ -62,30 +64,6 @@ const schedule = [
   { days: "Feriados", hours: "07h às 09h" },
 ];
 
-const faqs = [
-  { q: "Posso fazer musculação?", a: "Sim, está incluso no plano." },
-  { q: "Tem limite de aulas?", a: "Não, acesso ilimitado a todas as modalidades." },
-  { q: "Posso testar antes de assinar?", a: "Sim, oferecemos aula experimental mediante agendamento pelo WhatsApp." },
-  { q: "Tem convênio?", a: "Sim, aceitamos Wellhub Silver+ e TotalPass TP2." },
-  { q: "Sou aluno Move e quero migrar. Tem taxa?", a: "Não há taxa de cancelamento." },
-];
-
-function FAQ({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-white/10">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-4 text-left text-white font-semibold text-sm hover:text-primary transition-colors"
-      >
-        {q}
-        <FiChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && <p className="pb-4 text-gray-400 text-sm leading-relaxed">{a}</p>}
-    </div>
-  );
-}
-
 export default function MoutoннeePage() {
   return (
     <>
@@ -103,7 +81,7 @@ export default function MoutoннeePage() {
               className="max-w-3xl"
             >
               <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-                Parceiro Move · Box de CrossFit
+                Unidade Move · Box de CrossFit — Salto, SP
               </span>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mt-4 mb-6 leading-tight">
                 Moutonnée<br />
@@ -205,9 +183,7 @@ export default function MoutoннeePage() {
                   )}
                   <h3 className="text-white font-black text-lg mb-4">{plan.name}</h3>
                   <div className="flex items-end gap-1 mb-2">
-                    {plan.installments && (
-                      <span className="text-gray-400 text-sm mb-1">{plan.installments}</span>
-                    )}
+                    {plan.installments && <span className="text-gray-400 text-sm mb-1">{plan.installments}</span>}
                     <span className="text-gray-400 text-sm">R$</span>
                     <span className="text-4xl font-black text-white leading-none">{plan.price}</span>
                     {!plan.installments && <span className="text-gray-400 text-sm mb-1">/mês</span>}
@@ -404,26 +380,7 @@ export default function MoutoннeePage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="py-20 bg-charcoal/20 border-t border-white/5">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-10"
-            >
-              <span className="text-primary font-semibold text-sm uppercase tracking-widest">Dúvidas</span>
-              <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">Perguntas Frequentes</h2>
-            </motion.div>
-            <div className="divide-y divide-white/10 border-t border-white/10">
-              {faqs.map((faq) => (
-                <FAQ key={faq.q} q={faq.q} a={faq.a} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection />
 
         {/* CTA Final */}
         <section className="py-20 bg-primary">
@@ -434,9 +391,7 @@ export default function MoutoннeePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                Pronto para começar?
-              </h2>
+              <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Pronto para começar?</h2>
               <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
                 Agende sua aula experimental gratuitamente e conheça o Moutonnée Move.
               </p>
