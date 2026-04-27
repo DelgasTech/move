@@ -19,7 +19,7 @@ const units = [
   "Rondon",
   "Rui Barbosa",
   "Sete de Setembro",
-  "Central / Parque",
+  "Central Parque",
   "Todas",
 ];
 

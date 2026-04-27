@@ -40,7 +40,7 @@ const unidades = [
   },
   {
     slug: "central-parque",
-    nome: "Central / Parque",
+    nome: "Central Parque",
     descricao: "A unidade Central Parque é a nossa referência no Jardim Celani. Com espaço amplo, variedade de modalidades e um ambiente moderno e energético, é o lugar perfeito para quem busca evolução constante em um dos melhores centros de treinamento da cidade.",
     telRaw: "5511934461020",
     mapsHref: "https://www.google.com/maps/dir/-23.1243776,-47.251456/Move+-+Central+Parque,+Av.+Get%C3%BAlio+Vargas,+770+-+Piso+1+-+Jardim+Celani,+Salto+-+SP,+13326-185/@-23.1620744,-47.3189233,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94cf5304b22be769:0x937b69c90efbcaac!2m2!1d-47.307373!2d-23.1909294?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D",

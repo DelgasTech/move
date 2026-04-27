@@ -50,7 +50,7 @@ export const plans: Plan[] = [
     includes: [
       "Musculação ilimitada",
       "Crossfit (Rui Barbosa)",
-      "Bike Indoor (Central / Parque)",
+      "Bike Indoor (Central Parque)",
       "Fisioterapia",
       "Aulas Fitness (Rondon / Rui Barbosa)",
       "Aulas reservadas pelo app",
