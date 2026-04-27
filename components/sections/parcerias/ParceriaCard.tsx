@@ -31,12 +31,12 @@ export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, inst
             transition={{ duration: 0.7 }}
             className={invertido ? "lg:order-2" : "lg:order-1"}
           >
-            <div className="group relative h-[420px] rounded-3xl overflow-hidden bg-charcoal/40 border border-white/10 flex items-center justify-center">
+            <div className="relative h-[420px] rounded-3xl overflow-hidden bg-charcoal/40 border border-white/10 flex items-center justify-center">
               <Image
                 src={imagePath}
                 alt={nome}
                 fill
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
                 onError={() => {}}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/20">
