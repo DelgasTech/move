@@ -12,6 +12,7 @@ interface UnidadeCardProps {
   tel: string;
   telRaw: string;
   mapsHref?: string;
+  imageSrc?: string;
   invertido: boolean;
 }
 
@@ -23,9 +24,10 @@ export default function UnidadeCard({
   tel,
   telRaw,
   mapsHref,
+  imageSrc,
   invertido,
 }: UnidadeCardProps) {
-  const imagePath = `/images/unidades/${slug}.jpg`;
+  const imagePath = imageSrc ?? `/images/unidades/${slug}.jpg`;
 
   return (
     <section className="py-20 lg:py-28 bg-dark-bg">
