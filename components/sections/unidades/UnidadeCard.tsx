@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiMapPin, FiPhone } from "react-icons/fi";
+import { FiArrowRight, FiPhone } from "react-icons/fi";
 
 interface UnidadeCardProps {
   slug: string;
   nome: string;
   descricao: string;
-  endereco: string;
-  tel: string;
+  endereco?: string;
+  tel?: string;
   telRaw: string;
   mapsHref?: string;
   imageSrc?: string;
@@ -27,7 +27,8 @@ export default function UnidadeCard({
   imageSrc,
   invertido,
 }: UnidadeCardProps) {
-  const imagePath = imageSrc ?? `/images/unidades/${slug}.jpg`;
+  const imagePath = imageSrc || `/images/unidades/${slug}.jpg`;
+  const hasImage = !!imageSrc;
 
   return (
     <section className="py-20 lg:py-28 bg-dark-bg">
@@ -43,19 +44,22 @@ export default function UnidadeCard({
             className={invertido ? "lg:order-2" : "lg:order-1"}
           >
             <div className="relative h-[420px] rounded-3xl overflow-hidden bg-charcoal/40 border border-white/10 flex items-center justify-center">
-              <Image
-                src={imagePath}
-                alt={nome}
-                fill
-                className="object-cover"
-                onError={() => {}}
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/20">
-                <div className="w-16 h-16 border-2 border-white/10 rounded-2xl flex items-center justify-center">
-                  <span className="text-2xl font-black text-white/20">?</span>
+              {hasImage && (
+                <Image
+                  src={imagePath}
+                  alt={nome}
+                  fill
+                  className="object-cover"
+                />
+              )}
+              {!hasImage && (
+                <div className="flex flex-col items-center justify-center gap-3 text-white/20">
+                  <div className="w-16 h-16 border-2 border-white/10 rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl font-black text-white/20">?</span>
+                  </div>
+                  <p className="text-sm">Imagem em breve</p>
                 </div>
-                <p className="text-sm">Imagem em breve</p>
-              </div>
+              )}
             </div>
           </motion.div>
 
@@ -77,18 +81,23 @@ export default function UnidadeCard({
               {descricao}
             </p>
 
-            <div className="flex flex-col gap-3 mb-8">
-              <div className="flex items-center gap-3 text-gray-400 text-sm">
-                <FiMapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>{endereco}</span>
+            {(endereco || tel) && (
+              <div className="flex flex-col gap-3 mb-8">
+                {endereco && (
+                  <div className="flex items-center gap-3 text-gray-400 text-sm">
+                    <span>{endereco}</span>
+                  </div>
+                )}
+                {tel && (
+                  <div className="flex items-center gap-3 text-gray-400 text-sm">
+                    <FiPhone className="w-4 h-4 text-primary flex-shrink-0" />
+                    <a href={`tel:+${telRaw}`} className="hover:text-primary transition-colors">
+                      {tel}
+                    </a>
+                  </div>
+                )}
               </div>
-              <div className="flex items-center gap-3 text-gray-400 text-sm">
-                <FiPhone className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href={`tel:+${telRaw}`} className="hover:text-primary transition-colors">
-                  {tel}
-                </a>
-              </div>
-            </div>
+            )}
 
             <div className="flex flex-wrap gap-4">
               {mapsHref && (

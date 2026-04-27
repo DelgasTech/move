@@ -32,19 +32,21 @@ export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, inst
             className={invertido ? "lg:order-2" : "lg:order-1"}
           >
             <div className="relative h-[420px] rounded-3xl overflow-hidden bg-charcoal/40 border border-white/10 flex items-center justify-center">
-              <Image
-                src={imagePath}
-                alt={nome}
-                fill
-                className="object-cover"
-                onError={() => {}}
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/20">
-                <div className="w-16 h-16 border-2 border-white/10 rounded-2xl flex items-center justify-center">
-                  <span className="text-2xl font-black text-white/20">?</span>
+              {imageSrc ? (
+                <Image
+                  src={imagePath}
+                  alt={nome}
+                  fill
+                  className="object-cover"
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center gap-3 text-white/20">
+                  <div className="w-16 h-16 border-2 border-white/10 rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl font-black text-white/20">?</span>
+                  </div>
+                  <p className="text-sm">Imagem em breve</p>
                 </div>
-                <p className="text-sm">Imagem em breve</p>
-              </div>
+              )}
             </div>
           </motion.div>
 
