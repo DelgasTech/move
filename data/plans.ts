@@ -71,7 +71,7 @@ export const partners: PlanPartner[] = [
     name: "Wellhub",
     tier: "BASIC +",
     units: "Central Parque, Rondon e Rui Barbosa",
-    includes: ["Bike", "Musculação", "Aulas Fitness", "Cross"],
+    includes: ["Bike", "Musculação", "Aulas Fitness"],
     obs: "1 check-in por dia, válido para uma modalidade (exceto aulas de corrida e musculação supervisionada)",
   },
   {
