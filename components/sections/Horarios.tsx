@@ -28,26 +28,18 @@ export default function Horarios() {
   const [selectedUnit, setSelectedUnit] = useState(scheduleData[0].unit);
   const currentSchedule = scheduleData.find((u) => u.unit === selectedUnit)!;
 
-  const unitProfs = Array.from(
-    new Set(
-      currentSchedule.schedule
-        .map((r) => r.modality.split(" — ")[1]?.replace("Prof. ", "").trim())
-        .filter(Boolean)
-    )
-  ) as string[];
+  const allProfs = Object.entries(professorImages);
 
   return (
     <section id="horarios" className="relative py-20 lg:py-28 bg-white overflow-hidden">
 
-      {/* Professor images — decorative background */}
-      {unitProfs.map((prof, i) => {
-        const src = professorImages[prof];
-        if (!src) return null;
-        const isRight = i % 2 !== 0;
+      {/* Professor images — decorative background (test: all 3) */}
+      {allProfs.map(([prof, src], i) => {
+        const positions = ["left-0", "left-1/2 -translate-x-1/2", "right-0"];
         return (
           <div
             key={prof}
-            className={`pointer-events-none absolute bottom-0 ${isRight ? "right-0" : "left-0"} h-[85%] w-[220px] lg:w-[280px] select-none`}
+            className={`pointer-events-none absolute bottom-0 ${positions[i]} h-[85%] w-[220px] lg:w-[280px] select-none`}
           >
             <Image
               src={src}
