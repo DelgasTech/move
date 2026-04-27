@@ -38,7 +38,7 @@ const unidades = [
     endereco: "Salto, SP",
     tel: "+55 11 97107-1020",
     telRaw: "5511971071020",
-    mapsHref: undefined,
+    mapsHref: "https://maps.app.goo.gl/b8Gh1E8PSiPYqJYU8",
     invertido: false,
   },
   {
