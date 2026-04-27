@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiCheck, FiMessageCircle, FiAlertCircle } from "react-icons/fi";
-import { plans, partners, type PricePeriod } from "@/data/plans";
+import { plans, partners, extraPricing, type PricePeriod } from "@/data/plans";
 
 const WA_NUMBER = "5511910204226";
 
@@ -98,9 +98,6 @@ export default function Planos() {
                     {period === "anual" ? "Pagamento anual" : "Pagamento semestral"}
                   </p>
                 )}
-                <p className="text-gray-500 text-xs mt-2">
-                  Diária: <span className="text-gray-300 font-semibold">R$ {plan.diaria},00</span>
-                </p>
               </div>
 
               <ul className="space-y-3 mb-8 flex-1">
@@ -128,6 +125,25 @@ export default function Planos() {
             </motion.div>
           ))}
         </div>
+        {/* Extra pricing */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12"
+        >
+          <h3 className="text-center text-white font-black text-xl mb-6">Outras Opções</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            {extraPricing.map((item) => (
+              <div key={item.label} className="bg-charcoal/50 border border-white/10 rounded-2xl p-4 text-center">
+                <p className="text-gray-400 text-xs mb-1">{item.label}</p>
+                <p className="text-white font-black text-2xl">R$ {item.price}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Partners — Wellhub & Totalpass */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

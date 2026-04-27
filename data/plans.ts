@@ -15,9 +15,13 @@ export interface Plan {
     semestral: number;
     mensal: number;
   };
-  diaria: number;
   includes: string[];
   highlight: boolean;
+}
+
+export interface ExtraPricing {
+  label: string;
+  price: number;
 }
 
 export const plans: Plan[] = [
@@ -29,7 +33,6 @@ export const plans: Plan[] = [
       semestral: 130,
       mensal: 145,
     },
-    diaria: 30,
     includes: [
       "Musculação ilimitada",
       "Aulas Fitness (Rondon / Rui Barbosa)",
@@ -46,17 +49,21 @@ export const plans: Plan[] = [
       semestral: 180,
       mensal: 195,
     },
-    diaria: 40,
     includes: [
       "Musculação ilimitada",
-      "Crossfit (Rui Barbosa)",
-      "Bike Indoor (Central Parque)",
-      "Fisioterapia",
+      "Spinning (Central Parque)",
       "Aulas Fitness (Rondon / Rui Barbosa)",
       "Aulas reservadas pelo app",
     ],
     highlight: true,
   },
+];
+
+export const extraPricing: ExtraPricing[] = [
+  { label: "Diária Musculação", price: 30 },
+  { label: "Diária Aulas Coletivas", price: 40 },
+  { label: "Semanal", price: 80 },
+  { label: "Quinzenal", price: 110 },
 ];
 
 export const partners: PlanPartner[] = [
@@ -71,7 +78,7 @@ export const partners: PlanPartner[] = [
     name: "Wellhub",
     tier: "BASIC +",
     units: "Central Parque, Rondon e Rui Barbosa",
-    includes: ["Bike", "Musculação", "Aulas Fitness"],
+    includes: ["Spinning", "Musculação", "Aulas Fitness"],
     obs: "1 check-in por dia, válido para uma modalidade (exceto aulas de corrida e musculação supervisionada)",
   },
   {
