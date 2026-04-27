@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { scheduleData, days } from "@/data/schedule";
 
@@ -11,11 +10,6 @@ const professorColors: Record<string, { bg: string; text: string }> = {
   "Heidy": { bg: "bg-teal-100",   text: "text-teal-700"   },
 };
 
-const professorImages: Record<string, string> = {
-  "Erica":   "/images/prof/Erica-removebg-preview.png",
-  "Gabriel": "/images/prof/Gabriel-removebg-preview.png",
-  "Heidy":   "/images/prof/Heidy-removebg-preview.png",
-};
 
 function getProfColor(modality: string) {
   for (const [prof, style] of Object.entries(professorColors)) {
@@ -28,31 +22,10 @@ export default function Horarios() {
   const [selectedUnit, setSelectedUnit] = useState(scheduleData[0].unit);
   const currentSchedule = scheduleData.find((u) => u.unit === selectedUnit)!;
 
-  const allProfs = Object.entries(professorImages);
-
   return (
-    <section id="horarios" className="relative py-20 lg:py-28 bg-white overflow-hidden">
+    <section id="horarios" className="py-20 lg:py-28 bg-white">
 
-      {/* Professor images — decorative background (test: all 3) */}
-      {allProfs.map(([prof, src], i) => {
-        const positions = ["left-[-40px]", "left-1/2 -translate-x-1/2", "right-[-40px]"];
-        return (
-          <div
-            key={prof}
-            className={`pointer-events-none absolute bottom-0 ${positions[i]} h-full w-[38%] max-w-[480px] select-none opacity-20`}
-          >
-            <Image
-              src={src}
-              alt={`Prof. ${prof}`}
-              fill
-              className="object-contain object-bottom"
-              sizes="480px"
-            />
-          </div>
-        );
-      })}
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
