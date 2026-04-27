@@ -7,6 +7,7 @@ export interface Plan {
     semestral: number;
     mensal: number;
   };
+  diaria: number;
   includes: string[];
   highlight: boolean;
 }
@@ -20,6 +21,7 @@ export const plans: Plan[] = [
       semestral: 130,
       mensal: 145,
     },
+    diaria: 30,
     includes: [
       "Musculação ilimitada",
       "Aulas Fitness (Rondon / Rui Barbosa)",
@@ -36,6 +38,7 @@ export const plans: Plan[] = [
       semestral: 180,
       mensal: 195,
     },
+    diaria: 40,
     includes: [
       "Musculação ilimitada",
       "Crossfit (Rui Barbosa)",

@@ -98,6 +98,9 @@ export default function Planos() {
                     {period === "anual" ? "Pagamento anual" : "Pagamento semestral"}
                   </p>
                 )}
+                <p className="text-gray-500 text-xs mt-2">
+                  Diária: <span className="text-gray-300 font-semibold">R$ {plan.diaria},00</span>
+                </p>
               </div>
 
               <ul className="space-y-3 mb-8 flex-1">
