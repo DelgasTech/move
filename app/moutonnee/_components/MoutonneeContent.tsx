@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiCheck, FiMessageCircle, FiClock, FiZap } from "react-icons/fi";
-import FAQSection from "./FAQSection";
+import { FiCheck, FiMessageCircle, FiClock } from "react-icons/fi";
 
 const WA = "5511978246761";
 
@@ -22,15 +22,7 @@ const comboPlans = [
   { name: "Anual", price: "289,90", installments: "12x" },
 ];
 
-const modalities = ["Cross Training", "Hyrox", "Musculação"];
-
-const diferenciais = [
-  "Estrutura nova e moderna",
-  "Professores qualificados",
-  "Aulas dinâmicas",
-  "Ambiente acolhedor",
-  "Comunidade forte",
-];
+const modalities = ["Cross Training", "Hyrox", "Recovery"];
 
 const schedule = [
   { days: "Segunda a Sexta", hours: "05h às 22h" },
@@ -42,10 +34,17 @@ const schedule = [
 export default function MoutonneeContent() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 lg:pb-28 bg-dark-bg relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(247,148,29,0.12)_0%,_transparent_60%)]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Hero — fachada full screen */}
+      <section className="relative h-screen min-h-[600px] flex items-end overflow-hidden">
+        <Image
+          src="/images/fachadas/fachada montounne move.jpeg"
+          alt="Moutonnée Move"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +59,7 @@ export default function MoutonneeContent() {
               <span className="text-primary">Move</span>
             </h1>
             <p className="text-gray-300 text-xl leading-relaxed mb-10 max-w-xl">
-              Cross Training, Hyrox e Musculação com estrutura premium, professores especializados e uma comunidade que impulsiona seus resultados.
+              Cross Training, Hyrox e Recovery com estrutura premium, professores especializados e uma comunidade que impulsiona seus resultados.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -108,7 +107,6 @@ export default function MoutonneeContent() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-charcoal/60 border border-white/10 rounded-2xl p-6 text-center"
               >
-                <FiZap className="w-8 h-8 text-primary mx-auto mb-3" />
                 <h3 className="text-white font-black text-lg">{mod}</h3>
                 <p className="text-gray-500 text-xs mt-1">Acesso ilimitado</p>
               </motion.div>
@@ -129,7 +127,7 @@ export default function MoutonneeContent() {
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">Invista no seu treino</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3">Planos Moutonnée Move</h2>
-            <p className="text-gray-400 mt-4">Cross Training + Hyrox + Musculação · Acesso ilimitado</p>
+            <p className="text-gray-400 mt-4">Cross Training + Hyrox + Recovery · Acesso ilimitado</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -161,7 +159,7 @@ export default function MoutonneeContent() {
                   {!plan.installments && <span className="text-gray-400 text-sm mb-1">/mês</span>}
                 </div>
                 <ul className="space-y-2 mb-8 flex-1 mt-4">
-                  {["Acesso ilimitado", "Cross Training", "Hyrox", "Musculação", "Professores especializados"].map((item) => (
+                  {["Acesso ilimitado", "Cross Training", "Hyrox", "Recovery", "Professores especializados"].map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <FiCheck className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-gray-300 text-sm">{item}</span>
@@ -195,7 +193,7 @@ export default function MoutonneeContent() {
           >
             <div>
               <h4 className="text-white font-black text-lg">Day Use</h4>
-              <p className="text-gray-400 text-sm mt-1">Acesso livre no dia · Cross, Hyrox ou Musculação</p>
+              <p className="text-gray-400 text-sm mt-1">Acesso livre no dia · Cross, Hyrox ou Recovery</p>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-3xl font-black text-white">R$ 50<span className="text-gray-400 text-base font-normal">,00</span></span>
@@ -273,8 +271,8 @@ export default function MoutonneeContent() {
             <h4 className="text-center text-white font-black text-xl mb-6">Convênios aceitos</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { name: "Wellhub", tier: "Silver+", obs: "1 check-in por dia · Cross, Hyrox ou Musculação" },
-                { name: "TotalPass", tier: "TP2", obs: "1 check-in por dia · Cross, Hyrox ou Musculação" },
+                { name: "Wellhub", tier: "Silver+", obs: "1 check-in por dia · Cross, Hyrox ou Recovery" },
+                { name: "TotalPass", tier: "TP2", obs: "1 check-in por dia · Cross, Hyrox ou Recovery" },
               ].map((c) => (
                 <div key={c.name} className="bg-charcoal/40 border border-white/10 rounded-2xl p-5 flex items-center justify-between gap-4">
                   <div>
@@ -320,39 +318,6 @@ export default function MoutonneeContent() {
           </div>
         </div>
       </section>
-
-      {/* Diferenciais */}
-      <section className="py-20 bg-dark-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Por que escolher</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">Nossos Diferenciais</h2>
-          </motion.div>
-          <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
-            {diferenciais.map((d, i) => (
-              <motion.div
-                key={d}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="flex items-center gap-2 bg-charcoal/60 border border-white/10 rounded-full px-5 py-3"
-              >
-                <FiCheck className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-gray-300 text-sm font-semibold">{d}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <FAQSection />
 
       {/* CTA Final */}
       <section className="py-20 bg-primary">
