@@ -9,13 +9,13 @@ const diferenciais = [
     icon: <FiUsers className="w-8 h-8" />,
     title: "Espaço Kids",
     description:
-      "Área dedicada para os pequenos se divertirem enquanto você treina com tranquilidade.",
+      "Área dedicada para os pequenos se divertirem enquanto você treina com tranquilidade. Monitoramento de segunda a quinta das 17h às 21h na unidade Rondon.",
   },
   {
     icon: <FiSmartphone className="w-8 h-8" />,
     title: "App de Reservas",
     description:
-      "Reserve suas aulas pelo aplicativo Move com facilidade e nunca perca seu horário favorito.",
+      "Acompanhe seu treino pela tela do seu celular, tire dúvidas sobre execução dos exercícios e acompanhe seu rendimento pelo app da Move. Reserve suas aulas e nunca perca seu horário favorito.",
   },
   {
     icon: <FiShoppingBag className="w-8 h-8" />,
