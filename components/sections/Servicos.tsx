@@ -65,27 +65,27 @@ export default function Servicos() {
                 {service.description}
               </p>
 
-              <div className="mb-5">
-                <span className={`text-3xl font-black ${service.highlight ? "text-primary" : "text-charcoal"}`}>
-                  R$ {service.price.toFixed(2).replace(".", ",")}
-                </span>
-                <span className={`text-sm ml-1 ${service.highlight ? "text-gray-400" : "text-gray-400"}`}>
-                  /mês
-                </span>
-              </div>
+              {service.price != null && (
+                <div className="mb-5">
+                  <span className={`text-3xl font-black ${service.highlight ? "text-primary" : "text-charcoal"}`}>
+                    R$ {service.price.toFixed(2).replace(".", ",")}
+                  </span>
+                  <span className="text-sm ml-1 text-gray-400">/mês</span>
+                </div>
+              )}
 
               <a
                 href={getWaLink(service.name)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center justify-center gap-2 font-semibold py-3 rounded-full text-sm transition-colors ${
+                className={`flex items-center justify-center gap-2 font-semibold py-3 rounded-full text-sm transition-colors mt-auto ${
                   service.highlight
                     ? "bg-primary hover:bg-orange-500 text-white"
                     : "border-2 border-primary text-primary hover:bg-primary hover:text-white"
                 }`}
               >
                 <FiMessageCircle className="w-4 h-4" />
-                Saber mais
+                {service.ctaLabel ?? "Saber mais"}
               </a>
             </motion.div>
           ))}

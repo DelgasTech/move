@@ -2,11 +2,18 @@ export interface Service {
   id: string;
   name: string;
   description: string;
-  price: number;
+  price?: number;
+  ctaLabel?: string;
   highlight?: boolean;
 }
 
 export const services: Service[] = [
+  {
+    id: "recovery",
+    name: "Recovery",
+    description: "Técnicas de recuperação ativa para otimizar seu desempenho e prevenir lesões. Disponível no Moutonnée Move.",
+    ctaLabel: "Saber mais (imersão no gelo)",
+  },
   {
     id: "nutri",
     name: "Nutricionista",

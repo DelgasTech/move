@@ -87,6 +87,19 @@ export const partners: PlanPartner[] = [
     units: "Rui Barbosa, Central Parque e Rondon",
     includes: [],
   },
+  {
+    name: "Wellhub",
+    tier: "SILVER +",
+    units: "Moutonnée Move",
+    includes: ["Cross Training", "Hyrox", "Recovery"],
+    obs: "1 check-in por dia, válido para uma modalidade",
+  },
+  {
+    name: "Totalpass",
+    tier: "TP 2",
+    units: "Moutonnée Move",
+    includes: [],
+  },
 ];
 
 export type PricePeriod = "anual" | "semestral" | "mensal";

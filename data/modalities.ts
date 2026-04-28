@@ -22,13 +22,13 @@ export const modalities: Modality[] = [
     id: "running",
     name: "Running",
     description: "Corridas e treinos no Estádio Municipal com assessoria especializada.",
-    units: ["Rondon"],
+    units: [],
   },
   {
     id: "cross",
     name: "Cross Team",
     description: "Cross Training funcional em equipe para desafiar seus limites.",
-    units: ["Rondon"],
+    units: ["Moutonnée Move"],
   },
   {
     id: "fitness",
@@ -64,12 +64,6 @@ export const modalities: Modality[] = [
     id: "hyrox",
     name: "Hyrox",
     description: "Prepare-se para a maior competição de fitness do mundo com treinos específicos.",
-    units: ["Moutonnée Move"],
-  },
-  {
-    id: "recovery",
-    name: "Recovery",
-    description: "Técnicas de recuperação ativa para otimizar seu desempenho e prevenir lesões.",
     units: ["Moutonnée Move"],
   },
   {
