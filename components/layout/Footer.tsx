@@ -96,8 +96,8 @@ export default function Footer() {
               ))}
               <li className="flex items-center gap-2 pt-1">
                 <FiMail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="mailto:contato@moveacademia.com.br" className="hover:text-primary transition-colors">
-                  contato@moveacademia.com.br
+                <a href="mailto:relacionamentoaoclientemove@gmail.com" className="hover:text-primary transition-colors">
+                  relacionamentoaoclientemove@gmail.com
                 </a>
               </li>
             </ul>
