@@ -15,6 +15,11 @@ export const services: Service[] = [
     ctaLabel: "Saber mais (imersão no gelo)",
   },
   {
+    id: "fisioterapia",
+    name: "Fisioterapia",
+    description: "Reabilitação e recuperação com profissionais qualificados. Disponível na unidade Sete de Setembro.",
+  },
+  {
     id: "nutri",
     name: "Nutricionista",
     description: "Avaliação nutricional completa e plano alimentar personalizado para seus objetivos.",
