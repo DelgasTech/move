@@ -26,7 +26,7 @@ export default function Equipe() {
               Nossa equipe não é só instrutora, ela treina, compete e inspira. São profissionais
               apaixonados que vivem o que ensinam e estão prontos para te ajudar a superar seus limites.
             </p>
-            <p className="text-gray-500 leading-relaxed">
+            <p className="text-gray-400 text-lg leading-relaxed">
               Com profissionais certificados em musculação, cross training, pilates, bike indoor,
               fisioterapia e muito mais, a Move oferece o suporte completo que você precisa para
               evoluir de verdade.
