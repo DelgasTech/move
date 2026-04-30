@@ -23,7 +23,7 @@ export default function Equipe() {
               <span className="text-primary">Vive</span> o Esporte
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              Nossa equipe não é só instrutora — ela treina, compete e inspira. São profissionais
+              Nossa equipe não é só instrutora, ela treina, compete e inspira. São profissionais
               apaixonados que vivem o que ensinam e estão prontos para te ajudar a superar seus limites.
             </p>
             <p className="text-gray-500 leading-relaxed">
@@ -42,7 +42,7 @@ export default function Equipe() {
             className="relative h-[420px] rounded-3xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/images/equipe.jpg"
+              src="/images/time move.jpg"
               alt="Equipe Move Academia"
               fill
               className="object-cover object-top"
