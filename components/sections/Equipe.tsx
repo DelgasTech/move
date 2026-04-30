@@ -39,14 +39,14 @@ export default function Equipe() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl"
+            className="relative rounded-3xl overflow-hidden shadow-2xl max-h-[480px]"
           >
             <Image
               src="/images/time move.jpg"
               alt="Equipe Move Academia"
               width={900}
               height={900}
-              className="w-full h-auto"
+              className="w-full h-auto object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/50 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
