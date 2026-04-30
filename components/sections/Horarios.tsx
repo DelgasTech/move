@@ -6,7 +6,7 @@ import { scheduleData, days } from "@/data/schedule";
 
 const professorColors: Record<string, { bg: string; text: string }> = {
   "Erica":   { bg: "bg-violet-100", text: "text-violet-700" },
-  "Biel":    { bg: "bg-orange-100", text: "text-orange-700" },
+  "Gabriel": { bg: "bg-orange-100", text: "text-orange-700" },
   "Heidy":   { bg: "bg-teal-100",   text: "text-teal-700"   },
   "Camila":  { bg: "bg-pink-100",   text: "text-pink-700"   },
   "Michela": { bg: "bg-sky-100",    text: "text-sky-700"    },

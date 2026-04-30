@@ -34,7 +34,7 @@ export const modalities: Modality[] = [
     id: "fitness",
     name: "Sala Fitness",
     description: "Jump, Ritbox, Step, Fitdance e Aulas Kids em aulas animadas e dinâmicas.",
-    units: ["Rondon", "Rui Barbosa"],
+    units: ["Central Parque", "Rondon", "Rui Barbosa"],
   },
   {
     id: "pilates",
@@ -74,7 +74,7 @@ export const modalities: Modality[] = [
   },
   {
     id: "foot-volei",
-    name: "Foot Vôlei",
+    name: "Futevôlei",
     description: "Vôlei com os pés — técnica, habilidade e agilidade na areia.",
     units: ["Smash Move"],
   },

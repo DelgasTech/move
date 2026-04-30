@@ -130,7 +130,7 @@ export const scheduleData: UnitSchedule[] = [
         },
       },
       {
-        modality: "MoveDance — Prof. Biel",
+        modality: "MoveDance — Prof. Gabriel",
         times: {
           Seg: "—",
           Ter: "08h00 / 19h20",
@@ -142,7 +142,7 @@ export const scheduleData: UnitSchedule[] = [
         },
       },
       {
-        modality: "Step — Prof. Biel",
+        modality: "Step — Prof. Gabriel",
         times: {
           Seg: "—",
           Ter: "09h00 / 18h30",
@@ -154,7 +154,7 @@ export const scheduleData: UnitSchedule[] = [
         },
       },
       {
-        modality: "Pump — Prof. Biel",
+        modality: "Pump — Prof. Gabriel",
         times: {
           Seg: "—",
           Ter: "17h40",
@@ -166,7 +166,7 @@ export const scheduleData: UnitSchedule[] = [
         },
       },
       {
-        modality: "G.A.P — Prof. Biel",
+        modality: "G.A.P — Prof. Gabriel",
         times: {
           Seg: "—",
           Ter: "—",
