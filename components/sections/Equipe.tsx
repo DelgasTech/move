@@ -45,7 +45,7 @@ export default function Equipe() {
               src="/images/time move.jpg"
               alt="Equipe Move Academia"
               fill
-              className="object-cover object-top"
+              className="object-cover object-bottom"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/50 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
