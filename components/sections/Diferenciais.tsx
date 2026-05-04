@@ -9,7 +9,7 @@ const diferenciais = [
     icon: <FiUsers className="w-8 h-8" />,
     title: "Espaço Kids",
     description:
-      "Área dedicada para os pequenos se divertirem enquanto você treina com tranquilidade. Monitoramento de segunda a quinta das 17h às 21h na unidade Rondon.",
+      "Área dedicada para os pequenos se divertirem enquanto você treina com tranquilidade. Disponível nas unidades Rondon e Central Parque. Monitoramento de segunda a quinta das 17h às 21h na unidade Rondon.",
   },
   {
     icon: <FiSmartphone className="w-8 h-8" />,

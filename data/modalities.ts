@@ -25,12 +25,6 @@ export const modalities: Modality[] = [
     units: [],
   },
   {
-    id: "cross",
-    name: "Cross Team",
-    description: "Cross Training funcional em equipe para desafiar seus limites.",
-    units: ["Moutonnée Move"],
-  },
-  {
     id: "fitness",
     name: "Sala Fitness",
     description: "Jump, Ritbox, Step, Fitdance e Aulas Kids em aulas animadas e dinâmicas.",
