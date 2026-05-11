@@ -13,7 +13,7 @@ export default function TrabalheHero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/equipe.jpg"
+          src="/images/time move.jpg"
           alt="Equipe Move Academia"
           fill
           className="object-cover object-top"

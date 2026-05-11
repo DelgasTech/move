@@ -6,7 +6,7 @@ import ParceriaCard from "@/components/sections/parcerias/ParceriaCard";
 
 export const metadata: Metadata = {
   title: "Parcerias | Move Academia",
-  description: "Conheça as marcas parceiras da Move Academia: Moutonnée Move e Smash Move.",
+  description: "Conheça as marcas parceiras da Move Academia: Moutonnée Move e SmashMove.",
 };
 
 export default function ParceriasPage() {
@@ -25,8 +25,8 @@ export default function ParceriasPage() {
         />
         <ParceriaCard
           slug="smash-move"
-          nome="Smash Move"
-          descricao="O Smash Move é a nossa parceria no universo dos esportes de areia. Beach tennis, vôlei de praia, futevôlei e muito mais, tudo na areia, ao ar livre, com a energia e a comunidade que só o esporte de praia proporciona. Um ambiente descontraído e competitivo para jogar, socializar e evoluir junto com a família Move."
+          nome="SmashMove"
+          descricao="O SmashMove é a nossa parceria no universo dos esportes de areia. Beach tennis, vôlei de praia, futevôlei e muito mais, tudo na areia, ao ar livre, com a energia e a comunidade que só o esporte de praia proporciona. Um ambiente descontraído e competitivo para jogar, socializar e evoluir junto com a família Move."
           cta="Como chegar"
           ctaHref="https://www.google.com/maps/dir//Av.+Bras%C3%ADlia,+580+-+Jardim+D'icarai,+Salto+-+SP,+13327-100/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf52414f73cd45:0x162e283856eb008d?sa=X&ved=1t:707&ictx=111"
           instagram="https://www.instagram.com/smashbtsalto/"

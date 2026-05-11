@@ -45,8 +45,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-gray-300 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed">
-              Musculação, Cross Training, Pilates, Hyrox, Fisioterapia inclusa e muito mais.
-              Desde 2019 ajudando pessoas a treinar com segurança em Salto.
+              Estrutura completa com diversas modalidades. Conheça nossas 4 unidades em Salto e treine quando e onde quiser.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

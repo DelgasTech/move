@@ -274,12 +274,10 @@ export default function MoutonneeContent() {
                 { name: "Wellhub", tier: "Silver+", obs: "1 check-in por dia · Cross, Hyrox ou Recovery" },
                 { name: "TotalPass", tier: "TP2", obs: "1 check-in por dia · Cross, Hyrox ou Recovery" },
               ].map((c) => (
-                <div key={c.name} className="bg-charcoal/40 border border-white/10 rounded-2xl p-5 flex items-center justify-between gap-4">
-                  <div>
-                    <span className="text-white font-black text-lg">{c.name}</span>
-                    <p className="text-gray-500 text-xs mt-1">{c.obs}</p>
-                  </div>
-                  <span className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">{c.tier}</span>
+                <div key={c.name} className="bg-charcoal/40 border border-white/10 rounded-2xl p-5 flex flex-col gap-2">
+                  <span className="text-white font-black text-xl">{c.name}</span>
+                  <span className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full w-fit">{c.tier}</span>
+                  <p className="text-gray-500 text-xs mt-1">{c.obs}</p>
                 </div>
               ))}
             </div>
@@ -333,13 +331,13 @@ export default function MoutonneeContent() {
               Agende sua aula experimental gratuitamente e conheça o Moutonnée Move.
             </p>
             <a
-              href={waLink("Olá! Quero agendar minha aula experimental no Moutonnée Move.")}
+              href={waLink("Olá! Tenho interesse no Recovery do Moutonnée Move e quero saber mais.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-primary hover:bg-orange-50 font-black px-8 py-4 rounded-full transition-colors text-sm"
             >
               <FiMessageCircle className="w-5 h-5" />
-              Agendar aula experimental
+              Falar sobre o Recovery
             </a>
           </motion.div>
         </div>

@@ -64,18 +64,18 @@ export const modalities: Modality[] = [
     id: "beach-tennis",
     name: "Beach Tennis",
     description: "Esporte de raquete na areia com ritmo dinâmico e muita diversão.",
-    units: ["Smash Move"],
+    units: ["SmashMove"],
   },
   {
     id: "foot-volei",
     name: "Futevôlei",
     description: "Vôlei com os pés: técnica, habilidade e agilidade na areia.",
-    units: ["Smash Move"],
+    units: ["SmashMove"],
   },
   {
     id: "volei-areia",
     name: "Vôlei de Areia",
     description: "Treinamento e prática de vôlei de praia em quadras profissionais.",
-    units: ["Smash Move"],
+    units: ["SmashMove"],
   },
 ];

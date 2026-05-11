@@ -27,9 +27,6 @@ export default function Modalidades() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3">
             Nossas Modalidades
           </h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            Temos 13 modalidades distribuídas nas nossas unidades para você encontrar o treino ideal para a sua rotina.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

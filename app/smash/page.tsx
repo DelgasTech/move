@@ -4,8 +4,8 @@ import Footer from "@/components/layout/Footer";
 import { FiInstagram, FiMessageCircle } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "Smash Move | Move Academia",
-  description: "Smash Move - esportes de areia em Salto, SP. Beach tennis, vôlei de praia, futevôlei e muito mais. Em breve com página completa.",
+  title: "SmashMove | Move Academia",
+  description: "SmashMove - esportes de areia em Salto, SP. Beach tennis, vôlei de praia, futevôlei e muito mais. Em breve com página completa.",
 };
 
 export default function SmashPage() {
@@ -21,7 +21,7 @@ export default function SmashPage() {
             Smash <span className="text-primary">Move</span>
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
-            A Move está trabalhando por aqui. Em breve teremos uma página completa com tudo sobre o Smash Move: beach tennis, vôlei de praia, futevôlei e muito mais.
+            A Move está trabalhando por aqui. Em breve teremos uma página completa com tudo sobre o SmashMove: beach tennis, vôlei de praia, futevôlei e muito mais.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
@@ -34,7 +34,7 @@ export default function SmashPage() {
               Nos siga no Instagram
             </a>
             <a
-              href="https://wa.me/5511910204226?text=Olá! Quero saber mais sobre o Smash Move."
+              href="https://wa.me/5511910204226?text=Olá! Quero saber mais sobre o SmashMove."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border-2 border-white/20 hover:border-primary text-white hover:text-primary font-bold px-6 py-3 rounded-full transition-colors text-sm"
