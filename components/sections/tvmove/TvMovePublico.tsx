@@ -108,7 +108,7 @@ export default function TvMovePublico() {
             <div className="mt-8 pt-6 border-t border-white/10">
               <p className="text-gray-400 text-sm">
                 <span className="text-white font-bold">44.4%</span> do público tem entre{" "}
-                <span className="text-primary font-bold">20 e 39 anos</span> — poder de compra
+                <span className="text-primary font-bold">20 e 39 anos</span>, poder de compra
                 e alto engajamento com marcas.
               </p>
             </div>

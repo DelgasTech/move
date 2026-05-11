@@ -7,7 +7,7 @@ export default function TreinoIniciante() {
         <div className="flex items-center justify-between mb-6 border-b-2 border-primary pb-4">
           <div>
             <h1 className="text-3xl font-black text-white uppercase">Move Academia</h1>
-            <p className="text-primary font-semibold">Matriz de Treino — Iniciante</p>
+            <p className="text-primary font-semibold">Matriz de Treino:Iniciante</p>
           </div>
           <button
             onClick={() => window.print()}
@@ -25,7 +25,7 @@ export default function TreinoIniciante() {
 
         {[
           {
-            dia: "Dia A — Corpo Todo",
+            dia: "Dia A:Corpo Todo",
             exercicios: [
               { nome: "Agachamento Livre", series: "3x12", obs: "Foco na postura" },
               { nome: "Supino Máquina", series: "3x12", obs: "Cotovelos a 45°" },
@@ -36,7 +36,7 @@ export default function TreinoIniciante() {
             ],
           },
           {
-            dia: "Dia B — Inferior + Core",
+            dia: "Dia B:Inferior + Core",
             exercicios: [
               { nome: "Cadeira Extensora", series: "3x15", obs: "Contração no topo" },
               { nome: "Mesa Flexora", series: "3x15", obs: "Sem arcar lombar" },
@@ -47,7 +47,7 @@ export default function TreinoIniciante() {
             ],
           },
           {
-            dia: "Dia C — Superior",
+            dia: "Dia C:Superior",
             exercicios: [
               { nome: "Puxada Frontal", series: "3x12", obs: "Peito à frente" },
               { nome: "Supino Inclinado Máquina", series: "3x12", obs: "Foco no peitoral" },

@@ -50,7 +50,7 @@ export default function Equipe() {
             <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/50 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <span className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-full">
-                Time Move — Salto, SP
+                Time Move - Salto, SP
               </span>
             </div>
           </motion.div>

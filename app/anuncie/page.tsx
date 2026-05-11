@@ -8,7 +8,7 @@ import TvMoveCta from "@/components/sections/tvmove/TvMoveCta";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "TV Move — Anuncie na Academia | Move Academia",
+  title: "TV Move - Anuncie na Academia | Move Academia",
   description:
     "Anuncie sua marca nas telas da Move Academia e alcance +1.600 pessoas por dia. Mídia indoor em 4 unidades em Salto/SP.",
 };

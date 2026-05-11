@@ -28,7 +28,7 @@ export default function EventoHero() {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <p className="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-4">
-            Wolf × Move — Desafio
+            Wolf × Move:Desafio
           </p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-4">
             Virada 24h
@@ -37,7 +37,7 @@ export default function EventoHero() {
             08 e 09 de Novembro de 2025
           </p>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Concha Acústica de Salto/SP — 24 horas de música, movimento e superação.
+            Concha Acústica de Salto/SP:24 horas de música, movimento e superação.
           </p>
         </motion.div>
       </div>

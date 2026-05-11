@@ -7,7 +7,7 @@ export default function TreinoIntermediario() {
         <div className="flex items-center justify-between mb-6 border-b-2 border-primary pb-4">
           <div>
             <h1 className="text-3xl font-black text-white uppercase">Move Academia</h1>
-            <p className="text-primary font-semibold">Matriz de Treino — Intermediário</p>
+            <p className="text-primary font-semibold">Matriz de Treino:Intermediário</p>
           </div>
           <button
             onClick={() => window.print()}
@@ -25,7 +25,7 @@ export default function TreinoIntermediario() {
 
         {[
           {
-            dia: "Dia A — Peito + Tríceps",
+            dia: "Dia A:Peito + Tríceps",
             exercicios: [
               { nome: "Supino Reto (Barra)", series: "4x10", obs: "Barra toca o peito" },
               { nome: "Supino Inclinado (Halteres)", series: "3x12", obs: "Amplitude máxima" },
@@ -35,7 +35,7 @@ export default function TreinoIntermediario() {
             ],
           },
           {
-            dia: "Dia B — Costas + Bíceps",
+            dia: "Dia B:Costas + Bíceps",
             exercicios: [
               { nome: "Barra Fixa (Pegada Larga)", series: "4x8", obs: "Puxar escápulas" },
               { nome: "Remada Curvada (Barra)", series: "4x10", obs: "Cotovelos para trás" },
@@ -45,7 +45,7 @@ export default function TreinoIntermediario() {
             ],
           },
           {
-            dia: "Dia C — Pernas",
+            dia: "Dia C:Pernas",
             exercicios: [
               { nome: "Agachamento (Barra)", series: "4x10", obs: "Profundidade 90°" },
               { nome: "Leg Press 45°", series: "4x12", obs: "Pés médios" },
@@ -56,7 +56,7 @@ export default function TreinoIntermediario() {
             ],
           },
           {
-            dia: "Dia D — Ombros + Core",
+            dia: "Dia D:Ombros + Core",
             exercicios: [
               { nome: "Desenvolvimento (Halteres)", series: "4x10", obs: "Não arquear lombar" },
               { nome: "Elevação Lateral", series: "4x15", obs: "Leve flexão cotovelo" },

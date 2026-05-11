@@ -48,15 +48,15 @@ export default function QuemSomos() {
             className="relative h-[480px] rounded-3xl overflow-hidden shadow-2xl bg-dark-bg"
           >
             <Image
-              src="/images/time move.jpg"
-              alt="Equipe Move Academia"
+              src="/images/joao e marina.jpg"
+              alt="João e Marina, fundadores da Move Academia"
               fill
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/50 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <span className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-full">
-                Academia Move — Salto, SP
+                Academia Move - Salto, SP
               </span>
             </div>
           </motion.div>

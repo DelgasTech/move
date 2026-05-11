@@ -108,7 +108,7 @@ export default function Horarios() {
             <tbody>
               {currentSchedule.schedule.map((row, i) => {
                 const color = getProfColor(row.modality);
-                const [name, prof] = row.modality.split(" — ");
+                const [name, prof] = row.modality.split(" | ");
                 return (
                   <tr
                     key={row.modality}
@@ -126,11 +126,11 @@ export default function Horarios() {
                     </td>
                     {days.map((day) => {
                       const val = row.times[day];
-                      const isEmpty = !val || val === "—";
+                      const isEmpty = !val || val === "-";
                       return (
                         <td key={day} className="px-3 py-3 text-center">
                           {isEmpty ? (
-                            <span className="text-gray-200 select-none">—</span>
+                            <span className="text-gray-200 select-none">-</span>
                           ) : (
                             <div className="flex flex-col gap-1">
                               {val!.split(" / ").map((t) => (

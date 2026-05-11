@@ -69,7 +69,7 @@ export const modalities: Modality[] = [
   {
     id: "foot-volei",
     name: "Futevôlei",
-    description: "Vôlei com os pés — técnica, habilidade e agilidade na areia.",
+    description: "Vôlei com os pés: técnica, habilidade e agilidade na areia.",
     units: ["Smash Move"],
   },
   {

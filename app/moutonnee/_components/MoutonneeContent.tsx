@@ -52,7 +52,7 @@ export default function MoutonneeContent() {
             className="max-w-3xl"
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-              Unidade Move · Box de CrossFit — Salto, SP
+              Unidade Move · Box de CrossFit - Salto, SP
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mt-4 mb-6 leading-tight">
               Moutonnée<br />

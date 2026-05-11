@@ -35,7 +35,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="inline-block bg-primary/20 text-primary border border-primary/30 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-              Academia Move — Salto, SP
+              Academia Move - Salto, SP
             </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight mb-6">

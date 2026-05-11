@@ -16,7 +16,7 @@ export default function UnidadesHero() {
           className="max-w-2xl"
         >
           <span className="inline-block bg-primary/20 text-primary border border-primary/30 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-            Move Academia — Salto, SP
+            Academia Move - Salto, SP
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
             Nossas<br />

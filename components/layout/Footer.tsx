@@ -64,10 +64,10 @@ export default function Footer() {
                   <FiMapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   {unit.href ? (
                     <a href={unit.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                      {unit.name} — Salto, SP
+                      {unit.name} - Salto, SP
                     </a>
                   ) : (
-                    <span>{unit.name} — Salto, SP</span>
+                    <span>{unit.name} - Salto, SP</span>
                   )}
                 </li>
               ))}

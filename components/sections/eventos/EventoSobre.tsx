@@ -26,7 +26,7 @@ export default function EventoSobre() {
           {[
             { icon: <FiMapPin className="w-6 h-6" />, title: "Local", text: "Concha Acústica de Salto, SP" },
             { icon: <FiClock className="w-6 h-6" />, title: "Duração", text: "24 horas contínuas de atividades" },
-            { icon: <FiUsers className="w-6 h-6" />, title: "Formato", text: "Desafio Wolf × Move — equipes de 24 atletas" },
+            { icon: <FiUsers className="w-6 h-6" />, title: "Formato", text: "Desafio Wolf × Move, equipes de 24 atletas" },
           ].map((item) => (
             <motion.div
               key={item.title}

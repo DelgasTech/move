@@ -6,7 +6,7 @@ import ParceriaCard from "@/components/sections/parcerias/ParceriaCard";
 
 export const metadata: Metadata = {
   title: "Parcerias | Move Academia",
-  description: "Conheça as marcas parceiras da Move Academia — Moutonnée Move e Smash Move.",
+  description: "Conheça as marcas parceiras da Move Academia: Moutonnée Move e Smash Move.",
 };
 
 export default function ParceriasPage() {

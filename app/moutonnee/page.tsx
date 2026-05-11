@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "academia salto sp",
   ],
   openGraph: {
-    title: "Moutonnée Move — Cross Training, Hyrox e Musculação em Salto, SP",
+    title: "Moutonnée Move - Cross Training, Hyrox e Musculação em Salto, SP",
     description:
       "Box de Cross Training, Hyrox e Musculação em Salto. Planos a partir de 12x R$189,90. Wellhub Silver+ e TotalPass TP2.",
     url: "https://moveacademia.com.br/moutonnee",

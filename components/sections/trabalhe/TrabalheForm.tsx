@@ -48,7 +48,7 @@ export default function TrabalheForm() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const msg = encodeURIComponent(
-      `*Candidatura — Move Academia*\n\n` +
+      `*Candidatura - Move Academia*\n\n` +
         `*Nome:* ${form.nome}\n` +
         `*E-mail:* ${form.email}\n` +
         `*Telefone:* ${form.telefone}\n` +

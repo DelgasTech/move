@@ -7,7 +7,7 @@ export default function TreinoAvancado() {
         <div className="flex items-center justify-between mb-6 border-b-2 border-primary pb-4">
           <div>
             <h1 className="text-3xl font-black text-white uppercase">Move Academia</h1>
-            <p className="text-primary font-semibold">Matriz de Treino — Avançado</p>
+            <p className="text-primary font-semibold">Matriz de Treino:Avançado</p>
           </div>
           <button
             onClick={() => window.print()}
@@ -25,7 +25,7 @@ export default function TreinoAvancado() {
 
         {[
           {
-            dia: "Dia A — Peito (Volume)",
+            dia: "Dia A:Peito (Volume)",
             exercicios: [
               { nome: "Supino Reto (Barra)", series: "5x6-8", obs: "Carga máxima controlada" },
               { nome: "Supino Inclinado (Barra)", series: "4x10", obs: "Foco na porção superior" },
@@ -35,7 +35,7 @@ export default function TreinoAvancado() {
             ],
           },
           {
-            dia: "Dia B — Costas (Força)",
+            dia: "Dia B:Costas (Força)",
             exercicios: [
               { nome: "Levantamento Terra", series: "5x5", obs: "Barra rente ao corpo" },
               { nome: "Barra Fixa Lastrada", series: "4x8", obs: "Pegada pronada larga" },
@@ -45,7 +45,7 @@ export default function TreinoAvancado() {
             ],
           },
           {
-            dia: "Dia C — Pernas (Hipertrofia)",
+            dia: "Dia C:Pernas (Hipertrofia)",
             exercicios: [
               { nome: "Agachamento (Barra)", series: "5x8", obs: "ATG se mobilidade permitir" },
               { nome: "Hack Squat", series: "4x10", obs: "Pés baixos e fechados" },
@@ -56,7 +56,7 @@ export default function TreinoAvancado() {
             ],
           },
           {
-            dia: "Dia D — Ombros + Tríceps",
+            dia: "Dia D:Ombros + Tríceps",
             exercicios: [
               { nome: "Desenvolvimento Militar (Barra)", series: "4x8", obs: "Em pé, core contraído" },
               { nome: "Elevação Lateral (Cabo)", series: "4x15", obs: "Tensão constante" },
@@ -66,7 +66,7 @@ export default function TreinoAvancado() {
             ],
           },
           {
-            dia: "Dia E — Bíceps + Core",
+            dia: "Dia E:Bíceps + Core",
             exercicios: [
               { nome: "Rosca Direta (Barra EZ)", series: "4x10", obs: "Sem momentum" },
               { nome: "Rosca Scott (Máquina)", series: "3x12", obs: "Extensão completa" },

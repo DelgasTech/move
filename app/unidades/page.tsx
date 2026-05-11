@@ -7,7 +7,7 @@ import ParceriaCard from "@/components/sections/parcerias/ParceriaCard";
 
 export const metadata: Metadata = {
   title: "Unidades | Move Academia",
-  description: "Conheça todas as unidades da Move Academia em Salto, SP — academia, beach tennis, funcional e muito mais.",
+  description: "Conheça todas as unidades da Move Academia em Salto, SP academia, beach tennis, funcional e muito mais.",
 };
 
 const unidades = [

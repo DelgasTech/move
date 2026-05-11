@@ -35,7 +35,7 @@ export default function TvMoveHero() {
         >
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-6">
             <FiTv className="w-4 h-4" />
-            TV Move — Mídia Indoor
+            TV Move - Mídia Indoor
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
