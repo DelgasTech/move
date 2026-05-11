@@ -8,6 +8,7 @@ import Logo from "@/components/Logo";
 const navLinks = [
   { label: "Sobre Nós", href: "/#quem-somos" },
   { label: "Modalidades", href: "/#modalidades" },
+  { label: "Planos", href: "/#planos" },
   { label: "Unidades", href: "/unidades" },
   { label: "Anuncie", href: "/anuncie" },
   { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
