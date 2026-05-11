@@ -6,9 +6,8 @@ import { FiMenu, FiX, FiMessageCircle } from "react-icons/fi";
 import Logo from "@/components/Logo";
 
 const navLinks = [
+  { label: "Sobre Nós", href: "/#quem-somos" },
   { label: "Modalidades", href: "/#modalidades" },
-  { label: "Horários", href: "/#horarios" },
-  { label: "Planos", href: "/#planos" },
   { label: "Unidades", href: "/unidades" },
   { label: "Anuncie", href: "/anuncie" },
   { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },

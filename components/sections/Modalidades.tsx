@@ -24,14 +24,11 @@ export default function Modalidades() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-            O que oferecemos
-          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3">
             Nossas Modalidades
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            13 modalidades distribuídas nas nossas unidades para você escolher o treino ideal.
+            Temos 13 modalidades distribuídas nas nossas unidades para você encontrar o treino ideal para a sua rotina.
           </p>
         </motion.div>
 

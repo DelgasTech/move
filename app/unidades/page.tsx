@@ -81,12 +81,12 @@ export default function UnidadesPage() {
       <main>
         <UnidadesHero />
 
-        {unidadesEsportivas.map((u) => (
-          <ParceriaCard key={u.slug} {...u} />
-        ))}
-
         {unidades.map((unidade) => (
           <UnidadeCard key={unidade.slug} {...unidade} />
+        ))}
+
+        {unidadesEsportivas.map((u) => (
+          <ParceriaCard key={u.slug} {...u} />
         ))}
       </main>
       <Footer />

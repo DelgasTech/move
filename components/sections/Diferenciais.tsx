@@ -2,20 +2,26 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiSmartphone, FiShoppingBag, FiUsers } from "react-icons/fi";
+import { FiSmartphone, FiShoppingBag, FiUsers, FiActivity } from "react-icons/fi";
 
 const diferenciais = [
+  {
+    icon: <FiActivity className="w-8 h-8" />,
+    title: "Fisioterapia Inclusa",
+    description:
+      "Nossa maior diferença: fisioterapia profissional já inclusa no plano. Cuidado e prevenção de lesões fazem parte da sua experiência desde o primeiro dia, sem custo adicional.",
+  },
   {
     icon: <FiUsers className="w-8 h-8" />,
     title: "Espaço Kids",
     description:
-      "Área dedicada para os pequenos se divertirem enquanto você treina com tranquilidade. Disponível nas unidades Rondon e Central Parque. Monitoramento de segunda a quinta das 17h às 21h na unidade Rondon.",
+      "Área dedicada para os pequenos se divertirem enquanto você treina com tranquilidade. Disponível nas unidades Rondon e Central Parque.",
   },
   {
     icon: <FiSmartphone className="w-8 h-8" />,
     title: "App de Reservas",
     description:
-      "Acompanhe seu treino pela tela do seu celular, tire dúvidas sobre execução dos exercícios e acompanhe seu rendimento pelo app da Move. Reserve suas aulas e nunca perca seu horário favorito.",
+      "Acompanhe seu treino, reserve suas aulas e nunca perca seu horário favorito pelo app da Move.",
   },
   {
     icon: <FiShoppingBag className="w-8 h-8" />,

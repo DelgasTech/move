@@ -39,32 +39,31 @@ export default function Hero() {
             </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
-              Uma Nova{" "}
-              <span className="text-primary">Experiência</span>
+              Mova-se com{" "}
+              <span className="text-primary">Saúde</span>
               <br />
-              em Academia
+              e Constância
             </h1>
 
             <p className="text-gray-300 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed">
-              Musculação, Bike Indoor, Cross Training, Pilates, Fisioterapia e muito mais.
-              6 unidades em Salto para você treinar onde quiser.
+              Musculação, Cross Training, Pilates, Hyrox, Fisioterapia inclusa e muito mais.
+              Desde 2019 ajudando pessoas a treinar com segurança em Salto.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#planos"
-                className="bg-primary hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-full text-base transition-colors inline-flex items-center justify-center gap-2"
-              >
-                Ver Planos
-              </a>
-              <a
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="bg-primary hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-full text-base transition-colors inline-flex items-center justify-center gap-2"
+              >
+                Faça sua Matrícula
+              </a>
+              <a
+                href="/#quem-somos"
                 className="border-2 border-white/30 hover:border-primary text-white hover:text-primary font-bold px-8 py-4 rounded-full text-base transition-colors inline-flex items-center justify-center gap-2"
               >
-                <FiMessageCircle className="w-5 h-5" />
-                WhatsApp
+                Conheça a Move
               </a>
             </div>
           </motion.div>
@@ -77,8 +76,8 @@ export default function Hero() {
             className="mt-16 flex gap-10"
           >
             {[
-              { value: "6", label: "Unidades" },
-              { value: "10+", label: "Modalidades" },
+              { value: "4", label: "Unidades" },
+              { value: "13", label: "Modalidades" },
               { value: "100%", label: "Dedicação" },
             ].map((stat) => (
               <div key={stat.label}>
