@@ -25,7 +25,7 @@ export default function CtaFinal() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5">
             Pronto para começar?
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-white/80 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto">
             Fale com nossa equipe agora mesmo pelo WhatsApp e escolha o plano perfeito para você.
           </p>
 

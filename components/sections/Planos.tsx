@@ -62,7 +62,7 @@ export default function Planos() {
         </div>
 
         {/* Plan cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.id}
@@ -88,7 +88,7 @@ export default function Planos() {
                 <h3 className="text-2xl font-black text-white">{plan.name}</h3>
                 <div className="mt-4 flex items-end gap-1">
                   <span className="text-gray-400 text-sm">R$</span>
-                  <span className="text-5xl font-black text-white leading-none">
+                  <span className="text-4xl sm:text-5xl font-black text-white leading-none">
                     {plan.prices[period]}
                   </span>
                   <span className="text-gray-400 text-sm mb-1">/mês</span>
@@ -134,7 +134,7 @@ export default function Planos() {
           className="mt-12"
         >
           <h3 className="text-center text-white font-black text-xl mb-6">Outras Opções</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {extraPricing.map((item) => (
               <div key={item.label} className="bg-charcoal/50 border border-white/10 rounded-2xl p-4 text-center">
                 <p className="text-gray-400 text-xs mb-1">{item.label}</p>
@@ -155,7 +155,7 @@ export default function Planos() {
           <h3 className="text-center text-white font-black text-2xl mb-2">Convênios</h3>
           <p className="text-center text-gray-400 text-sm mb-8">Acesse a Move pelo seu benefício.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
             {partners.map((p, i) => (
               <div key={i} className="bg-charcoal/50 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
                 <div className="flex items-center justify-between">

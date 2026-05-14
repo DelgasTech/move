@@ -7,7 +7,7 @@ export default function QuemSomos() {
   return (
     <section id="quem-somos" className="py-20 lg:py-28 bg-dark-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Conteúdo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -45,7 +45,7 @@ export default function QuemSomos() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative h-[480px] rounded-3xl overflow-hidden shadow-2xl bg-dark-bg"
+            className="relative h-[300px] sm:h-[400px] lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl bg-dark-bg"
           >
             <Image
               src="/images/joao e marina.jpg"

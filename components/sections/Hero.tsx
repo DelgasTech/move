@@ -45,7 +45,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-gray-300 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed">
-              Estrutura completa com diversas modalidades. Conheça nossas 4 unidades em Salto e treine quando e onde quiser.
+              Estrutura completa com diversas modalidades. Conheça nossas 6 unidades em Salto e treine quando e onde quiser.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -71,15 +71,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-16 flex gap-10"
+            className="mt-12 sm:mt-16 flex gap-6 sm:gap-10"
           >
             {[
-              { value: "4", label: "Unidades" },
+              { value: "6", label: "Unidades" },
               { value: "13", label: "Modalidades" },
               { value: "100%", label: "Dedicação" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-3xl sm:text-4xl font-black text-primary">{stat.value}</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-primary">{stat.value}</div>
                 <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
               </div>
             ))}

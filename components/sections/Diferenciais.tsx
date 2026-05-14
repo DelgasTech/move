@@ -42,7 +42,7 @@ export default function Diferenciais() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+            className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl"
           >
             <Image
               src="/images/corda.jpg"
@@ -78,7 +78,7 @@ export default function Diferenciais() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 flex items-start gap-5 shadow-sm border border-orange-100"
+                  className="bg-white rounded-2xl p-4 sm:p-6 flex items-start gap-4 sm:gap-5 shadow-sm border border-orange-100"
                 >
                   <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-2xl text-primary shrink-0">
                     {item.icon}
