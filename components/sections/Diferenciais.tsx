@@ -9,7 +9,7 @@ const diferenciais = [
     icon: <FiActivity className="w-8 h-8" />,
     title: "Fisioterapia Inclusa",
     description:
-      "Nossa maior diferença: fisioterapia profissional já inclusa no plano. Cuidado e prevenção de lesões fazem parte da sua experiência desde o primeiro dia, sem custo adicional.",
+      "Nossa maior diferença: fisioterapia profissional já inclusa no plano. Cuidado e prevenção de lesões fazem parte da sua experiência desde o primeiro dia, sem custo adicional. Disponível na unidade Sete de Setembro.",
   },
   {
     icon: <FiUsers className="w-8 h-8" />,

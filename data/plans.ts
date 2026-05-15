@@ -19,9 +19,10 @@ export interface Plan {
   highlight: boolean;
 }
 
-export interface ExtraPricing {
-  label: string;
-  price: number;
+export interface ExtraPricingGroup {
+  title: string;
+  subtitle?: string;
+  items: { label: string; price: number; obs?: string }[];
 }
 
 export const plans: Plan[] = [
@@ -34,7 +35,7 @@ export const plans: Plan[] = [
       mensal: 145,
     },
     includes: [
-      "Musculação ilimitada",
+      "Musculação - acesso ilimitado em todas as unidades",
       "Aulas Fitness (Rondon / Rui Barbosa)",
       "Fisioterapia (Sete de Setembro)",
     ],
@@ -50,7 +51,7 @@ export const plans: Plan[] = [
       mensal: 195,
     },
     includes: [
-      "Musculação ilimitada",
+      "Musculação - acesso ilimitado em todas as unidades",
       "Spinning (Central Parque)",
       "Aulas Fitness (Rondon / Rui Barbosa)",
       "Aulas reservadas pelo app",
@@ -59,11 +60,29 @@ export const plans: Plan[] = [
   },
 ];
 
-export const extraPricing: ExtraPricing[] = [
-  { label: "Diária Musculação", price: 30 },
-  { label: "Diária Aulas Coletivas", price: 40 },
-  { label: "Semanal", price: 80 },
-  { label: "Quinzenal", price: 110 },
+export const extraPricing: ExtraPricingGroup[] = [
+  {
+    title: "Musculação",
+    items: [
+      { label: "Diária", price: 30 },
+      { label: "Semanal", price: 80, obs: "7 dias corridos" },
+      { label: "Quinzenal", price: 110, obs: "15 dias corridos" },
+    ],
+  },
+  {
+    title: "Aulas Coletivas",
+    subtitle: "Sala Fitness, Aulas Kids e Bike Indoor",
+    items: [
+      { label: "Diária", price: 40 },
+    ],
+  },
+  {
+    title: "Cross Moutonne",
+    subtitle: "Cross Training ou Hyrox",
+    items: [
+      { label: "Diária", price: 50 },
+    ],
+  },
 ];
 
 export const partners: PlanPartner[] = [

@@ -23,10 +23,10 @@ export default function QuemSomos() {
             </h2>
             <div className="space-y-4 text-gray-400 text-lg leading-relaxed">
               <p>
-                Desde 2019, ajudamos pessoas a se movimentarem com mais saúde, segurança e constância em Salto.
+                Desde 2019, ajudamos pessoas a se movimentarem com mais saúde, segurança e constância.
               </p>
               <p>
-                Com quatro unidades e uma estrutura completa, oferecemos musculação, aulas coletivas,
+                Com seis unidades e uma estrutura completa, oferecemos musculação, aulas coletivas,
                 Crossfit, Hyrox, pilates e acompanhamento profissional integrado, com fisioterapia
                 inclusa no plano.
               </p>
@@ -54,9 +54,9 @@ export default function QuemSomos() {
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/50 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <span className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-full">
-                Academia Move - Salto, SP
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
+              <span className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-full self-start">
+                João Paulo e Marina - Fundadores
               </span>
             </div>
           </motion.div>

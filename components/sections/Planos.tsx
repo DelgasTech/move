@@ -87,17 +87,20 @@ export default function Planos() {
               <div className="mb-6">
                 <h3 className="text-2xl font-black text-white">{plan.name}</h3>
                 <div className="mt-4 flex items-end gap-1">
-                  <span className="text-gray-400 text-sm">R$</span>
+                  <div className="flex flex-col items-start mr-0.5">
+                    <span className={`text-primary text-xs font-bold leading-none mb-0.5 ${period === "mensal" ? "invisible" : ""}`}>
+                      {period === "anual" ? "12x" : "6x"}
+                    </span>
+                    <span className="text-gray-400 text-sm">R$</span>
+                  </div>
                   <span className="text-4xl sm:text-5xl font-black text-white leading-none">
                     {plan.prices[period]}
                   </span>
                   <span className="text-gray-400 text-sm mb-1">/mês</span>
                 </div>
-                {period !== "mensal" && (
-                  <p className="text-primary text-xs mt-1 font-medium">
-                    {period === "anual" ? "Pagamento anual" : "Pagamento semestral"}
-                  </p>
-                )}
+                <p className={`text-primary text-xs mt-1 font-medium ${period === "mensal" ? "invisible" : ""}`}>
+                  {period === "anual" ? "Pagamento anual" : "Pagamento semestral"}
+                </p>
               </div>
 
               <ul className="space-y-3 mb-8 flex-1">
@@ -133,12 +136,29 @@ export default function Planos() {
           transition={{ duration: 0.6 }}
           className="mt-12"
         >
-          <h3 className="text-center text-white font-black text-xl mb-6">Outras Opções</h3>
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {extraPricing.map((item) => (
-              <div key={item.label} className="bg-charcoal/50 border border-white/10 rounded-2xl p-4 text-center">
-                <p className="text-gray-400 text-xs mb-1">{item.label}</p>
-                <p className="text-white font-black text-2xl">R$ {item.price}</p>
+          <h3 className="text-center text-white font-black text-xl mb-6">Planos Avulsos</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {extraPricing.map((group) => (
+              <div key={group.title} className="bg-charcoal/50 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
+                <div>
+                  <p className="text-white font-black text-base">{group.title}</p>
+                  {group.subtitle && <p className="text-gray-500 text-xs mt-0.5">{group.subtitle}</p>}
+                </div>
+                <table className="w-full text-sm border-collapse">
+                  <tbody>
+                    {group.items.map((item) => (
+                      <tr key={item.label} className="border-t border-white/10 first:border-t-0">
+                        <td className="py-2 pr-3">
+                          <span className="text-gray-300 font-semibold">{item.label}</span>
+                          {item.obs && <span className="block text-gray-500 text-xs">{item.obs}</span>}
+                        </td>
+                        <td className="py-2 text-right whitespace-nowrap">
+                          <span className="text-white font-black text-lg">R$ {item.price}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             ))}
           </div>
