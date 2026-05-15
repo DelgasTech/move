@@ -17,7 +17,7 @@ export const scheduleData: UnitSchedule[] = [
     unit: "Central Parque",
     schedule: [
       {
-        modality: "Spinning | Prof.Camila",
+        modality: "Bike Indoor | Prof.Camila",
         times: {
           Seg: "-",
           Ter: "06h00 / 07h00 / 08h00",
@@ -29,7 +29,7 @@ export const scheduleData: UnitSchedule[] = [
         },
       },
       {
-        modality: "Spinning | Prof.Michela",
+        modality: "Bike Indoor | Prof.Michela",
         times: {
           Seg: "07h00 / 08h00",
           Ter: "-",
@@ -41,7 +41,7 @@ export const scheduleData: UnitSchedule[] = [
         },
       },
       {
-        modality: "Spinning | Prof.Marco",
+        modality: "Bike Indoor | Prof.Marco",
         times: {
           Seg: "17h00",
           Ter: "-",
@@ -53,7 +53,7 @@ export const scheduleData: UnitSchedule[] = [
         },
       },
       {
-        modality: "Spinning | Prof.Marco / Geraldo",
+        modality: "Bike Indoor | Prof.Marco / Geraldo",
         times: {
           Seg: "-",
           Ter: "-",
@@ -65,7 +65,7 @@ export const scheduleData: UnitSchedule[] = [
         },
       },
       {
-        modality: "Spinning | Prof.Cleiton",
+        modality: "Bike Indoor | Prof.Cleiton",
         times: {
           Seg: "18h00 / 19h00 / 20h00",
           Ter: "18h00 / 19h00 / 20h00",

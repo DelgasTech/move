@@ -23,18 +23,16 @@ export default function QuemSomos() {
             </h2>
             <div className="space-y-4 text-gray-400 text-lg leading-relaxed">
               <p>
-                Desde 2019, ajudamos pessoas a se movimentarem com mais saúde, segurança e constância.
+                Desde 2019, nosso propósito é promover saúde, movimento e qualidade de vida, ajudando pessoas a treinarem com mais segurança, constância e bem-estar.
               </p>
               <p>
-                Com seis unidades e uma estrutura completa, oferecemos musculação, aulas coletivas,
-                Crossfit, Hyrox, pilates e acompanhamento profissional integrado, com fisioterapia
-                inclusa no plano.
+                Com seis unidades e uma estrutura completa, oferecemos musculação, aulas coletivas, cross training, hyrox, pilates, bike indoor, fortalecimento terapêutico e acompanhamento profissional integrado, incluindo fisioterapia para reabilitação e melhor alcance dos seus objetivos físicos e mentais.
               </p>
               <p>
-                Acreditamos em um treino possível, adaptado à rotina e às necessidades de cada aluno.
+                Acreditamos em um treino dedicado para cada perfil, respeitando a rotina, a constância, os objetivos e as necessidades de cada aluno.
               </p>
               <p>
-                Mais do que uma academia, somos um espaço de cuidado, orientação e evolução contínua.
+                Mais do que uma academia, somos um espaço de acolhimento, integração, orientação e evolução contínua.
               </p>
             </div>
           </motion.div>

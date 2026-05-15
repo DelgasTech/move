@@ -52,7 +52,7 @@ export const plans: Plan[] = [
     },
     includes: [
       "Musculação - acesso ilimitado em todas as unidades",
-      "Spinning (Central Parque)",
+      "Bike Indoor (Central Parque)",
       "Aulas Fitness (Rondon / Rui Barbosa)",
       "Aulas reservadas pelo app",
     ],
@@ -62,6 +62,13 @@ export const plans: Plan[] = [
 
 export const extraPricing: ExtraPricingGroup[] = [
   {
+    title: "Aulas Coletivas",
+    subtitle: "Aulas Fitness, Aulas Kids e Bike Indoor",
+    items: [
+      { label: "Diária", price: 40 },
+    ],
+  },
+  {
     title: "Musculação",
     items: [
       { label: "Diária", price: 30 },
@@ -70,14 +77,7 @@ export const extraPricing: ExtraPricingGroup[] = [
     ],
   },
   {
-    title: "Aulas Coletivas",
-    subtitle: "Sala Fitness, Aulas Kids e Bike Indoor",
-    items: [
-      { label: "Diária", price: 40 },
-    ],
-  },
-  {
-    title: "Cross Moutonne",
+    title: "Moutonnee Move",
     subtitle: "Cross Training ou Hyrox",
     items: [
       { label: "Diária", price: 50 },
@@ -97,7 +97,7 @@ export const partners: PlanPartner[] = [
     name: "Wellhub",
     tier: "BASIC +",
     units: "Central Parque, Rondon e Rui Barbosa",
-    includes: ["Spinning", "Musculação", "Aulas Fitness"],
+    includes: ["Bike Indoor", "Musculação", "Aulas Fitness"],
     obs: "1 check-in por dia, válido para uma modalidade (exceto aulas de corrida e musculação supervisionada)",
   },
   {

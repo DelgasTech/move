@@ -137,9 +137,9 @@ export default function Planos() {
           className="mt-12"
         >
           <h3 className="text-center text-white font-black text-xl mb-6">Planos Avulsos</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto items-start">
             {extraPricing.map((group) => (
-              <div key={group.title} className="bg-charcoal/50 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
+              <div key={group.title} className="bg-charcoal/50 border border-primary/40 rounded-2xl p-5 flex flex-col gap-3">
                 <div>
                   <p className="text-white font-black text-base">{group.title}</p>
                   {group.subtitle && <p className="text-gray-500 text-xs mt-0.5">{group.subtitle}</p>}

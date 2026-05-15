@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   description:
     "Box de Cross Training, Hyrox e Musculação em Salto, SP. Estrutura premium, professores especializados e planos a partir de 12x R$189,90. Aceita Wellhub e TotalPass.",
   keywords: [
-    "crossfit salto sp",
+    "cross training salto sp",
     "cross training salto",
     "hyrox salto",
     "musculação salto",
     "moutonnée move",
-    "box crossfit salto",
+    "box cross training salto",
     "academia salto sp",
   ],
   openGraph: {

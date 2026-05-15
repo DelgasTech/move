@@ -14,8 +14,8 @@ export const modalities: Modality[] = [
   },
   {
     id: "spinning",
-    name: "Spinning",
-    description: "Bike indoor com sistema israelense para máxima performance.",
+    name: "Bike Indoor",
+    description: "Bikes integradas com sistema israelense que apresenta gráfico de performance e ranking mundial.",
     units: ["Central Parque"],
   },
   {
@@ -26,9 +26,15 @@ export const modalities: Modality[] = [
   },
   {
     id: "fitness",
-    name: "Sala Fitness",
-    description: "Jump, Ritbox, Step, Fitdance e Aulas Kids em aulas animadas e dinâmicas.",
-    units: ["Central Parque", "Rondon", "Rui Barbosa"],
+    name: "Aulas Fitness",
+    description: "Jump, Ritbox, Step, Fitdance e Ritmos em aulas animadas e dinâmicas.",
+    units: ["Rondon", "Rui Barbosa"],
+  },
+  {
+    id: "aulas-kids",
+    name: "Aulas Kids",
+    description: "Um ambiente dedicado onde as crianças podem se exercitar e interagir brincando, desenvolver coordenação motora, criatividade e confiança de forma leve, divertida e cheia de energia.",
+    units: ["Rui Barbosa", "SmashMove"],
   },
   {
     id: "pilates",
@@ -43,9 +49,15 @@ export const modalities: Modality[] = [
     units: ["Sete de Setembro"],
   },
   {
+    id: "personal-trainer",
+    name: "Personal Trainer",
+    description: "Acompanhamento individual de personal trainer com atenção exclusiva durante a aula para resultados acelerados.",
+    units: ["Central Parque", "Rondon", "Rui Barbosa", "Sete de Setembro"],
+  },
+  {
     id: "supervisionada",
     name: "Musculação Supervisionada",
-    description: "Acompanhamento individual de personal trainer para resultados acelerados.",
+    description: "A musculação supervisionada é realizada em dupla, com acompanhamento de personal trainer e treinos desenvolvidos de acordo com os objetivos de cada aluno, garantindo motivação, segurança e melhores resultados juntos.",
     units: ["Central Parque", "Rondon", "Rui Barbosa", "Sete de Setembro"],
   },
   {
@@ -69,7 +81,7 @@ export const modalities: Modality[] = [
   {
     id: "foot-volei",
     name: "Futevôlei",
-    description: "Vôlei com os pés: técnica, habilidade e agilidade na areia.",
+    description: "Um esporte praticado na areia que combina futebol e vôlei, unindo técnica, habilidade e agilidade.",
     units: ["SmashMove"],
   },
   {

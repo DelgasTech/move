@@ -13,8 +13,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Academia Move - Salto, SP",
   description:
-    "Academia Move em Salto/SP. Musculação, Bike Indoor, Cross Training, Pilates, Fisioterapia e muito mais. 4 unidades para você treinar onde quiser.",
-  keywords: "academia, salto, musculação, crossfit, bike indoor, pilates, fisioterapia",
+    "Academia Move em Salto/SP. Musculação, bike indoor, cross training, pilates, fisioterapia e muito mais. 4 unidades para você treinar onde quiser.",
+  keywords: "academia, salto, musculação, cross training, hyrox, bike indoor, pilates, fisioterapia",
   openGraph: {
     title: "Academia Move - Salto, SP",
     description: "Uma nova experiência em academia. 4 unidades em Salto/SP.",
