@@ -76,13 +76,6 @@ export const extraPricing: ExtraPricingGroup[] = [
       { label: "Quinzenal", price: 110, obs: "15 dias corridos" },
     ],
   },
-  {
-    title: "Moutonnee Move",
-    subtitle: "Cross Training ou Hyrox",
-    items: [
-      { label: "Diária", price: 50 },
-    ],
-  },
 ];
 
 export const partners: PlanPartner[] = [
@@ -105,19 +98,6 @@ export const partners: PlanPartner[] = [
     tier: "TP 1+",
     units: "Rui Barbosa, Central Parque e Rondon",
     includes: ["Musculação"],
-  },
-  {
-    name: "Wellhub",
-    tier: "SILVER +",
-    units: "Moutonnée Move",
-    includes: ["Cross Training", "Hyrox"],
-    obs: "1 check-in por dia, válido para uma modalidade",
-  },
-  {
-    name: "Totalpass",
-    tier: "TP 2",
-    units: "Moutonnée Move",
-    includes: ["Cross Training", "Hyrox"],
   },
 ];
 

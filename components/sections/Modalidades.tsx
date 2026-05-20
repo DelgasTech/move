@@ -4,6 +4,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { modalities } from "@/data/modalities";
 
+const unitSlugMap: Record<string, string> = {
+  "Central Parque": "central-parque",
+  "Rondon": "rondon",
+  "Rui Barbosa": "rui-barbosa",
+  "Sete de Setembro": "sete-de-setembro",
+  "SmashMove": "smash-move",
+  "Moutonnée Move": "moutonnee",
+};
+
 export default function Modalidades() {
   return (
     <section id="modalidades" className="relative py-20 lg:py-28 bg-dark-bg overflow-hidden">
@@ -43,12 +52,13 @@ export default function Modalidades() {
               <p className="text-gray-400 text-sm leading-relaxed mb-3">{mod.description}</p>
               <div className="flex flex-wrap gap-1.5 mt-auto">
                 {mod.units.map((unit) => (
-                  <span
+                  <a
                     key={unit}
-                    className="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-primary/90 border border-primary/20"
+                    href={`/unidades#${unitSlugMap[unit] ?? unit}`}
+                    className="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-primary/90 border border-primary/20 hover:bg-primary/30 transition-colors"
                   >
                     {unit}
-                  </span>
+                  </a>
                 ))}
               </div>
             </motion.div>

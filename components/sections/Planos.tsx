@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiCheck, FiMessageCircle, FiAlertCircle } from "react-icons/fi";
-import { plans, partners, extraPricing, type PricePeriod } from "@/data/plans";
+import { plans, partners, type PricePeriod } from "@/data/plans";
 
 const WA_NUMBER = "5511910204226";
 
@@ -128,42 +128,6 @@ export default function Planos() {
             </motion.div>
           ))}
         </div>
-        {/* Extra pricing */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-12"
-        >
-          <h3 className="text-center text-white font-black text-xl mb-6">Planos Avulsos</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto items-start">
-            {extraPricing.map((group) => (
-              <div key={group.title} className="bg-charcoal/50 border border-primary/40 rounded-2xl p-5 flex flex-col gap-3">
-                <div>
-                  <p className="text-white font-black text-base">{group.title}</p>
-                  {group.subtitle && <p className="text-gray-500 text-xs mt-0.5">{group.subtitle}</p>}
-                </div>
-                <table className="w-full text-sm border-collapse">
-                  <tbody>
-                    {group.items.map((item) => (
-                      <tr key={item.label} className="border-t border-white/10 first:border-t-0">
-                        <td className="py-2 pr-3">
-                          <span className="text-gray-300 font-semibold">{item.label}</span>
-                          {item.obs && <span className="block text-gray-500 text-xs">{item.obs}</span>}
-                        </td>
-                        <td className="py-2 text-right whitespace-nowrap">
-                          <span className="text-white font-black text-lg">R$ {item.price}</span>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Partners — Wellhub & Totalpass */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

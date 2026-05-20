@@ -60,34 +60,4 @@ export const modalities: Modality[] = [
     description: "A musculação supervisionada é realizada em dupla, com acompanhamento de personal trainer e treinos desenvolvidos de acordo com os objetivos de cada aluno, garantindo motivação, segurança e melhores resultados juntos.",
     units: ["Central Parque", "Rondon", "Rui Barbosa", "Sete de Setembro"],
   },
-  {
-    id: "cross-training",
-    name: "Cross Training",
-    description: "Treino funcional de alta intensidade com programação diária variada.",
-    units: ["Moutonnée Move"],
-  },
-  {
-    id: "hyrox",
-    name: "Hyrox",
-    description: "Prepare-se para a maior competição de fitness do mundo com treinos específicos.",
-    units: ["Moutonnée Move"],
-  },
-  {
-    id: "beach-tennis",
-    name: "Beach Tennis",
-    description: "Esporte de raquete na areia com ritmo dinâmico e muita diversão.",
-    units: ["SmashMove"],
-  },
-  {
-    id: "foot-volei",
-    name: "Futevôlei",
-    description: "Um esporte praticado na areia que combina futebol e vôlei, unindo técnica, habilidade e agilidade.",
-    units: ["SmashMove"],
-  },
-  {
-    id: "volei-areia",
-    name: "Vôlei de Areia",
-    description: "Treinamento e prática de vôlei de praia em quadras profissionais.",
-    units: ["SmashMove"],
-  },
 ];

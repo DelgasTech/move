@@ -8,6 +8,7 @@ import Planos from "@/components/sections/Planos";
 import Servicos from "@/components/sections/Servicos";
 import HorariosFuncionamento from "@/components/sections/HorariosFuncionamento";
 import CtaFinal from "@/components/sections/CtaFinal";
+import MoveAlem from "@/components/sections/MoveAlem";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <Planos />
         <Servicos />
         <HorariosFuncionamento />
+        <MoveAlem />
         <CtaFinal />
       </main>
       <Footer />

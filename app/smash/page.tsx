@@ -18,7 +18,7 @@ export default function SmashPage() {
             Unidade Move · Esportes de Areia
           </span>
           <h1 className="text-5xl sm:text-6xl font-black text-white mt-4 mb-6">
-            Smash <span className="text-primary">Move</span>
+            Smash<span className="text-primary">Move</span>
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
             A Move está trabalhando por aqui. Em breve teremos uma página completa com tudo sobre o SmashMove: beach tennis, vôlei de praia, futevôlei e muito mais.
