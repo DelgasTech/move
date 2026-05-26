@@ -22,7 +22,7 @@ export default function UnidadesHero() {
             Nossas<br />
             <span className="text-primary">Unidades</span>
           </h1>
-          <p className="text-gray-300 text-lg leading-relaxed">
+          <p className="text-gray-300 text-lg leading-relaxed text-justify">
             Treine onde for mais confortável para você. A Move está presente em diferentes
             pontos de Salto, SP. Sempre perto de você com a mesma qualidade e estrutura.
           </p>

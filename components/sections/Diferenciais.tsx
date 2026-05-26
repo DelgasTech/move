@@ -151,7 +151,7 @@ export default function Diferenciais() {
                   )}
                   <div>
                     <h3 className="text-base font-bold text-charcoal mb-1">{item.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed text-justify">{item.description}</p>
                     {item.extra}
                   </div>
                 </motion.div>

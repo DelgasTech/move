@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -8,11 +9,13 @@ const parceiros = [
     href: "/smash",
     label: "SmashMove",
     descricao: "Beach Tennis, Futevôlei e esportes de areia.",
+    imageSrc: "/images/fachadas/SmashMove faixada.png",
   },
   {
     href: "/moutonnee",
     label: "Moutonnée Move",
     descricao: "Cross Training e Hyrox de alto nível.",
+    imageSrc: "/images/fachadas/fachada montounne move.jpeg",
   },
 ];
 
@@ -38,7 +41,7 @@ export default function MoveAlem() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
           {parceiros.map((p, i) => (
             <motion.a
               key={p.href}
@@ -47,13 +50,23 @@ export default function MoveAlem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex items-center justify-between gap-6 bg-gray-50 border border-gray-200 hover:border-primary/50 rounded-2xl px-8 py-6 w-full sm:w-80 transition-all duration-300"
+              className="group bg-gray-50 border border-gray-200 hover:border-primary/50 rounded-2xl overflow-hidden w-full sm:w-80 transition-all duration-300 flex flex-col"
             >
-              <div>
-                <p className="text-charcoal font-black text-lg">{p.label}</p>
-                <p className="text-gray-500 text-sm mt-1">{p.descricao}</p>
+              <div className="relative h-48 w-full">
+                <Image
+                  src={p.imageSrc}
+                  alt={p.label}
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <FiArrowRight className="w-5 h-5 text-primary shrink-0 group-hover:translate-x-1 transition-transform" />
+              <div className="flex items-center justify-between gap-4 px-6 py-5">
+                <div>
+                  <p className="text-charcoal font-black text-lg">{p.label}</p>
+                  <p className="text-gray-500 text-sm mt-1">{p.descricao}</p>
+                </div>
+                <FiArrowRight className="w-5 h-5 text-primary shrink-0 group-hover:translate-x-1 transition-transform" />
+              </div>
             </motion.a>
           ))}
         </div>

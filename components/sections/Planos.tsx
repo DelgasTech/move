@@ -170,7 +170,7 @@ export default function Planos() {
             <p className="text-gray-400 text-sm mt-3">Acesse a Move pelo seu benefício corporativo.</p>
           </div>
 
-          <div className="flex flex-col gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
 
             {/* Wellhub */}
             <div className="bg-charcoal/50 border border-[#f47732]/30 rounded-3xl overflow-hidden">

@@ -82,7 +82,7 @@ export default function UnidadeCard({
               {nome}
             </h2>
 
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-300 text-lg leading-relaxed text-justify">
               {descricao}
             </p>
 
