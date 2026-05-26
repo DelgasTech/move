@@ -4,9 +4,9 @@ import Logo from "@/components/Logo";
 
 const socials = [
   { icon: FiInstagram, label: "Instagram", href: "https://www.instagram.com/personnalitemove/" },
-  { icon: FiFacebook,  label: "Facebook",  href: "#" },
-  { icon: SiTiktok,    label: "TikTok",    href: "#" },
-  { icon: FiLinkedin,  label: "LinkedIn",  href: "#" },
+  { icon: FiFacebook,  label: "Facebook",  href: "https://www.facebook.com/share/1JBkqdcUVf/?mibextid=wwXIfr" },
+  { icon: SiTiktok,    label: "TikTok",    href: "https://www.tiktok.com/@personnalite.move?_r=1&_t=ZS-96ZhjU1Hylx" },
+  { icon: FiLinkedin,  label: "LinkedIn",  href: "https://www.linkedin.com/company/academia-move/" },
 ];
 
 export default function Footer() {

@@ -9,7 +9,6 @@ import Servicos from "@/components/sections/Servicos";
 import HorariosFuncionamento from "@/components/sections/HorariosFuncionamento";
 import CtaFinal from "@/components/sections/CtaFinal";
 import MoveAlem from "@/components/sections/MoveAlem";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
         <CtaFinal />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

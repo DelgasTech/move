@@ -2,12 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const WA_NUMBER = "5511910204226";
-const WA_MESSAGE = encodeURIComponent("Olá! Tenho interesse em conhecer os planos da Move Academia.");
-const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
+import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 
 export default function Hero() {
+  const { openModal } = useWhatsAppModal();
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-dark-bg">
       {/* Gradient overlay */}
@@ -49,14 +47,12 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openModal}
                 className="bg-primary hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-full text-base transition-colors inline-flex items-center justify-center gap-2"
               >
                 Faça sua Matrícula
-              </a>
+              </button>
               <a
                 href="/#quem-somos"
                 className="border-2 border-white/30 hover:border-primary text-white hover:text-primary font-bold px-8 py-4 rounded-full text-base transition-colors inline-flex items-center justify-center gap-2"

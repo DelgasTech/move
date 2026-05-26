@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiCheck, FiMessageCircle, FiAlertCircle } from "react-icons/fi";
+import Image from "next/image";
 import { plans, partners, type PricePeriod } from "@/data/plans";
 
 const WA_NUMBER = "5511910204226";
@@ -128,43 +129,119 @@ export default function Planos() {
             </motion.div>
           ))}
         </div>
-        {/* Partners — Wellhub & Totalpass */}
+        {/* Benefícios planos semestrais e anuais */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16"
+          className="mt-10 max-w-3xl mx-auto"
         >
-          <h3 className="text-center text-white font-black text-2xl mb-2">Convênios</h3>
-          <p className="text-center text-gray-400 text-sm mb-8">Acesse a Move pelo seu benefício.</p>
+          <div className="bg-primary/10 border border-primary/30 rounded-3xl p-6 sm:p-8">
+            <p className="text-primary font-bold text-xs uppercase tracking-widest mb-4">
+              Benefícios, Planos Semestrais e Anuais
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "Acesso ilimitado em todas as unidades",
+                "Fidelidade de 12 ou 6 meses",
+                "Taxa de cancelamento de 10% sobre os meses restantes",
+                "Sem taxa de matrícula",
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <FiCheck className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300 text-sm">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
-            {partners.map((p, i) => (
-              <div key={i} className="bg-charcoal/50 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-white font-black text-lg">{p.name}</span>
-                  <span className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full">{p.tier}</span>
+        {/* Convênios */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-10">
+            <h3 className="text-white font-black text-3xl sm:text-4xl">Convênios</h3>
+            <p className="text-gray-400 text-sm mt-3">Acesse a Move pelo seu benefício corporativo.</p>
+          </div>
+
+          <div className="flex flex-col gap-6 max-w-2xl mx-auto">
+
+            {/* Wellhub */}
+            <div className="bg-charcoal/50 border border-[#f47732]/30 rounded-3xl overflow-hidden">
+              {/* Logo area */}
+              <div className="bg-white flex items-center justify-center py-6 px-8">
+                <div className="relative h-12 w-48">
+                  <Image src="/images/logos/wellhub-logo.png" alt="Wellhub" fill className="object-contain" />
                 </div>
-                <p className="text-gray-400 text-xs">{p.units}</p>
-                {p.includes.length > 0 && (
-                  <ul className="space-y-1.5">
-                    {p.includes.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-gray-300 text-xs">
-                        <FiCheck className="w-3 h-3 text-primary flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {p.obs && (
-                  <div className="flex items-start gap-2 mt-auto pt-3 border-t border-white/10 text-gray-500 text-xs">
-                    <FiAlertCircle className="w-3 h-3 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span>{p.obs}</span>
-                  </div>
-                )}
               </div>
-            ))}
+              {/* Tiers */}
+              <div className="p-6 flex flex-col gap-5">
+                {partners.filter(p => p.name === "Wellhub").map((p, i) => (
+                  <div key={i} className="flex flex-col gap-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white font-bold text-sm">{p.units}</span>
+                      <span className="bg-[#f47732]/20 text-[#f47732] text-xs font-bold px-3 py-1 rounded-full">{p.tier}</span>
+                    </div>
+                    <ul className="space-y-1">
+                      {p.includes.map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-gray-400 text-xs">
+                          <FiCheck className="w-3 h-3 text-[#f47732] flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    {p.obs && (
+                      <div className="flex items-start gap-2 pt-2 border-t border-white/10 text-gray-500 text-xs">
+                        <FiAlertCircle className="w-3 h-3 text-yellow-500 flex-shrink-0 mt-0.5" />
+                        <span>{p.obs}</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Totalpass */}
+            <div className="bg-charcoal/50 border border-[#f47732]/30 rounded-3xl overflow-hidden">
+              {/* Logo area */}
+              <div className="bg-white flex items-center justify-center py-6 px-8">
+                <div className="relative h-12 w-48">
+                  <Image src="/images/logos/totalpass-desktop-black.ed6d569f.svg" alt="Totalpass" fill className="object-contain" />
+                </div>
+              </div>
+              {/* Tiers */}
+              <div className="p-6 flex flex-col gap-5">
+                {partners.filter(p => p.name === "Totalpass").map((p, i) => (
+                  <div key={i} className="flex flex-col gap-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white font-bold text-sm">{p.units}</span>
+                      <span className="bg-[#f47732]/20 text-[#f47732] text-xs font-bold px-3 py-1 rounded-full">{p.tier}</span>
+                    </div>
+                    <ul className="space-y-1">
+                      {p.includes.map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-gray-400 text-xs">
+                          <FiCheck className="w-3 h-3 text-[#f47732] flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    {p.obs && (
+                      <div className="flex items-start gap-2 pt-2 border-t border-white/10 text-gray-500 text-xs">
+                        <FiAlertCircle className="w-3 h-3 text-yellow-500 flex-shrink-0 mt-0.5" />
+                        <span>{p.obs}</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </motion.div>
 

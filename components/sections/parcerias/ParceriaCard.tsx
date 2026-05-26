@@ -59,9 +59,6 @@ export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, page
             transition={{ duration: 0.7 }}
             className={invertido ? "lg:order-1" : "lg:order-2"}
           >
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-              Unidade Move
-            </span>
             <h2 className="text-4xl sm:text-5xl font-black text-white mt-3 mb-6">
               {nome}
             </h2>

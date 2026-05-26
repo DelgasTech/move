@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion";
 import { FiMessageCircle, FiArrowRight } from "react-icons/fi";
-
-const WA_NUMBER = "5511910204226";
-const WA_MESSAGE = encodeURIComponent("Olá! Tenho interesse em conhecer os planos da Move Academia.");
-const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
+import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 
 export default function CtaFinal() {
+  const { openModal } = useWhatsAppModal();
   return (
     <section id="cta" className="py-20 lg:py-28 bg-primary relative overflow-hidden">
       {/* Decorative */}
@@ -30,16 +28,14 @@ export default function CtaFinal() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={openModal}
               className="inline-flex items-center justify-center gap-3 bg-white text-primary font-bold px-8 py-4 rounded-full text-base hover:bg-gray-100 transition-colors shadow-xl"
             >
               <FiMessageCircle className="w-5 h-5" />
               Falar pelo WhatsApp
               <FiArrowRight className="w-4 h-4" />
-            </a>
+            </button>
             <a
               href="#planos"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full text-base hover:border-white hover:bg-white/10 transition-colors"

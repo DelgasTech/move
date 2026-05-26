@@ -26,7 +26,7 @@ export default function QuemSomos() {
                 Desde 2019, nosso propósito é promover saúde, movimento e qualidade de vida, ajudando pessoas a treinarem com mais segurança, constância e bem-estar.
               </p>
               <p>
-                Com seis unidades e uma estrutura completa, oferecemos musculação, aulas coletivas, cross training, hyrox, pilates, bike indoor, fortalecimento terapêutico e acompanhamento profissional integrado, incluindo fisioterapia para reabilitação e melhor alcance dos seus objetivos físicos e mentais.
+                Com seis unidades e uma estrutura completa, oferecemos musculação, aulas coletivas, pilates, bike indoor, fortalecimento terapêutico e acompanhamento profissional integrado, incluindo fisioterapia para reabilitação e melhor alcance dos seus objetivos físicos e mentais.
               </p>
               <p>
                 Acreditamos em um treino dedicado para cada perfil, respeitando a rotina, a constância, os objetivos e as necessidades de cada aluno.

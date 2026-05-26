@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import { WhatsAppModalProvider } from "@/contexts/WhatsAppModalContext";
+import WhatsAppModal from "@/components/WhatsAppModal";
 import ChatBot from "@/components/ChatBot";
 
 const inter = Inter({
@@ -30,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={inter.variable}>
       <body className="antialiased font-sans">
-        {children}
-        <WhatsAppButton />
-        <ChatBot />
+        <WhatsAppModalProvider>
+          {children}
+          <WhatsAppModal />
+          <ChatBot />
+        </WhatsAppModalProvider>
       </body>
     </html>
   );

@@ -14,7 +14,13 @@ const unidades = [
   {
     slug: "sete-de-setembro",
     nome: "Sete de Setembro",
-    descricao: "A unidade Sete de Setembro, no Vila Henrique, une localização estratégica e estrutura de alto nível. Um ambiente acolhedor, com toda a metodologia Move, para você treinar com foco, constância e os melhores profissionais ao seu lado.",
+    descricao: "A unidade Sete de Setembro, na Vila Henrique, foi pensada para proporcionar uma experiência completa de cuidado, movimento e bem-estar. Em uma localização estratégica e com estrutura de alto padrão, oferece um ambiente acolhedor, acompanhamento próximo e toda a metodologia Move para você evoluir com segurança, conforto e atenção em cada detalhe.",
+    endereco: "Av. Sete de Setembro - Vila Henrique, Salto - SP",
+    horarios: [
+      { dias: "Segunda a Sexta", horario: "05h00 às 22h00" },
+      { dias: "Sábados e Feriados", horario: "07h00 às 12h00" },
+      { dias: "Domingo", horario: "Fechado" },
+    ],
     telRaw: "5511971071020",
     mapsHref: "https://maps.app.goo.gl/b8Gh1E8PSiPYqJYU8",
     imageSrc: "/images/fachadas/fachada sete de setembro.jpg",
@@ -23,7 +29,13 @@ const unidades = [
   {
     slug: "central-parque",
     nome: "Central Parque",
-    descricao: "A unidade Central Parque é a nossa referência no Jardim Celani. Com espaço amplo, variedade de modalidades e um ambiente moderno e energético, é o lugar perfeito para quem busca evolução constante em um dos melhores centros de treinamento da cidade.",
+    descricao: "A unidade Central Parque é referência na Região do Novo Centro, unindo estacionamento amplo, estrutura completa e um ambiente moderno e energético. Um espaço pensado para oferecer diferentes experiências de treino, acompanhamento especializado e tudo o que você precisa para evoluir com conforto e praticidade.",
+    endereco: "Av. Getúlio Vargas, 770 - Piso 1 - Jardim Celani, Salto - SP",
+    horarios: [
+      { dias: "Segunda a Sexta", horario: "05h00 às 00h00" },
+      { dias: "Sábados e Domingos", horario: "07h00 às 16h00" },
+      { dias: "Feriados", horario: "07h00 às 12h00" },
+    ],
     telRaw: "5511934461020",
     mapsHref: "https://www.google.com/maps/dir/-23.1243776,-47.251456/Move+-+Central+Parque,+Av.+Get%C3%BAlio+Vargas,+770+-+Piso+1+-+Jardim+Celani,+Salto+-+SP,+13326-185/@-23.1620744,-47.3189233,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94cf5304b22be769:0x937b69c90efbcaac!2m2!1d-47.307373!2d-23.1909294?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D",
     imageSrc: "/images/fachadas/fachada central parque.jpg",
@@ -32,7 +44,13 @@ const unidades = [
   {
     slug: "rondon",
     nome: "Rondon",
-    descricao: "A unidade Rondon é a nossa casa no Jardim da Cidade. Com estrutura completa de musculação, aulas coletivas e equipamentos modernos, é o espaço ideal para quem mora ou trabalha nessa região e quer treinar com qualidade e conforto.",
+    descricao: "A unidade Rondon é a nossa casa no Jardim da Cidade. Com estrutura completa, equipamentos modernos e aulas coletivas, oferece um ambiente confortável e acolhedor para quem busca treinar com qualidade na região. Além do amplo estacionamento, conta também com espaço kids monitorado no período da noite durante a semana, trazendo mais praticidade para a rotina dos alunos.",
+    endereco: "R. Botucatu, 74 - Jardim da Cidade, Salto - SP",
+    horarios: [
+      { dias: "Segunda a Sexta", horario: "05h00 às 00h00" },
+      { dias: "Sábados e Domingos", horario: "07h00 às 16h00" },
+      { dias: "Feriados", horario: "07h00 às 12h00" },
+    ],
     telRaw: "5519998866581",
     mapsHref: "https://www.google.com/maps/dir//Move+-+Rondon+-+R.+Botucatu,+74+-+Jardim+da+Cidade,+Salto+-+SP,+13323-080/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf4f7b3e63e5fd:0xf628a5c4fd7422ba?sa=X&ved=1t:57443&ictx=111",
     imageSrc: "/images/fachadas/fachada-rondon.png",
@@ -41,7 +59,13 @@ const unidades = [
   {
     slug: "rui-barbosa",
     nome: "Rui Barbosa",
-    descricao: "No coração do Centro de Salto, a unidade Rui Barbosa oferece praticidade para quem quer encaixar o treino na rotina do dia a dia. Estrutura completa, professores qualificados e toda a energia da Move para impulsionar seus resultados.",
+    descricao: "No coração do Centro de Salto, próxima à faculdade CEUNSP, a unidade Rui Barbosa oferece praticidade para quem quer encaixar o treino na rotina do dia a dia. Conta com estrutura completa, aulas kids, professores qualificados e horário estendido até 01h da madrugada, levando toda a energia Move para impulsionar seus resultados.",
+    endereco: "R. Rui Barbosa, 672 - Centro, Salto - SP",
+    horarios: [
+      { dias: "Segunda a Sexta", horario: "05h00 às 01h00" },
+      { dias: "Sábados e Domingos", horario: "07h00 às 16h00" },
+      { dias: "Feriados", horario: "07h00 às 12h00" },
+    ],
     telRaw: "5511918441020",
     mapsHref: "https://www.google.com/maps/dir//Move+-+Rui+Barbosa+-+R.+Rui+Barbosa,+672+-+Centro,+Salto+-+SP,+13320-230/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf513c7ec597b1:0x141f75856c97702?sa=X&ved=1t:57443&ictx=111",
     imageSrc: "",

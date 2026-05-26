@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiMenu, FiX, FiMessageCircle } from "react-icons/fi";
 import Logo from "@/components/Logo";
+import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 
 const navLinks = [
   { label: "Sobre Nós", href: "/#quem-somos" },
@@ -12,17 +13,13 @@ const navLinks = [
   { label: "Horários", href: "/#horarios" },
   { label: "Unidades", href: "/unidades" },
   { label: "Anuncie", href: "/anuncie" },
-  { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
   { label: "Contato", href: "/#cta" },
 ];
-
-const WA_NUMBER = "5511910204226";
-const WA_MESSAGE = encodeURIComponent("Olá! Tenho interesse em conhecer os planos da Move Academia.");
-const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { openModal } = useWhatsAppModal();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -57,15 +54,13 @@ export default function Header() {
           </nav>
 
           {/* CTA */}
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={openModal}
             className="hidden md:flex items-center gap-2 bg-primary hover:bg-orange-500 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
           >
             <FiMessageCircle className="w-4 h-4" />
             Fale pelo WhatsApp
-          </a>
+          </button>
 
           {/* Mobile menu button */}
           <button
@@ -92,16 +87,13 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => { openModal(); setMenuOpen(false); }}
               className="flex items-center justify-center gap-2 bg-primary text-white font-semibold px-4 py-3 rounded-full mt-2"
-              onClick={() => setMenuOpen(false)}
             >
               <FiMessageCircle className="w-4 h-4" />
               Fale pelo WhatsApp
-            </a>
+            </button>
           </nav>
         </div>
       )}
