@@ -152,10 +152,10 @@ export default function Planos() {
                   <span className="text-gray-300 text-sm">{b}</span>
                 </li>
               ))}
-              <li className="text-gray-500 text-xs text-center italic">
-                em caso de cancelamento antecipado, taxa de 10% sobre os meses restantes do contrato
-              </li>
             </ul>
+            <p className="text-gray-500 text-xs text-center italic mt-1">
+              em caso de cancelamento antecipado, taxa de 10% sobre os meses restantes do contrato
+            </p>
           </div>
         </motion.div>
 
