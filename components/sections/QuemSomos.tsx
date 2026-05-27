@@ -21,7 +21,7 @@ export default function QuemSomos() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-6">
               Somos a <span className="text-primary">Move.</span>
             </h2>
-            <div className="space-y-4 text-gray-400 text-lg leading-relaxed text-justify">
+            <div className="space-y-4 text-gray-400 text-lg leading-relaxed text-justify hyphens-auto">
               <p>
                 Desde 2019, nosso propósito é promover saúde, movimento e qualidade de vida, ajudando pessoas a treinarem com mais segurança, constância e bem-estar.
               </p>

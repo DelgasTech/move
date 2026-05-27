@@ -62,7 +62,7 @@ export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, page
             <h2 className="text-4xl sm:text-5xl font-black text-white mt-3 mb-6">
               {nome}
             </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 text-justify">
+            <p className="text-gray-300 text-lg leading-relaxed mb-8 text-justify hyphens-auto">
               {descricao}
             </p>
 

@@ -42,7 +42,7 @@ export default function Hero() {
               e Constância
             </h1>
 
-            <p className="text-gray-300 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed text-justify">
+            <p className="text-gray-300 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed text-justify hyphens-auto">
               Estrutura completa com diversas modalidades. Conheça nossas unidades em Salto e treine quando e onde quiser.
             </p>
 

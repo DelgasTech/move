@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FiCheck, FiMessageCircle, FiAlertCircle } from "react-icons/fi";
+import { FiCheck, FiMessageCircle } from "react-icons/fi";
 import Image from "next/image";
 import { plans, partners, type PricePeriod } from "@/data/plans";
 
@@ -138,22 +138,24 @@ export default function Planos() {
           className="mt-10 max-w-3xl mx-auto"
         >
           <div className="bg-primary/10 border border-primary/30 rounded-3xl p-6 sm:p-8">
-            <p className="text-primary font-bold text-xs uppercase tracking-widest mb-4">
-              Benefícios, Planos Semestrais e Anuais
+            <p className="text-primary font-bold text-xs uppercase tracking-widest mb-5 text-center">
+              Benefícios dos Planos Semestrais e Anuais
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <ul className="flex flex-col items-center gap-3 mb-5">
               {[
-                "Acesso ilimitado em todas as unidades",
-                "Fidelidade de 12 ou 6 meses",
-                "Taxa de cancelamento de 10% sobre os meses restantes",
-                "Sem taxa de matrícula",
+                "Isenção da taxa de matrícula",
+                "Acesso liberado em todas as unidades",
+                "Fidelidade de 6 ou 12 meses",
               ].map((b) => (
-                <li key={b} className="flex items-start gap-3">
-                  <FiCheck className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <li key={b} className="flex items-center gap-3">
+                  <FiCheck className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-gray-300 text-sm">{b}</span>
                 </li>
               ))}
             </ul>
+            <p className="text-gray-500 text-xs text-center">
+              Em caso de cancelamento, taxa de 10% sobre os meses restantes do contrato.
+            </p>
           </div>
         </motion.div>
 
@@ -181,26 +183,15 @@ export default function Planos() {
                 </div>
               </div>
               {/* Tiers */}
-              <div className="p-6 flex flex-col gap-5">
+              <div className="p-6 flex flex-col gap-4">
                 {partners.filter(p => p.name === "Wellhub").map((p, i) => (
-                  <div key={i} className="flex flex-col gap-2">
-                    <div className="flex items-center justify-between">
+                  <div key={i} className={`flex flex-col gap-2 ${i > 0 ? "border-t border-white/10 pt-4" : ""}`}>
+                    <div className="flex items-center justify-between gap-2">
                       <span className="text-white font-bold text-sm">{p.units}</span>
-                      <span className="bg-[#f47732]/20 text-[#f47732] text-xs font-bold px-3 py-1 rounded-full">{p.tier}</span>
+                      <span className="bg-[#f47732]/20 text-[#f47732] text-xs font-bold px-3 py-1 rounded-full shrink-0">{p.tier}</span>
                     </div>
-                    <ul className="space-y-1">
-                      {p.includes.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-gray-400 text-xs">
-                          <FiCheck className="w-3 h-3 text-[#f47732] flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
                     {p.obs && (
-                      <div className="flex items-start gap-2 pt-2 border-t border-white/10 text-gray-500 text-xs">
-                        <FiAlertCircle className="w-3 h-3 text-yellow-500 flex-shrink-0 mt-0.5" />
-                        <span>{p.obs}</span>
-                      </div>
+                      <p className="text-gray-500 text-xs leading-relaxed">{p.obs}</p>
                     )}
                   </div>
                 ))}
@@ -216,26 +207,15 @@ export default function Planos() {
                 </div>
               </div>
               {/* Tiers */}
-              <div className="p-6 flex flex-col gap-5">
+              <div className="p-6 flex flex-col gap-4">
                 {partners.filter(p => p.name === "Totalpass").map((p, i) => (
-                  <div key={i} className="flex flex-col gap-2">
-                    <div className="flex items-center justify-between">
+                  <div key={i} className={`flex flex-col gap-2 ${i > 0 ? "border-t border-white/10 pt-4" : ""}`}>
+                    <div className="flex items-center justify-between gap-2">
                       <span className="text-white font-bold text-sm">{p.units}</span>
-                      <span className="bg-[#f47732]/20 text-[#f47732] text-xs font-bold px-3 py-1 rounded-full">{p.tier}</span>
+                      <span className="bg-[#f47732]/20 text-[#f47732] text-xs font-bold px-3 py-1 rounded-full shrink-0">{p.tier}</span>
                     </div>
-                    <ul className="space-y-1">
-                      {p.includes.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-gray-400 text-xs">
-                          <FiCheck className="w-3 h-3 text-[#f47732] flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
                     {p.obs && (
-                      <div className="flex items-start gap-2 pt-2 border-t border-white/10 text-gray-500 text-xs">
-                        <FiAlertCircle className="w-3 h-3 text-yellow-500 flex-shrink-0 mt-0.5" />
-                        <span>{p.obs}</span>
-                      </div>
+                      <p className="text-gray-500 text-xs leading-relaxed">{p.obs}</p>
                     )}
                   </div>
                 ))}

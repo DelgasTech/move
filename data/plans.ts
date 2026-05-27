@@ -98,6 +98,7 @@ export const partners: PlanPartner[] = [
     tier: "TP 1+",
     units: "Rui Barbosa, Central Parque e Rondon",
     includes: ["Musculação"],
+    obs: "Acesso à musculação (exceto aulas coletivas e Sete de Setembro)",
   },
 ];
 

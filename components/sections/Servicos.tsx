@@ -46,7 +46,7 @@ export default function Servicos() {
               <h3 className="text-xl font-bold mb-2 text-charcoal">
                 {service.name}
               </h3>
-              <p className="text-sm leading-relaxed mb-6 flex-1 text-gray-500 text-justify">
+              <p className="text-sm leading-relaxed mb-6 flex-1 text-gray-500 text-justify hyphens-auto">
                 {service.description}
               </p>
 
