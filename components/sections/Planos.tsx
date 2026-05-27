@@ -141,7 +141,7 @@ export default function Planos() {
             <p className="text-primary font-bold text-xs uppercase tracking-widest mb-5 text-center">
               Benefícios dos Planos Semestrais e Anuais
             </p>
-            <ul className="flex flex-col items-center gap-3 mb-5">
+            <ul className="flex flex-col items-center gap-3">
               {[
                 "Isenção da taxa de matrícula",
                 "Acesso liberado em todas as unidades",
@@ -152,10 +152,10 @@ export default function Planos() {
                   <span className="text-gray-300 text-sm">{b}</span>
                 </li>
               ))}
+              <li className="text-gray-500 text-xs text-center italic">
+                em caso de cancelamento antecipado, taxa de 10% sobre os meses restantes do contrato
+              </li>
             </ul>
-            <p className="text-gray-500 text-xs text-center">
-              Em caso de cancelamento, taxa de 10% sobre os meses restantes do contrato.
-            </p>
           </div>
         </motion.div>
 
