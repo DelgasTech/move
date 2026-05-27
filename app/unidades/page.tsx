@@ -68,7 +68,7 @@ const unidades = [
     ],
     telRaw: "5511918441020",
     mapsHref: "https://www.google.com/maps/dir//Move+-+Rui+Barbosa+-+R.+Rui+Barbosa,+672+-+Centro,+Salto+-+SP,+13320-230/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf513c7ec597b1:0x141f75856c97702?sa=X&ved=1t:57443&ictx=111",
-    imageSrc: "",
+    imageSrc: "/images/fachadas/fachada-rui-barbosa.png",
     invertido: true,
   },
 ];
