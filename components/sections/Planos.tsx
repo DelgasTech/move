@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FiCheck, FiMessageCircle } from "react-icons/fi";
+import { FiCheck, FiMessageCircle, FiTag, FiHome, FiDroplet, FiWind, FiCalendar, FiAlertCircle } from "react-icons/fi";
+import { LuCar } from "react-icons/lu";
 import Image from "next/image";
 import { plans, partners, type PricePeriod } from "@/data/plans";
 
@@ -129,7 +130,7 @@ export default function Planos() {
             </motion.div>
           ))}
         </div>
-        {/* Benefícios planos semestrais e anuais */}
+        {/* Benefícios */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,25 +138,27 @@ export default function Planos() {
           transition={{ duration: 0.6 }}
           className="mt-10 max-w-3xl mx-auto"
         >
-          <div className="bg-primary/10 border border-primary/30 rounded-3xl p-6 sm:p-8">
-            <p className="text-primary font-bold text-xs uppercase tracking-widest mb-5 text-center">
-              Benefícios dos Planos Semestrais e Anuais
-            </p>
-            <ul className="flex flex-col items-center gap-3">
-              {[
-                "Isenção da taxa de matrícula",
-                "Acesso liberado em todas as unidades",
-                "Fidelidade de 6 ou 12 meses",
-              ].map((b) => (
-                <li key={b} className="flex items-center gap-3">
-                  <FiCheck className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span className="text-gray-300 text-sm">{b}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-gray-500 text-xs text-center italic mt-1">
-              Em caso de cancelamento antecipado, taxa de 10% sobre os meses restantes do contrato
-            </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+            {[
+              { icon: <FiTag className="w-5 h-5" />,      title: "Sem taxa de matrícula",      desc: "Isenção total na hora de começar" },
+              { icon: <FiHome className="w-5 h-5" />,      title: "Todas as unidades",          desc: "Acesso liberado em todas as unidades" },
+              { icon: <LuCar className="w-5 h-5" />,        title: "Estacionamento",             desc: "Estacionamento disponível na unidade" },
+              { icon: <FiDroplet className="w-5 h-5" />,   title: "Vestiários completos",       desc: "Armários, chuveiros e secador de cabelo" },
+              { icon: <FiWind className="w-5 h-5" />,      title: "Ar condicionado",            desc: "Ambiente climatizado para seu conforto" },
+              { icon: <FiCalendar className="w-5 h-5" />,  title: "Planos semestrais e anuais", desc: "Fidelidade de 6 a 12 meses com condições especiais" },
+            ].map((b) => (
+              <div key={b.title} className="bg-primary/10 border border-primary/30 rounded-2xl p-4 flex flex-col gap-2">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-primary/20 text-primary">
+                  {b.icon}
+                </div>
+                <p className="text-white text-sm font-bold leading-snug">{b.title}</p>
+                <p className="text-gray-500 text-xs leading-relaxed">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-start justify-center gap-2 text-gray-500 text-xs italic">
+            <FiAlertCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+            <p>Em caso de cancelamento antecipado em planos com fidelidade, é aplicada uma taxa de 10% sobre os meses restantes do contrato.</p>
           </div>
         </motion.div>
 
