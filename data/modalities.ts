@@ -45,7 +45,7 @@ export const modalities: Modality[] = [
   {
     id: "terapeutico",
     name: "Fortalecimento Terapêutico",
-    description: "Atividades essenciais para o dia a dia com foco em saúde e bem-estar.",
+    description: "Voltado para idosos, pessoas com limitações articulares ou em reabilitação de lesões. Os equipamentos com sistema de alavanca, oferecem os exercícios de fortalecimento muscular com mais segurança e menor sobrecarga nas articulações, promovendo mais mobilidade, autonomia e qualidade de vida.",
     units: ["Sete de Setembro"],
   },
   {

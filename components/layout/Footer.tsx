@@ -11,14 +11,22 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-bg text-gray-400 py-12">
+    <footer className="bg-dark-bg text-gray-400 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
-          <a href="/"><Logo height={36} /></a>
-          <p className="text-sm leading-relaxed text-center flex-1">
-            Uma nova experiência em academia. Saúde, movimento e qualidade de vida para toda a família.
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
+          {/* Logo */}
+          <a href="/" className="flex justify-center sm:justify-start">
+            <Logo height={36} />
+          </a>
+
+          {/* Tagline */}
+          <p className="text-sm leading-relaxed text-center">
+            Uma nova experiência em academia.<br />
+            Saúde, movimento e qualidade de vida para toda a família.
           </p>
-          <div className="flex items-center gap-4">
+
+          {/* Redes sociais */}
+          <div className="flex items-center justify-center sm:justify-end gap-5">
             {socials.map(({ icon: Icon, label, href }) => (
               <a
                 key={label}
@@ -33,7 +41,8 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <hr className="border-white/10 mt-6 mb-4" />
+
+        <hr className="border-white/10 mt-8 mb-4" />
         <p className="text-xs text-gray-600 text-center">© {new Date().getFullYear()} Move Academia. Todos os direitos reservados.</p>
       </div>
     </footer>

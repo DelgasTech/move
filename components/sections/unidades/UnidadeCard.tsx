@@ -48,7 +48,7 @@ export default function UnidadeCard({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className={`${invertido ? "lg:order-2" : "lg:order-1"} flex flex-col gap-3`}
+            className={`order-2 ${invertido ? "lg:order-2" : "lg:order-1"} flex flex-col gap-3`}
           >
             <div className="relative h-[420px] rounded-3xl overflow-hidden bg-charcoal/40 border border-white/10 flex items-center justify-center">
               {hasImage ? (
@@ -76,7 +76,7 @@ export default function UnidadeCard({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className={`${invertido ? "lg:order-1" : "lg:order-2"} flex flex-col gap-6`}
+            className={`order-1 ${invertido ? "lg:order-1" : "lg:order-2"} flex flex-col gap-6`}
           >
             <h2 className="text-4xl sm:text-5xl font-black text-white">
               {nome}

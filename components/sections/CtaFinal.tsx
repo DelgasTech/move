@@ -7,7 +7,7 @@ import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 export default function CtaFinal() {
   const { openModal } = useWhatsAppModal();
   return (
-    <section id="cta" className="py-20 lg:py-28 bg-primary relative overflow-hidden">
+    <section id="cta" className="py-16 lg:py-20 bg-primary relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />

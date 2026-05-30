@@ -3,17 +3,11 @@
 import { motion } from "framer-motion";
 import { FiMessageCircle } from "react-icons/fi";
 import { services } from "@/data/services";
-
-const WA_NUMBER = "5511910204226";
-
-function getWaLink(serviceName: string) {
-  const msg = encodeURIComponent(
-    `Olá! Tenho interesse no serviço de ${serviceName} da Move Academia.`
-  );
-  return `https://wa.me/${WA_NUMBER}?text=${msg}`;
-}
+import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 
 export default function Servicos() {
+  const { openModal } = useWhatsAppModal();
+
   return (
     <section id="servicos" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,15 +44,13 @@ export default function Servicos() {
                 {service.description}
               </p>
 
-              <a
-                href={getWaLink(service.name)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 font-semibold py-3 rounded-full text-sm transition-colors mt-auto border-2 border-primary text-primary hover:bg-primary hover:text-white"
+              <button
+                onClick={() => openModal(`Olá! Tenho interesse no serviço de ${service.name} da Move Academia.`)}
+                className="flex items-center justify-center gap-2 font-semibold py-3 rounded-full text-sm transition-colors mt-auto border-2 border-primary text-primary hover:bg-primary hover:text-white w-full"
               >
                 <FiMessageCircle className="w-4 h-4" />
                 Saber mais
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>

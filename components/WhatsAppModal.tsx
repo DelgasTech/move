@@ -7,17 +7,16 @@ import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 const units = [
   { name: "Sete de Setembro", tel: "5511971071020" },
   { name: "Central Parque",   tel: "5511934461020" },
-  { name: "Rondon",           tel: "5519998866581" },
+  { name: "Rondon",           tel: "5511918331020" },
   { name: "Rui Barbosa",      tel: "5511918441020" },
 ];
 
-function waLink(tel: string) {
-  const msg = encodeURIComponent("Olá! Tenho interesse em conhecer os planos da Move Academia.");
-  return `https://wa.me/${tel}?text=${msg}`;
+function waLink(tel: string, msg: string) {
+  return `https://wa.me/${tel}?text=${encodeURIComponent(msg)}`;
 }
 
 export default function WhatsAppModal() {
-  const { isOpen, closeModal } = useWhatsAppModal();
+  const { isOpen, message, closeModal } = useWhatsAppModal();
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
@@ -49,7 +48,7 @@ export default function WhatsAppModal() {
           {units.map((u) => (
             <li key={u.name}>
               <a
-                href={waLink(u.tel)}
+                href={waLink(u.tel, message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeModal}

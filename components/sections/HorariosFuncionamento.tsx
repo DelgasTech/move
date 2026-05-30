@@ -44,7 +44,7 @@ const unidades: UnidadeHorario[] = [
       { dias: "Feriados", horario: "07h00 às 12h00" },
     ],
     mapsHref: "https://www.google.com/maps/dir//Move+-+Rondon+-+R.+Botucatu,+74+-+Jardim+da+Cidade,+Salto+-+SP,+13323-080/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf4f7b3e63e5fd:0xf628a5c4fd7422ba?sa=X&ved=1t:57443&ictx=111",
-    telRaw: "5519998866581",
+    telRaw: "5511918331020",
   },
   {
     nome: "Rui Barbosa",

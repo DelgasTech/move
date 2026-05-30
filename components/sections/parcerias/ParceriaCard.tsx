@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiInstagram } from "react-icons/fi";
+import { FiArrowRight, FiInstagram, FiMapPin, FiClock } from "react-icons/fi";
+
+interface HorarioItem {
+  dias: string;
+  horario: string;
+}
 
 interface ParceriaCardProps {
   slug: string;
@@ -14,9 +19,11 @@ interface ParceriaCardProps {
   instagram?: string;
   imageSrc?: string;
   invertido: boolean;
+  endereco?: string;
+  horarios?: HorarioItem[];
 }
 
-export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, pageHref, instagram, imageSrc, invertido }: ParceriaCardProps) {
+export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, pageHref, instagram, imageSrc, invertido, endereco, horarios }: ParceriaCardProps) {
   const imagePath = imageSrc ?? `/images/parcerias/${slug}.jpg`;
 
   return (
@@ -30,7 +37,7 @@ export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, page
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className={invertido ? "lg:order-2" : "lg:order-1"}
+            className={`order-2 ${invertido ? "lg:order-2" : "lg:order-1"} flex flex-col gap-3`}
           >
             <div className="relative h-[420px] rounded-3xl overflow-hidden bg-charcoal/40 border border-white/10 flex items-center justify-center">
               {imageSrc ? (
@@ -49,6 +56,12 @@ export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, page
                 </div>
               )}
             </div>
+            {endereco && (
+              <div className="flex items-start gap-2 text-gray-400 text-sm px-1">
+                <FiMapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span>{endereco}</span>
+              </div>
+            )}
           </motion.div>
 
           {/* Conteúdo */}
@@ -57,14 +70,30 @@ export default function ParceriaCard({ slug, nome, descricao, cta, ctaHref, page
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className={invertido ? "lg:order-1" : "lg:order-2"}
+            className={`order-1 ${invertido ? "lg:order-1" : "lg:order-2"}`}
           >
             <h2 className="text-4xl sm:text-5xl font-black text-white mt-3 mb-6">
               {nome}
             </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 text-justify hyphens-auto">
+            <p className="text-gray-300 text-lg leading-relaxed mb-6 text-justify hyphens-auto">
               {descricao}
             </p>
+
+            {horarios && horarios.length > 0 && (
+              <div className="flex items-start gap-3 mb-6">
+                <FiClock className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <div className="flex flex-col gap-1">
+                  {horarios.map((h) => (
+                    <p key={h.dias} className="text-sm text-gray-400">
+                      <span className="text-gray-500">{h.dias}:</span>{" "}
+                      <span className={h.horario === "Fechado" ? "text-gray-600" : "text-gray-300 font-medium"}>
+                        {h.horario}
+                      </span>
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-4">
               {pageHref && (

@@ -15,7 +15,7 @@ const unidades = [
     slug: "sete-de-setembro",
     nome: "Sete de Setembro",
     descricao: "A unidade Sete de Setembro, na Vila Henrique, foi pensada para proporcionar uma experiência completa de cuidado, movimento e bem-estar. Em uma localização estratégica e com estrutura de alto padrão, oferece um ambiente acolhedor, acompanhamento próximo e toda a metodologia Move para você evoluir com segurança, conforto e atenção em cada detalhe.",
-    endereco: "Av. Sete de Setembro - Vila Henrique, Salto - SP",
+    endereco: "Av. Sete de Setembro, 1.055 - Vila Henrique, Salto - SP",
     horarios: [
       { dias: "Segunda a Sexta", horario: "05h00 às 22h00" },
       { dias: "Sábados e Feriados", horario: "07h00 às 12h00" },
@@ -51,7 +51,7 @@ const unidades = [
       { dias: "Sábados e Domingos", horario: "07h00 às 16h00" },
       { dias: "Feriados", horario: "07h00 às 12h00" },
     ],
-    telRaw: "5519998866581",
+    telRaw: "5511918331020",
     mapsHref: "https://www.google.com/maps/dir//Move+-+Rondon+-+R.+Botucatu,+74+-+Jardim+da+Cidade,+Salto+-+SP,+13323-080/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf4f7b3e63e5fd:0xf628a5c4fd7422ba?sa=X&ved=1t:57443&ictx=111",
     imageSrc: "/images/fachadas/fachada-rondon.png",
     invertido: false,
@@ -84,6 +84,12 @@ const unidadesEsportivas = [
     pageHref: "/moutonnee",
     instagram: "https://www.instagram.com/moutonneemove/",
     invertido: false,
+    endereco: "Rua Escócia, 799 - Jardim Celani, Salto/SP",
+    horarios: [
+      { dias: "Segunda a Sexta", horario: "05h00 às 22h00" },
+      { dias: "Sábado e Domingo", horario: "07h00 às 11h00" },
+      { dias: "Feriados", horario: "07h00 às 09h00" },
+    ],
   },
   {
     slug: "smash-move",
@@ -95,6 +101,12 @@ const unidadesEsportivas = [
     instagram: "https://www.instagram.com/smashbtsalto/",
     imageSrc: "/images/fachadas/SmashMove faixada.png",
     invertido: true,
+    endereco: "Avenida Brasília, 580 - Icaraí, Salto/SP",
+    horarios: [
+      { dias: "Segunda a Sexta", horario: "16h00 às 22h00" },
+      { dias: "Sábado", horario: "07h30 às 14h00" },
+      { dias: "Domingos e Feriados", horario: "07h30 às 12h00" },
+    ],
   },
 ];
 
