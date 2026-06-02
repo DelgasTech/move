@@ -6,15 +6,7 @@ import { FiCheck, FiMessageCircle, FiTag, FiHome, FiDroplet, FiWind, FiCalendar,
 import { LuCar } from "react-icons/lu";
 import Image from "next/image";
 import { plans, partners, type PricePeriod } from "@/data/plans";
-
-const WA_NUMBER = "5511910204226";
-
-function getWaLink(planName: string) {
-  const msg = encodeURIComponent(
-    `Olá! Tenho interesse no plano ${planName} da Move Academia.`
-  );
-  return `https://wa.me/${WA_NUMBER}?text=${msg}`;
-}
+import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 
 const periods: { key: PricePeriod; label: string }[] = [
   { key: "anual", label: "Anual" },
@@ -24,6 +16,7 @@ const periods: { key: PricePeriod; label: string }[] = [
 
 export default function Planos() {
   const [period, setPeriod] = useState<PricePeriod>("mensal");
+  const { openModal } = useWhatsAppModal();
 
   return (
     <section id="planos" className="py-20 lg:py-28 bg-dark-bg">
@@ -114,11 +107,9 @@ export default function Planos() {
                 ))}
               </ul>
 
-              <a
-                href={getWaLink(plan.name)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center justify-center gap-2 font-bold py-3.5 rounded-full transition-colors text-sm ${
+              <button
+                onClick={() => openModal(`Olá! Tenho interesse no plano ${plan.name} da Move Academia.`)}
+                className={`flex items-center justify-center gap-2 font-bold py-3.5 rounded-full transition-colors text-sm w-full ${
                   plan.highlight
                     ? "bg-primary hover:bg-orange-500 text-white"
                     : "border-2 border-primary text-primary hover:bg-primary hover:text-white"
@@ -126,7 +117,7 @@ export default function Planos() {
               >
                 <FiMessageCircle className="w-4 h-4" />
                 Contratar via WhatsApp
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
