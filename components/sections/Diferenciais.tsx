@@ -59,14 +59,18 @@ const diferenciais = [
     extra: (
       <div className="flex gap-3 mt-3">
         <a
-          href="#"
+          href="https://apps.apple.com/br/app/personnalite-move/id6447705757"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 bg-charcoal text-white text-xs font-semibold px-3 py-2 rounded-xl hover:bg-primary transition-colors"
         >
           <SiApple className="w-4 h-4" />
           App Store
         </a>
         <a
-          href="#"
+          href="https://play.google.com/store/apps/details?id=com.cloudgym.academiamove&hl=pt"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 bg-charcoal text-white text-xs font-semibold px-3 py-2 rounded-xl hover:bg-primary transition-colors"
         >
           <SiGoogleplay className="w-4 h-4" />
