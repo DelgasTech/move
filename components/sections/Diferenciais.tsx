@@ -13,9 +13,9 @@ const carouselImages = [
     alt: "Fisioterapia inclusa na Move Academia",
   },
   {
-    src:       "/images/Fisioterapia - 2.jpeg",
-    srcMobile: "/images/Fisioterapia - 2.jpeg",
-    alt: "Fisioterapia Move Academia",
+    src:       "/images/app.jpg",
+    srcMobile: "/images/app.jpg",
+    alt: "App de Reservas Move Academia",
   },
   {
     src:       "/images/Espaço Kids.jpeg",
