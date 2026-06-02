@@ -94,7 +94,7 @@ export default function Diferenciais() {
   return (
     <section id="diferenciais" className="py-20 lg:py-28 bg-primary-light overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-12 lg:items-stretch">
 
           {/* Carrossel */}
           <motion.div
@@ -102,7 +102,7 @@ export default function Diferenciais() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative min-h-[400px] rounded-3xl overflow-hidden shadow-2xl"
+            className="relative rounded-3xl overflow-hidden shadow-2xl self-stretch min-h-[400px]"
           >
             <AnimatePresence mode="sync">
               <motion.div
@@ -144,7 +144,7 @@ export default function Diferenciais() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mb-8"
+              className="mb-8 text-center"
             >
               <span className="text-primary font-semibold text-sm uppercase tracking-widest">
                 Por que a Move?
