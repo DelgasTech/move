@@ -48,7 +48,7 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="bg-primary hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-full text-base transition-colors inline-flex items-center justify-center gap-2"
               >
                 Faça sua Matrícula

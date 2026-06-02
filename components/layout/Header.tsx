@@ -55,7 +55,7 @@ export default function Header() {
 
           {/* CTA */}
           <button
-            onClick={openModal}
+            onClick={() => openModal()}
             className="hidden md:flex items-center gap-2 bg-primary hover:bg-orange-500 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
           >
             <FiMessageCircle className="w-4 h-4" />
