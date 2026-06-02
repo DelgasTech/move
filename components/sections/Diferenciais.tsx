@@ -102,7 +102,7 @@ export default function Diferenciais() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl self-stretch min-h-[400px]"
+            className="relative rounded-3xl overflow-hidden shadow-2xl h-full min-h-[500px]"
           >
             <AnimatePresence mode="sync">
               <motion.div
