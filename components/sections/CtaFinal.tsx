@@ -29,7 +29,7 @@ export default function CtaFinal() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={openModal}
+              onClick={() => openModal()}
               className="inline-flex items-center justify-center gap-3 bg-white text-primary font-bold px-8 py-4 rounded-full text-base hover:bg-gray-100 transition-colors shadow-xl"
             >
               <FiMessageCircle className="w-5 h-5" />
