@@ -7,10 +7,26 @@ import { SiApple, SiGoogleplay } from "react-icons/si";
 import { useState, useEffect } from "react";
 
 const carouselImages = [
-  { src: "/images/corda.jpg",     alt: "Aluna Move Academia com corda" },
-  { src: "/images/halter.jpg",    alt: "Treino de musculação Move" },
-  { src: "/images/time move.jpg", alt: "Time Move Academia" },
-  { src: "/images/equipe.jpg",    alt: "Equipe Move Academia" },
+  {
+    src:       "/images/Fisioterapia.jpeg",
+    srcMobile: "/images/Fisioterapia-mobile.jpeg",
+    alt: "Fisioterapia inclusa na Move Academia",
+  },
+  {
+    src:       "/images/Fisioterapia - 2.jpeg",
+    srcMobile: "/images/Fisioterapia - 2.jpeg",
+    alt: "Fisioterapia Move Academia",
+  },
+  {
+    src:       "/images/Espaço Kids.jpeg",
+    srcMobile: "/images/Espaço Kids-mobile.jpeg",
+    alt: "Espaço Kids Move Academia",
+  },
+  {
+    src:       "/images/Loja Move.jpeg",
+    srcMobile: "/images/Loja Move-mobile.jpeg",
+    alt: "Loja Move Academia",
+  },
 ];
 
 const diferenciais = [
@@ -94,14 +110,14 @@ export default function Diferenciais() {
                 className="absolute inset-0"
               >
                 <Image
-                  src={carouselImages[current].src}
+                  src={carouselImages[current].srcMobile}
                   alt={carouselImages[current].alt}
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                 />
               </motion.div>
             </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
             {/* Dots */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
